@@ -1,6 +1,6 @@
 ﻿namespace CECLIMI
 {
-    partial class inicio
+    partial class ini
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inicio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ini));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.papiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

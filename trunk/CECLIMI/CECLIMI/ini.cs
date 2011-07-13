@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CECLIMI
 {
-    public partial class inicio : Form
+    public partial class ini : Form
     {
-        public inicio()
+        public ini()
         {
             InitializeComponent();
         }
