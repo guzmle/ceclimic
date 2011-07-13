@@ -1,0 +1,9 @@
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\bin\Debug\Logica.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\bin\Debug\Logica.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\bin\Debug\EnlaceDatos.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\bin\Debug\Entidades.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\bin\Debug\EnlaceDatos.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\bin\Debug\Entidades.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\obj\Debug\ResolveAssemblyReference.cache
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\obj\Debug\Logica.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Logica\obj\Debug\Logica.pdb

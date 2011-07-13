@@ -1,0 +1,7 @@
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\bin\Debug\EnlaceDatos.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\bin\Debug\EnlaceDatos.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\obj\Debug\ResolveAssemblyReference.cache
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\obj\Debug\EnlaceDatos.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\obj\Debug\EnlaceDatos.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\bin\Debug\Entidades.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\EnlaceDatos\bin\Debug\Entidades.pdb

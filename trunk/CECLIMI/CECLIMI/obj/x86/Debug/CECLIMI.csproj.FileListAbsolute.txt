@@ -1,0 +1,11 @@
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\CECLIMI.exe
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\CECLIMI.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Properties.Resources.resources
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.exe
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\Logica.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\Logica.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Form1.resources

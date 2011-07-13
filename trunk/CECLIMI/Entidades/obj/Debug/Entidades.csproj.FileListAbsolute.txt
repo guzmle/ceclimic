@@ -1,0 +1,5 @@
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\bin\Debug\Entidades.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\bin\Debug\Entidades.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\obj\Debug\ResolveAssemblyReference.cache
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\obj\Debug\Entidades.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\obj\Debug\Entidades.pdb
