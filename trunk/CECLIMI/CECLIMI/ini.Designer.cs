@@ -250,7 +250,7 @@
             this.lineShape1.Y1 = 30;
             this.lineShape1.Y2 = 30;
             // 
-            // inicio
+            // ini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,7 +262,9 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "inicio";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ini";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

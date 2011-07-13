@@ -24,9 +24,19 @@ namespace CECLIMI
             {
                 panel1.Width = panel1.Width + (width - 1280);
             }
+            else
+            {
+                panel1.Width = panel1.Width - (1200 - width);
+            }
             if (height > 800)
             {
                 panel1.Height = panel1.Height + (height - 830);
+                panelDatos.Height = panelDatos.Height + (height - 830);
+            }
+            else
+            {
+                panel1.Height = panel1.Height - (830 - height);
+                panelDatos.Height = panelDatos.Height - (830 - height);
             }
         }
 
