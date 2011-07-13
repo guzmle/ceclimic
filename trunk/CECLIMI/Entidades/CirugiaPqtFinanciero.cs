@@ -5,19 +5,20 @@ using System.Text;
 
 namespace Entidades
 {
-    public class CirugiaCirujano: Entidad
+    public class CirugiaPqtFinanciero
     {
         #region Atributos
-        private float _honorarios;
-        private Entidad _cirujano;
+        private DateTime _fechaOperacion;
+        private Entidad _paqueteFinanciero;
         private Entidad _cirugia;
         #endregion
 
         #region Encapsulamiento
-        public float Honorarios
+
+        public DateTime FechaOperacion
         {
-            get { return _honorarios; }
-            set { _honorarios = value; }
+            get { return _fechaOperacion; }
+            set { _fechaOperacion = value; }
         }
 
         public Entidad Cirugia
@@ -25,10 +26,10 @@ namespace Entidades
             get { return _cirugia; }
             set { _cirugia = value; }
         }
-        public Entidad Cirujano
+        public Entidad PaqueteFinanciero
         {
-            get { return _cirujano; }
-            set { _cirujano = value; }
+            get { return _paqueteFinanciero; }
+            set { _paqueteFinanciero = value; }
         }
         #endregion
     }
