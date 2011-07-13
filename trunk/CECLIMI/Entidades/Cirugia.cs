@@ -6,23 +6,21 @@ using System.Text;
 namespace Entidades
 {
     /// <summary>
-    /// clase que mantiene el control de la entidad Paciente
+    /// clase que hace referencia a la tabla cirugia de la base de datos en el sistema
     /// </summary>
-    public class Paciente: Persona
+    public class Cirugia: Entidad
     {
         #region Atributos
-        private DateTime _fechaIngreso;
+
+        private String _descripcion;
         #endregion
 
         #region Encapsulamiento
-
-        public DateTime FechaIngreso
+        public string Descripcion
         {
-            get { return _fechaIngreso; }
-            set { _fechaIngreso = value; }
+            get { return _descripcion; }
+            set { _descripcion = value; }
         }
-        
         #endregion
-       
     }
 }
