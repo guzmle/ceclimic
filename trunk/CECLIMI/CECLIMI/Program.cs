@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using CECLIMI.Vista;
 
 namespace CECLIMI
 {
@@ -15,7 +16,7 @@ namespace CECLIMI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new inicio());
+            Application.Run(new formInicial());
         }
     }
 }
