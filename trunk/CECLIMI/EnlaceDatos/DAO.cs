@@ -16,9 +16,10 @@ namespace EnlaceDatos
             switch (baseDatos)
             {
                 case 1:
-                    return new FabricaDAOMySql(); 
-                    break;
-
+                    {
+                        return new FabricaDAOMySql();
+                        break;
+                    }
                 case 2:
                     return null;
 

@@ -1,6 +1,6 @@
-﻿namespace CECLIMI
+﻿namespace CECLIMI.Vista
 {
-    partial class ini
+    partial class formInicial
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ini));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.papiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.babaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alejandroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInicial));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelDatos = new System.Windows.Forms.Panel();
             this.buttonModificarPerfil = new System.Windows.Forms.Button();
             this.usuarioMostrar = new System.Windows.Forms.Label();
@@ -48,66 +42,15 @@
             this.apellido = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.papiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.babaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alejandroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDatos.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.papiToolStripMenuItem,
-            this.vamosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // papiToolStripMenuItem
-            // 
-            this.papiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kikiToolStripMenuItem,
-            this.babaToolStripMenuItem});
-            this.papiToolStripMenuItem.Name = "papiToolStripMenuItem";
-            this.papiToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.papiToolStripMenuItem.Text = "Papi";
-            // 
-            // kikiToolStripMenuItem
-            // 
-            this.kikiToolStripMenuItem.Name = "kikiToolStripMenuItem";
-            this.kikiToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.kikiToolStripMenuItem.Text = "Kiki";
-            // 
-            // babaToolStripMenuItem
-            // 
-            this.babaToolStripMenuItem.Name = "babaToolStripMenuItem";
-            this.babaToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.babaToolStripMenuItem.Text = "Baba";
-            // 
-            // vamosToolStripMenuItem
-            // 
-            this.vamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alejandroToolStripMenuItem});
-            this.vamosToolStripMenuItem.Name = "vamosToolStripMenuItem";
-            this.vamosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.vamosToolStripMenuItem.Text = "Vamos";
-            // 
-            // alejandroToolStripMenuItem
-            // 
-            this.alejandroToolStripMenuItem.Name = "alejandroToolStripMenuItem";
-            this.alejandroToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.alejandroToolStripMenuItem.Text = "Alejandro";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(306, 130);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(946, 620);
-            this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
@@ -117,7 +60,16 @@
             this.panel2.Location = new System.Drawing.Point(12, 130);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 241);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(306, 130);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(946, 620);
+            this.panel1.TabIndex = 6;
             // 
             // panelDatos
             // 
@@ -133,13 +85,11 @@
             this.panelDatos.Controls.Add(this.apellido);
             this.panelDatos.Controls.Add(this.Nombre);
             this.panelDatos.Controls.Add(this.label1);
-            this.panelDatos.Controls.Add(this.shapeContainer1);
             this.panelDatos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelDatos.Location = new System.Drawing.Point(13, 378);
+            this.panelDatos.Location = new System.Drawing.Point(12, 378);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(287, 372);
-            this.panelDatos.TabIndex = 3;
-            this.panelDatos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDatos_Paint);
+            this.panelDatos.TabIndex = 4;
             // 
             // buttonModificarPerfil
             // 
@@ -231,48 +181,69 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos personales";
             // 
-            // shapeContainer1
+            // menuStrip1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(285, 370);
-            this.shapeContainer1.TabIndex = 1;
-            this.shapeContainer1.TabStop = false;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.papiToolStripMenuItem,
+            this.vamosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // lineShape1
+            // papiToolStripMenuItem
             // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 5;
-            this.lineShape1.X2 = 277;
-            this.lineShape1.Y1 = 30;
-            this.lineShape1.Y2 = 30;
+            this.papiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kikiToolStripMenuItem,
+            this.babaToolStripMenuItem});
+            this.papiToolStripMenuItem.Name = "papiToolStripMenuItem";
+            this.papiToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.papiToolStripMenuItem.Text = "Papi";
             // 
-            // ini
+            // kikiToolStripMenuItem
+            // 
+            this.kikiToolStripMenuItem.Name = "kikiToolStripMenuItem";
+            this.kikiToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.kikiToolStripMenuItem.Text = "Kiki";
+            // 
+            // babaToolStripMenuItem
+            // 
+            this.babaToolStripMenuItem.Name = "babaToolStripMenuItem";
+            this.babaToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.babaToolStripMenuItem.Text = "Baba";
+            // 
+            // vamosToolStripMenuItem
+            // 
+            this.vamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alejandroToolStripMenuItem});
+            this.vamosToolStripMenuItem.Name = "vamosToolStripMenuItem";
+            this.vamosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.vamosToolStripMenuItem.Text = "Vamos";
+            // 
+            // alejandroToolStripMenuItem
+            // 
+            this.alejandroToolStripMenuItem.Name = "alejandroToolStripMenuItem";
+            this.alejandroToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.alejandroToolStripMenuItem.Text = "Alejandro";
+            // 
+            // formInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 762);
-            this.Controls.Add(this.panelDatos);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelDatos);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ini";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Name = "formInicial";
+            this.Text = "formInicial";
+            this.Load += new System.EventHandler(this.formInicial_Load);
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,28 +251,24 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDatos;
+        private System.Windows.Forms.Button buttonModificarPerfil;
+        private System.Windows.Forms.Label usuarioMostrar;
+        private System.Windows.Forms.Label rollMostrar;
+        private System.Windows.Forms.Label apellidoMostrar;
+        private System.Windows.Forms.Label nombreMostrar;
+        private System.Windows.Forms.Label usuario;
+        private System.Windows.Forms.Label roll;
+        private System.Windows.Forms.Label apellido;
+        private System.Windows.Forms.Label Nombre;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem papiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kikiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem babaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alejandroToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panelDatos;
-        private System.Windows.Forms.Label label1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.Label Nombre;
-        private System.Windows.Forms.Label roll;
-        private System.Windows.Forms.Label apellido;
-        private System.Windows.Forms.Label usuario;
-        private System.Windows.Forms.Label nombreMostrar;
-        private System.Windows.Forms.Button buttonModificarPerfil;
-        private System.Windows.Forms.Label usuarioMostrar;
-        private System.Windows.Forms.Label rollMostrar;
-        private System.Windows.Forms.Label apellidoMostrar;
-
     }
 }
-

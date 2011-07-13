@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CECLIMI
+namespace CECLIMI.Vista
 {
-    public partial class ini : Form
+    public partial class formInicial : Form
     {
-        public ini()
+        public formInicial()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void formInicial_Load(object sender, EventArgs e)
         {
             int width = Screen.PrimaryScreen.Bounds.Width;
             int height = Screen.PrimaryScreen.Bounds.Height;
@@ -38,19 +38,6 @@ namespace CECLIMI
                 panel1.Height = panel1.Height - (830 - height);
                 panelDatos.Height = panelDatos.Height - (830 - height);
             }
-        }
-
-        protected new void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-        }
-
-        private void panelDatos_Paint(object sender, PaintEventArgs e)
-        {
-            nombreMostrar.Text = "Daniel Antonio";
-            apellidoMostrar.Text = "Zamora Bustamante";
-            rollMostrar.Text = "Administrativo";
-            usuarioMostrar.Text = "dzamora87";
         }
     }
 }
