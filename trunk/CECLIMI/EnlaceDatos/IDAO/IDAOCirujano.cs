@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace EnlaceDatos.IDAO
 {
     public interface IDAOCirujano
     {
-        void AgregarCirujano();
+        bool AgregarCirujano(Cirujano cirujano);
     }
 }

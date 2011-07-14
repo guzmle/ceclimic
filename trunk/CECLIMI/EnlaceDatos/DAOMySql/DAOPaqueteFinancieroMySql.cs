@@ -9,7 +9,7 @@ using Entidades;
 
 namespace EnlaceDatos.DAOMySql
 {
-    public class DAOPaqueteFinancieroMySql: Conexion,IDAOPaqueteFinanciero 
+    public class DAOPaqueteFinancieroMySql: ConexionMySql,IDAOPaqueteFinanciero 
     {
         public bool AgregarPaqueteFinanciero(PaqueteFinanciero paquete)
         {
@@ -18,7 +18,7 @@ namespace EnlaceDatos.DAOMySql
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = Conexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "AgregarAseguradora";
+                comando.CommandText = "InsertarPaqueteFinanciero";
 
 
                 comando.Parameters.AddWithValue("@FECHA_PAQUETE", paquete.FechaPaquete);
@@ -32,8 +32,6 @@ namespace EnlaceDatos.DAOMySql
                 comando.Parameters["@PACIENTE"].Direction = ParameterDirection.Input;
 
                 comando.ExecuteNonQuery();
-
-                int id = (int)comando.Parameters["@id"].Value;
 
                 CerrarConexion();
                 return true;

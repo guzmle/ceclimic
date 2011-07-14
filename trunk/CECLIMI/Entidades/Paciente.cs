@@ -12,6 +12,7 @@ namespace Entidades
     {
         #region Atributos
         private DateTime _fechaIngreso;
+        private String _telefonoMovil;
         #endregion
 
         #region Encapsulamiento
@@ -21,7 +22,13 @@ namespace Entidades
             get { return _fechaIngreso; }
             set { _fechaIngreso = value; }
         }
-        
+
+        public string TelefonoMovil
+        {
+            get { return _telefonoMovil; }
+            set { _telefonoMovil = value; }
+        }
+
         #endregion
        
     }

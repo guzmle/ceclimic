@@ -6,12 +6,12 @@ using MySql.Data.MySqlClient;
 
 namespace EnlaceDatos.DAOMySql
 {
-    public class Conexion
+    public class ConexionMySql
     {
         private string _direccion = "127.0.0.1";
         private string _usuario = "root";
         private string _password = "1234";
-        private string _nombreBaseDatos = "schaden";
+        private string _nombreBaseDatos = "ceclimi";
         private MySqlConnection conn;
 
         /// <summary>
