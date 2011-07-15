@@ -14,5 +14,10 @@ namespace CECLIMI.Vista
         {
             InitializeComponent();
         }
+
+        private void AgregarCirugia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
