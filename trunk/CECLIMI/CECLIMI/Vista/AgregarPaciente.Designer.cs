@@ -69,7 +69,7 @@
             this.comboIntervencionQuirurgica1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.grupoDatosPaciente1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.botonModificarInformacion = new System.Windows.Forms.Button();
             this.textoApellidoPacienteIngresado = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.textoTelefonoFijoPacienteIngresado = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.textoCorreoElectronicoPacienteIngresado = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.grupoDatosPacientes = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.botonAgregarIQX = new System.Windows.Forms.Button();
             this.textCorreoElectronico = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -174,7 +174,7 @@
             this.grupoIntervencionQuirurgica.Controls.Add(this.comboIntervencionQuirurgica1);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label12);
             this.grupoIntervencionQuirurgica.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoIntervencionQuirurgica.Location = new System.Drawing.Point(4, 147);
+            this.grupoIntervencionQuirurgica.Location = new System.Drawing.Point(4, 142);
             this.grupoIntervencionQuirurgica.Name = "grupoIntervencionQuirurgica";
             this.grupoIntervencionQuirurgica.Size = new System.Drawing.Size(976, 346);
             this.grupoIntervencionQuirurgica.TabIndex = 1;
@@ -524,7 +524,7 @@
             // 
             // grupoDatosPaciente1
             // 
-            this.grupoDatosPaciente1.Controls.Add(this.button6);
+            this.grupoDatosPaciente1.Controls.Add(this.botonModificarInformacion);
             this.grupoDatosPaciente1.Controls.Add(this.textoApellidoPacienteIngresado);
             this.grupoDatosPaciente1.Controls.Add(this.label34);
             this.grupoDatosPaciente1.Controls.Add(this.textoTelefonoFijoPacienteIngresado);
@@ -538,7 +538,7 @@
             this.grupoDatosPaciente1.Controls.Add(this.textoCorreoElectronicoPacienteIngresado);
             this.grupoDatosPaciente1.Controls.Add(this.label35);
             this.grupoDatosPaciente1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoDatosPaciente1.Location = new System.Drawing.Point(4, 25);
+            this.grupoDatosPaciente1.Location = new System.Drawing.Point(4, 20);
             this.grupoDatosPaciente1.Name = "grupoDatosPaciente1";
             this.grupoDatosPaciente1.Size = new System.Drawing.Size(977, 122);
             this.grupoDatosPaciente1.TabIndex = 8;
@@ -546,18 +546,18 @@
             this.grupoDatosPaciente1.Text = "Informacion del Paciente";
             this.grupoDatosPaciente1.Visible = false;
             // 
-            // button6
+            // botonModificarInformacion
             // 
-            this.button6.Image = global::CECLIMI.Properties.Resources.iconoModificar;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(711, 80);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(171, 29);
-            this.button6.TabIndex = 51;
-            this.button6.Text = "Modificar Informacion";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.botonModificarInformacion.Image = global::CECLIMI.Properties.Resources.iconoModificar;
+            this.botonModificarInformacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonModificarInformacion.Location = new System.Drawing.Point(711, 80);
+            this.botonModificarInformacion.Name = "botonModificarInformacion";
+            this.botonModificarInformacion.Size = new System.Drawing.Size(171, 29);
+            this.botonModificarInformacion.TabIndex = 51;
+            this.botonModificarInformacion.Text = "Modificar Informacion";
+            this.botonModificarInformacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botonModificarInformacion.UseVisualStyleBackColor = true;
+            this.botonModificarInformacion.Click += new System.EventHandler(this.button6_Click);
             // 
             // textoApellidoPacienteIngresado
             // 
@@ -675,7 +675,7 @@
             // 
             // grupoDatosPacientes
             // 
-            this.grupoDatosPacientes.Controls.Add(this.button5);
+            this.grupoDatosPacientes.Controls.Add(this.botonAgregarIQX);
             this.grupoDatosPacientes.Controls.Add(this.textCorreoElectronico);
             this.grupoDatosPacientes.Controls.Add(this.label11);
             this.grupoDatosPacientes.Controls.Add(this.label9);
@@ -704,18 +704,18 @@
             this.grupoDatosPacientes.TabStop = false;
             this.grupoDatosPacientes.Text = "Informacion del paciente";
             // 
-            // button5
+            // botonAgregarIQX
             // 
-            this.button5.Image = global::CECLIMI.Properties.Resources.agregarIntervencion;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(724, 169);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(115, 29);
-            this.button5.TabIndex = 41;
-            this.button5.Text = "Agregar IQX";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.botonAgregarIQX.Image = global::CECLIMI.Properties.Resources.agregarIntervencion;
+            this.botonAgregarIQX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAgregarIQX.Location = new System.Drawing.Point(724, 169);
+            this.botonAgregarIQX.Name = "botonAgregarIQX";
+            this.botonAgregarIQX.Size = new System.Drawing.Size(115, 29);
+            this.botonAgregarIQX.TabIndex = 41;
+            this.botonAgregarIQX.Text = "Agregar IQX";
+            this.botonAgregarIQX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botonAgregarIQX.UseVisualStyleBackColor = true;
+            this.botonAgregarIQX.Click += new System.EventHandler(this.button5_Click);
             // 
             // textCorreoElectronico
             // 
@@ -978,7 +978,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label textoHonorarioCirujano;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button botonAgregarIQX;
         private System.Windows.Forms.GroupBox grupoDatosPaciente1;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label textoCIPacienteIngresado;
@@ -992,7 +992,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label textoApellidoPacienteIngresado;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button botonModificarInformacion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label27;

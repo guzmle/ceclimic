@@ -5,15 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CECLIMI.Contratos;
+using CECLIMI.Presentador;
 
 namespace CECLIMI.Vista
 {
-    public partial class AgregarPaciente : CECLIMI.Vista.formInicial
+    public partial class AgregarPaciente : CECLIMI.Vista.formInicial,IContratoAgregarPaciente
     {
-        private int iteracion = 1;
+        private PresentadorAgregarPaciente _presentador;
         public AgregarPaciente()
         {
             InitializeComponent();
+            _presentador = new PresentadorAgregarPaciente(this);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -47,25 +50,128 @@ namespace CECLIMI.Vista
 
         private void button5_Click(object sender, EventArgs e)
         {
-            grupoDatosPacientes.Visible = false;
-            grupoDatosPaciente1.Visible = true;
-            grupoIntervencionQuirurgica.Visible = true;
-            textoNombrePacienteIngresado.Text = textPrimerNombre.Text + " " + textSegundoNombre.Text;
-            textoApellidoPacienteIngresado.Text = textPrimerApellido.Text + " " + textSegundoApellido.Text;
-            textoCIPacienteIngresado.Text = textIdPaciente.Text;
-            textoCorreoElectronicoPacienteIngresado.Text = textCorreoElectronico.Text;
-            textoTelefonoFijoPacienteIngresado.Text = textCodigoAreaFijo.Text + " - " + textTelefonoFijo.Text;
-            textoTelefonoMovilIngresado.Text = textCodigoAreaMovil.Text + " - " + textTelefonoMovil.Text;
-            textInformacionVentana.Text = "Nuevo Paciente - Agregar Intervencion Quirurgica";
-
+            _presentador.agregarIntervencionesQuirurgicas();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            grupoDatosPacientes.Visible = true;
-            grupoDatosPaciente1.Visible = false;
-            grupoIntervencionQuirurgica.Visible = false;
-            textInformacionVentana.Text = "Nuevo Paciente";
+            _presentador.modificarInformacionPaciente();
         }
+
+        #region Implementation of IContratoAgregarPaciente
+
+        public GroupBox GrupoDatosPaciente
+        {
+            get { return grupoDatosPacientes; }
+        }
+
+        public GroupBox GrupoDatosPaciente1
+        {
+            get { return grupoDatosPaciente1; }
+        }
+
+        public GroupBox GrupoIntervencionQuirurgica
+        {
+            get { return grupoIntervencionQuirurgica; }
+        }
+
+        public Button BotonAgregarIQX
+        {
+            get { return botonAgregarIQX; }
+        }
+
+        public Button ModificarInformacion
+        {
+            get { return botonModificarInformacion; }
+        }
+
+        public Label TextoNombrePacienteIngresado
+        {
+            get { return textoNombrePacienteIngresado; }
+        }
+
+        public Label TextoApellidoPacienteIngresado
+        {
+            get { return textoApellidoPacienteIngresado; }
+        }
+
+        public Label TextoCIPacienteIngresado
+        {
+            get { return textoCIPacienteIngresado; }
+        }
+
+        public Label TextoCorreoElectronicoPacienteIngresado
+        {
+            get { return textoCorreoElectronicoPacienteIngresado; }
+        }
+
+        public Label TextoTelefonoFijoPacienteIngresado
+        {
+            get { return textoTelefonoFijoPacienteIngresado; }
+        }
+
+        public Label TextoTelefonoMovilIngresado
+        {
+            get { return textoTelefonoMovilIngresado; }
+        }
+
+        public TextBox TextPrimerNombre
+        {
+            get { return textPrimerNombre; }
+        }
+
+        public TextBox TextSegundoNombre
+        {
+            get { return textSegundoNombre; }
+        }
+
+        public TextBox TextPrimerApellido
+        {
+            get { return textPrimerApellido; }
+        }
+
+        public TextBox TextSegundoApellido
+        {
+            get { return textSegundoApellido; }
+        }
+
+        public TextBox TextIdPaciente
+        {
+            get { return textIdPaciente; }
+        }
+
+        public TextBox TextCodigoAreaFijo
+        {
+            get { return textCodigoAreaFijo; }
+        }
+
+        public TextBox TextTelefonoFijo
+        {
+            get { return textTelefonoFijo; }
+        }
+
+        public TextBox TextCodigoAreaMovil
+        {
+            get { return textCodigoAreaMovil; }
+        }
+
+        public TextBox TextTelefonoMovil
+        {
+            get { return textTelefonoMovil; }
+        }
+
+        public TextBox TextCorreoElectronico
+        {
+            get { return textCorreoElectronico; }
+        }
+
+        public Label TextInformacionVentana
+        {
+            get { return textInformacionVentana; }
+        }
+
+        #endregion
+
+
     }
 }
