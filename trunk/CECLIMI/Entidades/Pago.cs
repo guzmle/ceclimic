@@ -13,16 +13,16 @@ namespace Entidades
         #region Atributos
 
         private float _monto;
-        private Entidad _usuario;
+        private Persona _usuario = new Persona();
         #endregion
 
         #region Encapsulamiento
-        public float Descripcion
+        public float Monto
         {
             get { return _monto; }
             set { _monto = value; }
         }
-        public Entidad Usuario
+        public Persona Usuario
         {
             get { return _usuario; }
             set { _usuario = value; }

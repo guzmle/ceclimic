@@ -9,8 +9,8 @@ namespace Entidades
     {
         #region Atributos
         private float _honorarios;
-        private Entidad _cirujano;
-        private Entidad _cirugia;
+        private Cirujano _cirujano = new Cirujano();
+        private Cirugia _cirugia = new Cirugia();
         #endregion
 
         #region Encapsulamiento
@@ -20,12 +20,12 @@ namespace Entidades
             set { _honorarios = value; }
         }
 
-        public Entidad Cirugia
+        public Cirugia Cirugia
         {
             get { return _cirugia; }
             set { _cirugia = value; }
         }
-        public Entidad Cirujano
+        public Cirujano Cirujano
         {
             get { return _cirujano; }
             set { _cirujano = value; }

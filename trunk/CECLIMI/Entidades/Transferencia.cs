@@ -10,22 +10,22 @@ namespace Entidades
         #region Atributos
 
         private float _monto;
-        private Entidad _pacienteOtorga;
-        private Entidad _pacienteRecibe;
+        private Persona _pacienteOtorga = new Persona();
+        private Persona _pacienteRecibe = new Persona();
         #endregion
 
         #region Encapsulamiento
-        public float Descripcion
+        public float Monto
         {
             get { return _monto; }
             set { _monto = value; }
         }
-        public Entidad PacienteOtorga
+        public Persona PacienteOtorga
         {
             get { return _pacienteOtorga; }
             set { _pacienteOtorga = value; }
         }
-        public Entidad PacienteRecibe
+        public Persona PacienteRecibe
         {
             get { return _pacienteRecibe; }
             set { _pacienteRecibe = value; }

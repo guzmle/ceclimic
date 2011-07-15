@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Entidades;
 
 namespace EnlaceDatos.IDAO
 {
     public interface IDAOPersonalQ
     {
-        void AgregarPersonalQ();
+        bool AgregarPersonalQ(Personal personal);
+        bool EditarPersonalQ(Personal personal);
+        bool EliminarPersonalQ(Personal personal);
     }
 }

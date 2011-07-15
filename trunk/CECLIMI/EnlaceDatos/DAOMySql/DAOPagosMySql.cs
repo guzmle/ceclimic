@@ -1,16 +1,108 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data;
 using EnlaceDatos.IDAO;
+using Entidades;
+using MySql.Data.MySqlClient;
 
 namespace EnlaceDatos.DAOMySql
 {
-    public class DAOPagosMySql: IDAOPagos
+    /// <summary>
+    /// clase que realiza la crud de la tabla pagos en la base de datos MySql
+    /// </summary>
+    public class DAOPagosMySql: ConexionMySql,IDAOPagos
     {
-        public void AgregarPagos()
+        /// <summary>
+        /// Metodo que almacena los datos un pago en la base de datos
+        /// </summary>
+        /// <param name="pago">Objeto que posee la informacion del pago a insertar</param>
+        /// <returns>verdadero si la insercion fue exitosa de lo contrario false</returns>
+        public bool AgregarPago(Pago pago)
         {
-            throw new NotImplementedException();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "InsertarPago";
+
+
+                comando.Parameters.AddWithValue("@MONTO", pago.Monto);
+                comando.Parameters.AddWithValue("@NOMBRE", pago.Nombre);
+                comando.Parameters.AddWithValue("@PACIENTE", pago.Usuario.Id);
+
+                comando.Parameters["@MONTO"].Direction = ParameterDirection.Input;
+                comando.Parameters["@NOMBRE"].Direction = ParameterDirection.Input;
+                comando.Parameters["@PACIENTE"].Direction = ParameterDirection.Input;
+
+
+                comando.ExecuteNonQuery();
+
+                CerrarConexion();
+                return true;
+            }
+            catch (MySqlException)
+            {
+
+                return false;
+            }
+        }
+
+        public bool EditarPago(Pago pago)
+        {
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ModificarPago";
+
+                comando.Parameters.AddWithValue("@ID", pago.Id);
+                comando.Parameters.AddWithValue("@MONTO", pago.Monto);
+                comando.Parameters.AddWithValue("@NOMBRE", pago.Nombre);
+                comando.Parameters.AddWithValue("@PACIENTE", pago.Usuario.Id);
+
+                comando.Parameters["@ID"].Direction = ParameterDirection.Input;
+                comando.Parameters["@MONTO"].Direction = ParameterDirection.Input;
+                comando.Parameters["@NOMBRE"].Direction = ParameterDirection.Input;
+                comando.Parameters["@PACIENTE"].Direction = ParameterDirection.Input;
+
+
+                comando.ExecuteNonQuery();
+
+                CerrarConexion();
+                return true;
+            }
+            catch (MySqlException)
+            {
+
+                return false;
+            }
+        }
+
+        public bool EliminarPago(Pago pago)
+        {
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "EliminarPago";
+
+                comando.Parameters.AddWithValue("@ID", pago.Id);
+
+                comando.Parameters["@ID"].Direction = ParameterDirection.Input;
+
+
+                comando.ExecuteNonQuery();
+
+                CerrarConexion();
+                return true;
+            }
+            catch (MySqlException)
+            {
+
+                return false;
+            }
         }
     }
 }

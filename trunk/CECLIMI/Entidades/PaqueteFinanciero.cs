@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entidades
 {
-    public class PaqueteFinanciero
+    public class PaqueteFinanciero: Entidad
     {
         #region Atributos
         private DateTime _fechaPaquete;

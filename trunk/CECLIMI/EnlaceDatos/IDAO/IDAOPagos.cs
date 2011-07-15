@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace EnlaceDatos.IDAO
 {
     public interface IDAOPagos
     {
-        void AgregarPagos();
+        bool AgregarPago(Pago pago);
+        bool EditarPago(Pago pago);
+        bool EliminarPago(Pago pago);
     }
 }

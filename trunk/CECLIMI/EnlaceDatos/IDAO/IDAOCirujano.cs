@@ -9,5 +9,7 @@ namespace EnlaceDatos.IDAO
     public interface IDAOCirujano
     {
         bool AgregarCirujano(Cirujano cirujano);
+        bool EliminarCirujano(Entidad cirujano);
+        bool EditarCirujano(Cirujano cirujano);
     }
 }

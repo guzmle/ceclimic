@@ -5,13 +5,12 @@ using System.Text;
 
 namespace Entidades
 {
-    public class PersonalPaquete
+    public class PersonalPaquete:Entidad
     {
         #region Atributos
         private String _especialidad;
-        private DateTime _fechaLimite;
-        private Entidad _cirugia;
-        private Entidad _personal;
+        private CirugiaPqtFinanciero _cirugia = new CirugiaPqtFinanciero();
+        private Persona _personal = new Persona();
         #endregion
 
         #region Encapsulamiento
@@ -22,18 +21,12 @@ namespace Entidades
             set { _especialidad = value; }
         }
 
-        public DateTime FechaLimite
-        {
-            get { return _fechaLimite; }
-            set { _fechaLimite = value; }
-        }
-
-        public Entidad Cirugia
+        public CirugiaPqtFinanciero Cirugia
         {
             get { return _cirugia; }
             set { _cirugia = value; }
         }
-        public Entidad Personal
+        public Persona Personal
         {
             get { return _personal; }
             set { _personal = value; }
