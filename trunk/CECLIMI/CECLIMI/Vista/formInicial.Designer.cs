@@ -61,7 +61,7 @@
             // 
             // panelDatos
             // 
-            this.panelDatos.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelDatos.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelDatos.Controls.Add(this.buttonModificarPerfil);
             this.panelDatos.Controls.Add(this.usuarioMostrar);
@@ -222,7 +222,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1232, 86);
+            this.tabPage2.Size = new System.Drawing.Size(1232, 63);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cirugia / Cirujano";
             // 
@@ -244,7 +244,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1232, 86);
+            this.tabPage1.Size = new System.Drawing.Size(1232, 63);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Paciente";
             // 
@@ -267,7 +267,7 @@
             this.tabPaciente.Location = new System.Drawing.Point(12, 28);
             this.tabPaciente.Name = "tabPaciente";
             this.tabPaciente.SelectedIndex = 0;
-            this.tabPaciente.Size = new System.Drawing.Size(1240, 119);
+            this.tabPaciente.Size = new System.Drawing.Size(1240, 96);
             this.tabPaciente.TabIndex = 8;
             // 
             // panel2
@@ -275,9 +275,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.BackgroundImage = global::CECLIMI.Properties.Resources.ceclimi;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(12, 153);
+            this.panel2.Location = new System.Drawing.Point(12, 130);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(239, 221);
+            this.panel2.Size = new System.Drawing.Size(239, 244);
             this.panel2.TabIndex = 5;
             // 
             // formInicial

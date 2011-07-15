@@ -67,6 +67,13 @@ namespace CECLIMI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap boton_buscar {
+            get {
+                object obj = ResourceManager.GetObject("boton buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ceclimi {
             get {
                 object obj = ResourceManager.GetObject("ceclimi", resourceCulture);
