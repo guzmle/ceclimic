@@ -28,72 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textDescripcion = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.botonAceptar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.botonCancelarCirugia = new System.Windows.Forms.Button();
+            this.botonAceptarCirugia = new System.Windows.Forms.Button();
+            this.GrupoCirugias = new System.Windows.Forms.GroupBox();
+            this.textDescripcionCirugia = new System.Windows.Forms.TextBox();
+            this.textNombreCirugia = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.GrupoCirugias.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textNombre
+            // panel1
             // 
-            this.textNombre.Location = new System.Drawing.Point(551, 293);
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(207, 20);
-            this.textNombre.TabIndex = 66;
-            this.textNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.botonCancelarCirugia);
+            this.panel1.Controls.Add(this.botonAceptarCirugia);
+            this.panel1.Controls.Add(this.GrupoCirugias);
+            this.panel1.Location = new System.Drawing.Point(261, 130);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(991, 620);
+            this.panel1.TabIndex = 10;
             // 
-            // label2
+            // botonCancelarCirugia
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(618, 272);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Nmbre";
+            this.botonCancelarCirugia.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCancelarCirugia.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
+            this.botonCancelarCirugia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonCancelarCirugia.Location = new System.Drawing.Point(553, 276);
+            this.botonCancelarCirugia.Name = "botonCancelarCirugia";
+            this.botonCancelarCirugia.Size = new System.Drawing.Size(111, 29);
+            this.botonCancelarCirugia.TabIndex = 40;
+            this.botonCancelarCirugia.Text = "Cancelar";
+            this.botonCancelarCirugia.UseVisualStyleBackColor = true;
             // 
-            // textDescripcion
+            // botonAceptarCirugia
             // 
-            this.textDescripcion.Location = new System.Drawing.Point(809, 293);
-            this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(207, 20);
-            this.textDescripcion.TabIndex = 68;
-            this.textDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.botonAceptarCirugia.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptarCirugia.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptarCirugia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptarCirugia.Location = new System.Drawing.Point(848, 276);
+            this.botonAceptarCirugia.Name = "botonAceptarCirugia";
+            this.botonAceptarCirugia.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptarCirugia.TabIndex = 39;
+            this.botonAceptarCirugia.Text = "Aceptar";
+            this.botonAceptarCirugia.UseVisualStyleBackColor = true;
+            this.botonAceptarCirugia.Click += new System.EventHandler(this.botonAceptarCirugia_Click);
             // 
-            // label3
+            // GrupoCirugias
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(876, 272);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 67;
-            this.label3.Text = "Descripcion";
+            this.GrupoCirugias.Controls.Add(this.textDescripcionCirugia);
+            this.GrupoCirugias.Controls.Add(this.textNombreCirugia);
+            this.GrupoCirugias.Controls.Add(this.label13);
+            this.GrupoCirugias.Controls.Add(this.label12);
+            this.GrupoCirugias.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrupoCirugias.Location = new System.Drawing.Point(18, 14);
+            this.GrupoCirugias.Name = "GrupoCirugias";
+            this.GrupoCirugias.Size = new System.Drawing.Size(957, 230);
+            this.GrupoCirugias.TabIndex = 2;
+            this.GrupoCirugias.TabStop = false;
+            this.GrupoCirugias.Text = "Cirugia";
             // 
-            // botonAceptar
+            // textDescripcionCirugia
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(674, 369);
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(75, 23);
-            this.botonAceptar.TabIndex = 69;
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseVisualStyleBackColor = true;
-            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
+            this.textDescripcionCirugia.Location = new System.Drawing.Point(398, 93);
+            this.textDescripcionCirugia.Multiline = true;
+            this.textDescripcionCirugia.Name = "textDescripcionCirugia";
+            this.textDescripcionCirugia.Size = new System.Drawing.Size(278, 105);
+            this.textDescripcionCirugia.TabIndex = 45;
+            // 
+            // textNombreCirugia
+            // 
+            this.textNombreCirugia.Location = new System.Drawing.Point(398, 35);
+            this.textNombreCirugia.Name = "textNombreCirugia";
+            this.textNombreCirugia.Size = new System.Drawing.Size(278, 26);
+            this.textNombreCirugia.TabIndex = 20;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(279, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 20);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Descripcion";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(309, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 20);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Cirugía";
             // 
             // AgregarCirugia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1264, 762);
-            this.Controls.Add(this.botonAceptar);
-            this.Controls.Add(this.textDescripcion);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textNombre);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1264, 750);
+            this.Controls.Add(this.panel1);
             this.Name = "AgregarCirugia";
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.textNombre, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.textDescripcion, 0);
-            this.Controls.SetChildIndex(this.botonAceptar, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.GrupoCirugias.ResumeLayout(false);
+            this.GrupoCirugias.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,12 +140,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textNombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textDescripcion;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button botonAceptar;
-
-
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox GrupoCirugias;
+        private System.Windows.Forms.TextBox textNombreCirugia;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textDescripcionCirugia;
+        private System.Windows.Forms.Button botonCancelarCirugia;
+        private System.Windows.Forms.Button botonAceptarCirugia;
     }
 }

@@ -8,8 +8,9 @@ namespace CECLIMI.Contratos
 {
     public interface IContratoAgregarCirugia
     {
-        TextBox TextNombre { get; }
-        TextBox TextDescripcion { get; }
+        TextBox TextNombreCirugia { get; }
+        TextBox TextDescripcionCirugia { get; }
         Button BotonAceptar { get; }
+        Button BotonCancelar { get; }
     }
 }

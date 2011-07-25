@@ -20,7 +20,6 @@ namespace EnlaceDatos.DAOMySql
 
                 comando.Parameters.AddWithValue("@FECHA_PAQUETE", paquete.FechaPaquete);
                 comando.Parameters.AddWithValue("@FECHA_LIMITE", paquete.FechaLimite);
-                comando.Parameters.AddWithValue("@CIRUJANO", paquete.Cirujano.Id);
                 comando.Parameters.AddWithValue("@PACIENTE", paquete.Paciente.Id);
 
                 comando.Parameters["@FECHA_PAQUETE"].Direction = ParameterDirection.Input;
@@ -52,7 +51,6 @@ namespace EnlaceDatos.DAOMySql
                 comando.Parameters.AddWithValue("@ID", paquete.Id);
                 comando.Parameters.AddWithValue("@FECHA_PAQUETE", paquete.FechaPaquete);
                 comando.Parameters.AddWithValue("@FECHA_LIMITE", paquete.FechaLimite);
-                comando.Parameters.AddWithValue("@CIRUJANO", paquete.Cirujano.Id);
                 comando.Parameters.AddWithValue("@PACIENTE", paquete.Paciente.Id);
 
                 comando.Parameters["@ID"].Direction = ParameterDirection.Input;

@@ -5,42 +5,44 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using CECLIMI.Presentador;
 using CECLIMI.Contratos;
+using CECLIMI.Presentador;
+
 namespace CECLIMI.Vista
 {
     public partial class AgregarCirugia : CECLIMI.Vista.formInicial, IContratoAgregarCirugia
     {
-        private PresenadorAgregarCirugia _presentador;
+        private PresentadorAgregarCirugia _presentador;
         public AgregarCirugia()
         {
             InitializeComponent();
-            _presentador = new PresenadorAgregarCirugia(this);
-
+            _presentador= new PresentadorAgregarCirugia(this);
+        
         }
 
-        private void botonAceptar_Click(object sender, EventArgs e)
+        public TextBox TextNombreCirugia
         {
-            _presentador.BotonAceptar();
+            get { return textNombreCirugia; }
         }
 
-        #region Implementation of IContratoAgregarCirugia
-
-        public TextBox TextNombre
+        public TextBox TextDescripcionCirugia
         {
-            get { return textNombre; }
-        }
-
-        public TextBox TextDescripcion
-        {
-            get { return textDescripcion; }
+            get { return textDescripcionCirugia; }
         }
 
         public Button BotonAceptar
         {
-            get { return botonAceptar; }
+            get { return botonAceptarCirugia; }
         }
 
-        #endregion
+        public Button BotonCancelar
+        {
+            get { return botonCancelarCirugia; }
+        }
+
+        private void botonAceptarCirugia_Click(object sender, EventArgs e)
+        {
+            _presentador.BotonAceptar();
+        }
     }
 }
