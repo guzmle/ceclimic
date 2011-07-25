@@ -40,9 +40,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -72,9 +72,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -98,9 +98,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }

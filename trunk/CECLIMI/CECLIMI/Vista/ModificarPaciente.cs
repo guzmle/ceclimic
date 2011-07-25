@@ -19,7 +19,7 @@ namespace CECLIMI.Vista
             _presentador = new PresentadorModificarPaciente(this);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -128,9 +128,9 @@ namespace CECLIMI.Vista
 
         #endregion
 
-        private void botonBuscar_Click(object sender, EventArgs e)
+        private void BotonBuscarClick(object sender, EventArgs e)
         {
-            _presentador.buscarInformacionPaciente();
+            _presentador.BuscarInformacionPaciente();
         }
     }
 }

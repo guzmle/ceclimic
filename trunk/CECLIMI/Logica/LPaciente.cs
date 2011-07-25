@@ -12,9 +12,15 @@ namespace Logica
     /// </summary>
     public class LPaciente
     {
-        public int AgregarPaciente()
+        /// <summary>
+        /// metodo que se encarga de la logica de agregar paciente
+        /// </summary>
+        /// <param name="paciente"></param>
+        /// <returns></returns>
+        public bool AgregarPaciente(Paciente paciente)
         {
-            return 0;
+            
+            return DAO.ObtenerDAO(1).ObtenerDAOPaciente().AgregarPaciente(paciente);
         }
     }
 }

@@ -21,12 +21,9 @@ namespace CECLIMI.Vista
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            textCodigoAreaFijo.MaxLength = 4;
-            textTelefonoFijo.MaxLength = 7;
-            textCodigoAreaMovil.MaxLength = 4;
-            textTelefonoMovil.MaxLength = 7;
-            textDescuento1.MaxLength = 3;
-            textDiaIQX1.MaxLength = textMesIQX1.MaxLength = 2;
+            textCodigoAreaFijo.MaxLength = 4;textTelefonoFijo.MaxLength = 7;
+            textCodigoAreaMovil.MaxLength = 4;textTelefonoMovil.MaxLength = 7;
+            textDescuento1.MaxLength = 3;textDiaIQX1.MaxLength = textMesIQX1.MaxLength = 2;
             textAnoIQX1.MaxLength = 4;
         }
 
@@ -40,12 +37,7 @@ namespace CECLIMI.Vista
 
         private void botonAgregarIntervencionQuirurgica_Click(object sender, EventArgs e)
         {
-              
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            
+            _presentador.AgregarNuevaIntervencionQuirurgica();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -55,8 +47,24 @@ namespace CECLIMI.Vista
 
         private void button6_Click(object sender, EventArgs e)
         {
-            _presentador.modificarInformacionPaciente();
+            _presentador.ModificarInformacionPaciente();
         }
+
+        private void botonAceptar_Click(object sender, EventArgs e)
+        {
+            _presentador.ClickAceptar();
+        }
+
+        private void comboIntervencionQuirurgica1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _presentador.SeleccionCirugia();
+        }
+
+        private void comboCirujano1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _presentador.PrecioOperacion();
+        }
+
 
         #region Implementation of IContratoAgregarPaciente
 
@@ -165,13 +173,117 @@ namespace CECLIMI.Vista
             get { return textCorreoElectronico; }
         }
 
+        public TextBox TextProtesis
+        {
+            get { return textProtesis; }
+        }
+
         public Label TextInformacionVentana
         {
             get { return textInformacionVentana; }
         }
 
-        #endregion
+        public ComboBox ComboIntervencionQuirurgica
+        {
+            get { return comboIntervencionQuirurgica1; }
+        }
 
+        public ComboBox ComboCirujano
+        {
+            get { return comboCirujano1; }
+        }
+
+        public Label TextoHonorarioCirujano
+        {
+            get { return textoHonorarioCirujano; }
+        }
+
+        public Label TextoBsFHonorarios
+        {
+            get { return textoBsFHonorarios; }
+        }
+
+        public ComboBox Combo1ErAyudante
+        {
+            get { return combo1erAyudante; }
+        }
+
+        public ComboBox ComboAnestesiologo
+        {
+            get { return comboAnestesiologo; }
+        }
+
+        public ComboBox ComboInstrumentista
+        {
+            get { return comboInstrumentista; }
+        }
+
+        public ComboBox ComboCirculante
+        {
+            get { return  comboCirculante; }
+        }
+
+        public ComboBox ComboInstrumentalEspecial
+        {
+            get { return comboInstrumentalEspecial; }
+        }
+
+        public Button BotonAgregarIntervencionQuirurgica
+        {
+            get { return botonAgregarIntervencionQuirurgica; }
+        }
+
+        public Button BotonQuitarIntervencionQuirurgica
+        {
+            get { return botonQuitarIntervencionQuirurgica; }
+        }
+
+        public DataGridView DataGridCirugias
+        {
+            get { return dataGridCirugias; }
+        }
+
+        public TextBox TextDiaIQX1
+        {
+            get { return textDiaIQX1; }
+        }
+
+        public TextBox TextmesIQX1
+        {
+            get { return textMesIQX1; }
+        }
+
+        public TextBox TextAnoIQX1
+        {
+            get { return textAnoIQX1; }
+        }
+
+        public Label Label1
+        {
+            get { return label17; }
+        }
+
+        public Label Label2
+        {
+            get { return label21; }
+        }
+
+        public Label Label3
+        {
+            get { return label22; }
+        }
+
+        public Label Label4
+        {
+            get { return label23; }
+        }
+
+        public Label Label5
+        {
+            get { return label24; }
+        }
+
+        #endregion
 
     }
 }

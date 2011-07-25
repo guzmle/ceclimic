@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using EnlaceDatos.IDAO;
 using Entidades;
 using MySql.Data.MySqlClient;
@@ -49,9 +51,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -81,9 +83,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -126,11 +128,52 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Obtener una Lista de Cirujanos dado una cirugia
+        /// </summary>
+        /// <param name="cirugia"></param>
+        /// <returns></returns>
+        public List<Cirujano> ObtenerCirujanos(Entidad cirugia)
+        {
+            List<Cirujano> retorno = new List<Cirujano>();
+            try
+            {
+                
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerCirujanosCirugia";
+
+
+                comando.Parameters.AddWithValue("@idCirugia", cirugia.Id);
+                comando.Parameters["@idCirugia"].Direction = ParameterDirection.Input;
+                
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Cirujano cirujano = new Cirujano();
+                    cirujano.Nombre = reader.GetString(0);
+                    cirujano.Id = reader.GetInt64(1);
+                    retorno.Add(cirujano);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return retorno;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return retorno;
+            }
+            
         }
     }
 }

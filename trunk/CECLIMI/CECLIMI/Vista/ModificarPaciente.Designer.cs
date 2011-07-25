@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.botonCancelar = new System.Windows.Forms.Button();
-            this.botonAceptar = new System.Windows.Forms.Button();
-            this.botonRestaurarDatosPaciente = new System.Windows.Forms.Button();
             this.grupoDatosPacientes = new System.Windows.Forms.GroupBox();
             this.textCorreoElectronico = new System.Windows.Forms.TextBox();
             this.correoElectrico = new System.Windows.Forms.Label();
@@ -58,6 +55,8 @@
             this.textoCiPaciente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textModificarPaciente = new System.Windows.Forms.Label();
+            this.botonCancelar = new System.Windows.Forms.Button();
+            this.botonAceptar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.grupoDatosPacientes.SuspendLayout();
             this.grupoInformacionPaciente.SuspendLayout();
@@ -69,7 +68,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.botonCancelar);
             this.panel1.Controls.Add(this.botonAceptar);
-            this.panel1.Controls.Add(this.botonRestaurarDatosPaciente);
             this.panel1.Controls.Add(this.grupoDatosPacientes);
             this.panel1.Controls.Add(this.grupoInformacionPaciente);
             this.panel1.Controls.Add(this.textModificarPaciente);
@@ -77,37 +75,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(990, 619);
             this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // botonCancelar
-            // 
-            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonCancelar.Location = new System.Drawing.Point(435, 335);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
-            this.botonCancelar.TabIndex = 33;
-            this.botonCancelar.Text = "Cancelar";
-            this.botonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // botonAceptar
-            // 
-            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAceptar.Location = new System.Drawing.Point(730, 335);
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
-            this.botonAceptar.TabIndex = 32;
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseVisualStyleBackColor = true;
-            // 
-            // botonRestaurarDatosPaciente
-            // 
-            this.botonRestaurarDatosPaciente.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRestaurarDatosPaciente.Location = new System.Drawing.Point(143, 335);
-            this.botonRestaurarDatosPaciente.Name = "botonRestaurarDatosPaciente";
-            this.botonRestaurarDatosPaciente.Size = new System.Drawing.Size(111, 29);
-            this.botonRestaurarDatosPaciente.TabIndex = 31;
-            this.botonRestaurarDatosPaciente.Text = "Restaurar";
-            this.botonRestaurarDatosPaciente.UseVisualStyleBackColor = true;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1Paint);
             // 
             // grupoDatosPacientes
             // 
@@ -342,7 +310,7 @@
             this.botonBuscar.TabIndex = 52;
             this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botonBuscar.UseVisualStyleBackColor = true;
-            this.botonBuscar.Click += new System.EventHandler(this.botonBuscar_Click);
+            this.botonBuscar.Click += new System.EventHandler(this.BotonBuscarClick);
             // 
             // textoCiPaciente
             // 
@@ -369,6 +337,30 @@
             this.textModificarPaciente.Size = new System.Drawing.Size(182, 22);
             this.textModificarPaciente.TabIndex = 28;
             this.textModificarPaciente.Text = "Modificar Paciente";
+            // 
+            // botonCancelar
+            // 
+            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCancelar.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
+            this.botonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonCancelar.Location = new System.Drawing.Point(505, 344);
+            this.botonCancelar.Name = "botonCancelar";
+            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
+            this.botonCancelar.TabIndex = 34;
+            this.botonCancelar.Text = "Cancelar";
+            this.botonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // botonAceptar
+            // 
+            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptar.Location = new System.Drawing.Point(800, 344);
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptar.TabIndex = 33;
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseVisualStyleBackColor = true;
             // 
             // ModificarPaciente
             // 
@@ -419,7 +411,6 @@
         private System.Windows.Forms.Label primerNombre;
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Button botonAceptar;
-        private System.Windows.Forms.Button botonRestaurarDatosPaciente;
 
     }
 }

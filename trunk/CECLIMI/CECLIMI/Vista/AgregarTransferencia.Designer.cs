@@ -1,6 +1,6 @@
 ﻿namespace CECLIMI.Vista
 {
-    partial class AgregarPagos
+    partial class AgregarTransferencia
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonCancelar = new System.Windows.Forms.Button();
+            this.botonAceptar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.botonAgregarPago = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textAnoPago = new System.Windows.Forms.TextBox();
-            this.textMesPago = new System.Windows.Forms.TextBox();
-            this.textDiaPago = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textoNumeroFactura = new System.Windows.Forms.TextBox();
+            this.buscarBeneficiario = new System.Windows.Forms.Button();
+            this.textoCIBeneficiario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textoMontoPagar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textoInformacionEstatusCliente = new System.Windows.Forms.Label();
             this.textoSaldoDeudorModificar = new System.Windows.Forms.Label();
             this.textoSaldoFavorModificar = new System.Windows.Forms.Label();
             this.textoTotalAbonadoModificar = new System.Windows.Forms.Label();
@@ -59,8 +54,6 @@
             this.textoCiPaciente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textInformacionPagos = new System.Windows.Forms.Label();
-            this.botonCancelar = new System.Windows.Forms.Button();
-            this.botonAceptar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,21 +71,39 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.grupoInformacionPaciente);
             this.panel1.Controls.Add(this.textInformacionPagos);
-            this.panel1.Location = new System.Drawing.Point(257, 130);
+            this.panel1.Location = new System.Drawing.Point(261, 130);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(991, 620);
-            this.panel1.TabIndex = 9;
+            this.panel1.TabIndex = 10;
+            // 
+            // botonCancelar
+            // 
+            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCancelar.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
+            this.botonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonCancelar.Location = new System.Drawing.Point(561, 484);
+            this.botonCancelar.Name = "botonCancelar";
+            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
+            this.botonCancelar.TabIndex = 32;
+            this.botonCancelar.Text = "Cancelar";
+            this.botonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // botonAceptar
+            // 
+            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptar.Location = new System.Drawing.Point(856, 484);
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptar.TabIndex = 31;
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.botonAgregarPago);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.textAnoPago);
-            this.groupBox2.Controls.Add(this.textMesPago);
-            this.groupBox2.Controls.Add(this.textDiaPago);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textoNumeroFactura);
+            this.groupBox2.Controls.Add(this.buscarBeneficiario);
+            this.groupBox2.Controls.Add(this.textoCIBeneficiario);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.textoMontoPagar);
@@ -103,88 +114,39 @@
             this.groupBox2.Size = new System.Drawing.Size(962, 114);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Informacion del Pago";
+            this.groupBox2.Text = "Informacion de Transferencia";
             // 
-            // botonAgregarPago
+            // buscarBeneficiario
             // 
-            this.botonAgregarPago.Image = global::CECLIMI.Properties.Resources.mas;
-            this.botonAgregarPago.Location = new System.Drawing.Point(907, 79);
-            this.botonAgregarPago.Name = "botonAgregarPago";
-            this.botonAgregarPago.Size = new System.Drawing.Size(38, 29);
-            this.botonAgregarPago.TabIndex = 65;
-            this.botonAgregarPago.UseVisualStyleBackColor = true;
+            this.buscarBeneficiario.Image = global::CECLIMI.Properties.Resources.boton_buscar;
+            this.buscarBeneficiario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buscarBeneficiario.Location = new System.Drawing.Point(822, 36);
+            this.buscarBeneficiario.Name = "buscarBeneficiario";
+            this.buscarBeneficiario.Size = new System.Drawing.Size(30, 29);
+            this.buscarBeneficiario.TabIndex = 53;
+            this.buscarBeneficiario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buscarBeneficiario.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // textoCIBeneficiario
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(852, 40);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(13, 20);
-            this.label20.TabIndex = 64;
-            this.label20.Text = "/";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(791, 39);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(13, 20);
-            this.label18.TabIndex = 63;
-            this.label18.Text = "/";
-            // 
-            // textAnoPago
-            // 
-            this.textAnoPago.Location = new System.Drawing.Point(870, 37);
-            this.textAnoPago.Name = "textAnoPago";
-            this.textAnoPago.Size = new System.Drawing.Size(75, 26);
-            this.textAnoPago.TabIndex = 62;
-            this.textAnoPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textMesPago
-            // 
-            this.textMesPago.Location = new System.Drawing.Point(808, 37);
-            this.textMesPago.Name = "textMesPago";
-            this.textMesPago.Size = new System.Drawing.Size(38, 26);
-            this.textMesPago.TabIndex = 61;
-            this.textMesPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textDiaPago
-            // 
-            this.textDiaPago.Location = new System.Drawing.Point(749, 37);
-            this.textDiaPago.Name = "textDiaPago";
-            this.textDiaPago.Size = new System.Drawing.Size(38, 26);
-            this.textDiaPago.TabIndex = 60;
-            this.textDiaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(667, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Fecha Pago";
-            // 
-            // textoNumeroFactura
-            // 
-            this.textoNumeroFactura.Location = new System.Drawing.Point(485, 37);
-            this.textoNumeroFactura.Name = "textoNumeroFactura";
-            this.textoNumeroFactura.Size = new System.Drawing.Size(141, 26);
-            this.textoNumeroFactura.TabIndex = 4;
+            this.textoCIBeneficiario.Location = new System.Drawing.Point(675, 37);
+            this.textoCIBeneficiario.Name = "textoCIBeneficiario";
+            this.textoCIBeneficiario.Size = new System.Drawing.Size(141, 26);
+            this.textoCIBeneficiario.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(356, 40);
+            this.label8.Location = new System.Drawing.Point(574, 40);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 20);
+            this.label8.Size = new System.Drawing.Size(99, 20);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Numero de Factura";
+            this.label8.Text = "CI Beneficiario:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 40);
+            this.label7.Location = new System.Drawing.Point(291, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 20);
             this.label7.TabIndex = 2;
@@ -192,7 +154,7 @@
             // 
             // textoMontoPagar
             // 
-            this.textoMontoPagar.Location = new System.Drawing.Point(130, 34);
+            this.textoMontoPagar.Location = new System.Drawing.Point(148, 34);
             this.textoMontoPagar.Name = "textoMontoPagar";
             this.textoMontoPagar.Size = new System.Drawing.Size(141, 26);
             this.textoMontoPagar.TabIndex = 1;
@@ -202,13 +164,12 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(31, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 20);
+            this.label6.Size = new System.Drawing.Size(119, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Monto a Pagar:";
+            this.label6.Text = "Monto a Transferir:";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textoInformacionEstatusCliente);
             this.groupBox1.Controls.Add(this.textoSaldoDeudorModificar);
             this.groupBox1.Controls.Add(this.textoSaldoFavorModificar);
             this.groupBox1.Controls.Add(this.textoTotalAbonadoModificar);
@@ -223,16 +184,6 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estatus de la cuenta del paciente";
-            // 
-            // textoInformacionEstatusCliente
-            // 
-            this.textoInformacionEstatusCliente.AutoSize = true;
-            this.textoInformacionEstatusCliente.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoInformacionEstatusCliente.Location = new System.Drawing.Point(159, 97);
-            this.textoInformacionEstatusCliente.Name = "textoInformacionEstatusCliente";
-            this.textoInformacionEstatusCliente.Size = new System.Drawing.Size(673, 29);
-            this.textoInformacionEstatusCliente.TabIndex = 7;
-            this.textoInformacionEstatusCliente.Text = "Introduzca la informacion del paciente, para obtener el estatus de su cuenta.";
             // 
             // textoSaldoDeudorModificar
             // 
@@ -354,7 +305,6 @@
             this.botonBuscar.TabIndex = 52;
             this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botonBuscar.UseVisualStyleBackColor = true;
-            this.botonBuscar.Click += new System.EventHandler(this.button6_Click);
             // 
             // textoCiPaciente
             // 
@@ -378,41 +328,16 @@
             this.textInformacionPagos.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textInformacionPagos.Location = new System.Drawing.Point(205, 9);
             this.textInformacionPagos.Name = "textInformacionPagos";
-            this.textInformacionPagos.Size = new System.Drawing.Size(138, 22);
+            this.textInformacionPagos.Size = new System.Drawing.Size(202, 22);
             this.textInformacionPagos.TabIndex = 27;
-            this.textInformacionPagos.Text = "Agregar Pago";
+            this.textInformacionPagos.Text = "Nueva Transferencia";
             // 
-            // botonCancelar
-            // 
-            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonCancelar.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
-            this.botonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonCancelar.Location = new System.Drawing.Point(526, 495);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
-            this.botonCancelar.TabIndex = 34;
-            this.botonCancelar.Text = "Cancelar";
-            this.botonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // botonAceptar
-            // 
-            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
-            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAceptar.Location = new System.Drawing.Point(821, 495);
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
-            this.botonAceptar.TabIndex = 33;
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseVisualStyleBackColor = true;
-            // 
-            // AgregarPagos
+            // AgregarTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1264, 762);
             this.Controls.Add(this.panel1);
-            this.Name = "AgregarPagos";
-            this.Load += new System.EventHandler(this.AgregarPagos_Load);
+            this.Name = "AgregarTransferencia";
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -431,37 +356,31 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label textInformacionPagos;
-        private System.Windows.Forms.GroupBox grupoInformacionPaciente;
-        private System.Windows.Forms.TextBox textoCiPaciente;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button botonBuscar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView gridInformacionPagos;
+        private System.Windows.Forms.Button botonCancelar;
+        private System.Windows.Forms.Button botonAceptar;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textoCIBeneficiario;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textoMontoPagar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label textoSaldoDeudorModificar;
         private System.Windows.Forms.Label textoSaldoFavorModificar;
         private System.Windows.Forms.Label textoTotalAbonadoModificar;
         private System.Windows.Forms.Label textoSaldoDeudor;
         private System.Windows.Forms.Label textoSaldoFavor;
         private System.Windows.Forms.Label textoTotalAbonado;
+        private System.Windows.Forms.DataGridView gridInformacionPagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaNumeroFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPago;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textoNumeroFactura;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textoMontoPagar;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textAnoPago;
-        private System.Windows.Forms.TextBox textMesPago;
-        private System.Windows.Forms.TextBox textDiaPago;
-        private System.Windows.Forms.Button botonAgregarPago;
-        private System.Windows.Forms.Label textoInformacionEstatusCliente;
-        private System.Windows.Forms.Button botonCancelar;
-        private System.Windows.Forms.Button botonAceptar;
+        private System.Windows.Forms.GroupBox grupoInformacionPaciente;
+        private System.Windows.Forms.Button botonBuscar;
+        private System.Windows.Forms.TextBox textoCiPaciente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label textInformacionPagos;
+        private System.Windows.Forms.Button buscarBeneficiario;
+
     }
 }

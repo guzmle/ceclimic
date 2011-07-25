@@ -35,9 +35,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -67,9 +67,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -97,6 +97,40 @@ namespace EnlaceDatos.DAOMySql
             {
 
                 return false;
+            }
+        }
+
+        public float PrecioOperacion(Cirugia cirugia, Cirujano cirujano)
+        {
+            float retorno = 0;
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerHonorarioCirugiaCirujano";
+
+
+                comando.Parameters.AddWithValue("@idCirugia", cirugia.Id);
+                comando.Parameters["@idCirugia"].Direction = ParameterDirection.Input;
+
+                comando.Parameters.AddWithValue("@idCirujano", cirujano.Id);
+                comando.Parameters["@idCirujano"].Direction = ParameterDirection.Input;
+                
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    retorno = reader.GetUInt64(1);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return retorno;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return retorno;
             }
         }
     }

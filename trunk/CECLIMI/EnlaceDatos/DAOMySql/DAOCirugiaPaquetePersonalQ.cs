@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using EnlaceDatos.IDAO;
 using Entidades;
 using MySql.Data.MySqlClient;
@@ -28,9 +29,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -59,9 +60,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -85,9 +86,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }

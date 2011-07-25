@@ -81,9 +81,30 @@ namespace CECLIMI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icono_aceptar {
+            get {
+                object obj = ResourceManager.GetObject("icono aceptar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icono_aceptar1 {
+            get {
+                object obj = ResourceManager.GetObject("icono aceptar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icono_calcular {
             get {
                 object obj = ResourceManager.GetObject("icono calcular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icono_cancelar {
+            get {
+                object obj = ResourceManager.GetObject("icono cancelar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

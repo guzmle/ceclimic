@@ -11,5 +11,6 @@ namespace EnlaceDatos.IDAO
         bool AgregarCirugia(Cirugia cirugia);
         bool EliminarCirugia(Entidad cirugia);
         bool ModificarCirugia(Cirugia cirugia);
+        List<Cirugia> ObtenerCirugias();
     }
 }

@@ -30,25 +30,23 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelInformacionUsuario = new System.Windows.Forms.Panel();
+            this.botonCancelar = new System.Windows.Forms.Button();
+            this.botonAceptar = new System.Windows.Forms.Button();
             this.textInformacionVentana = new System.Windows.Forms.Label();
             this.grupoIntervencionQuirurgica = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridCirugias = new System.Windows.Forms.DataGridView();
+            this.textProtesis = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboInstrumentalEspecial = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboCirculante = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboInstrumentista = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboAnestesiologo = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combo1erAyudante = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -61,8 +59,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textDescuento1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.textoBsFHonorarios = new System.Windows.Forms.Label();
+            this.botonQuitarIntervencionQuirurgica = new System.Windows.Forms.Button();
             this.botonAgregarIntervencionQuirurgica = new System.Windows.Forms.Button();
             this.comboCirujano1 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -104,12 +102,16 @@
             this.textPrimerNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.botonCancelar = new System.Windows.Forms.Button();
-            this.botonAceptar = new System.Windows.Forms.Button();
-            this.botonRestaurarDatosPaciente = new System.Windows.Forms.Button();
+            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaFechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelInformacionUsuario.SuspendLayout();
             this.grupoIntervencionQuirurgica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCirugias)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grupoDatosPaciente1.SuspendLayout();
             this.grupoDatosPacientes.SuspendLayout();
@@ -128,17 +130,41 @@
             // 
             // panelInformacionUsuario
             // 
+            this.panelInformacionUsuario.Controls.Add(this.botonCancelar);
+            this.panelInformacionUsuario.Controls.Add(this.botonAceptar);
             this.panelInformacionUsuario.Controls.Add(this.textInformacionVentana);
             this.panelInformacionUsuario.Controls.Add(this.grupoIntervencionQuirurgica);
             this.panelInformacionUsuario.Controls.Add(this.grupoDatosPaciente1);
             this.panelInformacionUsuario.Controls.Add(this.grupoDatosPacientes);
-            this.panelInformacionUsuario.Controls.Add(this.botonCancelar);
-            this.panelInformacionUsuario.Controls.Add(this.botonAceptar);
-            this.panelInformacionUsuario.Controls.Add(this.botonRestaurarDatosPaciente);
             this.panelInformacionUsuario.Location = new System.Drawing.Point(3, 3);
             this.panelInformacionUsuario.Name = "panelInformacionUsuario";
             this.panelInformacionUsuario.Size = new System.Drawing.Size(983, 556);
             this.panelInformacionUsuario.TabIndex = 1;
+            // 
+            // botonCancelar
+            // 
+            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCancelar.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
+            this.botonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonCancelar.Location = new System.Drawing.Point(455, 504);
+            this.botonCancelar.Name = "botonCancelar";
+            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
+            this.botonCancelar.TabIndex = 34;
+            this.botonCancelar.Text = "Cancelar";
+            this.botonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // botonAceptar
+            // 
+            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptar.Location = new System.Drawing.Point(750, 504);
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptar.TabIndex = 33;
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // textInformacionVentana
             // 
@@ -152,7 +178,8 @@
             // 
             // grupoIntervencionQuirurgica
             // 
-            this.grupoIntervencionQuirurgica.Controls.Add(this.textBox1);
+            this.grupoIntervencionQuirurgica.Controls.Add(this.dataGridCirugias);
+            this.grupoIntervencionQuirurgica.Controls.Add(this.textProtesis);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label31);
             this.grupoIntervencionQuirurgica.Controls.Add(this.groupBox1);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label20);
@@ -166,193 +193,175 @@
             this.grupoIntervencionQuirurgica.Controls.Add(this.button4);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label14);
             this.grupoIntervencionQuirurgica.Controls.Add(this.textDescuento1);
-            this.grupoIntervencionQuirurgica.Controls.Add(this.label19);
-            this.grupoIntervencionQuirurgica.Controls.Add(this.button3);
+            this.grupoIntervencionQuirurgica.Controls.Add(this.textoBsFHonorarios);
+            this.grupoIntervencionQuirurgica.Controls.Add(this.botonQuitarIntervencionQuirurgica);
             this.grupoIntervencionQuirurgica.Controls.Add(this.botonAgregarIntervencionQuirurgica);
             this.grupoIntervencionQuirurgica.Controls.Add(this.comboCirujano1);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label13);
             this.grupoIntervencionQuirurgica.Controls.Add(this.comboIntervencionQuirurgica1);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label12);
             this.grupoIntervencionQuirurgica.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoIntervencionQuirurgica.Location = new System.Drawing.Point(4, 142);
+            this.grupoIntervencionQuirurgica.Location = new System.Drawing.Point(4, 134);
             this.grupoIntervencionQuirurgica.Name = "grupoIntervencionQuirurgica";
-            this.grupoIntervencionQuirurgica.Size = new System.Drawing.Size(976, 346);
+            this.grupoIntervencionQuirurgica.Size = new System.Drawing.Size(976, 364);
             this.grupoIntervencionQuirurgica.TabIndex = 1;
             this.grupoIntervencionQuirurgica.TabStop = false;
             this.grupoIntervencionQuirurgica.Text = "Intervencion Quirurgica";
             this.grupoIntervencionQuirurgica.Visible = false;
             // 
-            // textBox1
+            // dataGridCirugias
             // 
-            this.textBox1.Location = new System.Drawing.Point(743, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 25);
-            this.textBox1.TabIndex = 62;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dataGridCirugias.AllowUserToAddRows = false;
+            this.dataGridCirugias.AllowUserToDeleteRows = false;
+            this.dataGridCirugias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridCirugias.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridCirugias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCirugias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnaNumero,
+            this.columnaIQX,
+            this.ColumnaCirujano,
+            this.columnaProtesis,
+            this.columnaFechaCirugia,
+            this.columnaPrecioCirugia});
+            this.dataGridCirugias.Location = new System.Drawing.Point(16, 261);
+            this.dataGridCirugias.Name = "dataGridCirugias";
+            this.dataGridCirugias.ReadOnly = true;
+            this.dataGridCirugias.Size = new System.Drawing.Size(943, 97);
+            this.dataGridCirugias.TabIndex = 63;
+            this.dataGridCirugias.Visible = false;
+            // 
+            // textProtesis
+            // 
+            this.textProtesis.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textProtesis.Location = new System.Drawing.Point(746, 50);
+            this.textProtesis.Name = "textProtesis";
+            this.textProtesis.Size = new System.Drawing.Size(207, 21);
+            this.textProtesis.TabIndex = 62;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(810, 24);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 20);
+            this.label31.Size = new System.Drawing.Size(81, 20);
             this.label31.TabIndex = 61;
-            this.label31.Text = "Protesis";
+            this.label31.Text = "Protesis BsF.";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.label28);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.comboBox5);
+            this.groupBox1.Controls.Add(this.comboInstrumentalEspecial);
             this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.comboBox4);
+            this.groupBox1.Controls.Add(this.comboCirculante);
             this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.comboInstrumentista);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboAnestesiologo);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.combo1erAyudante);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Location = new System.Drawing.Point(16, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(943, 205);
+            this.groupBox1.Size = new System.Drawing.Size(943, 127);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Quirurgico";
             // 
-            // label29
+            // comboInstrumentalEspecial
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(598, 164);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(34, 20);
-            this.label29.TabIndex = 46;
-            this.label29.Text = "BsF.";
-            this.label29.Visible = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(598, 131);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(34, 20);
-            this.label27.TabIndex = 45;
-            this.label27.Text = "BsF.";
-            this.label27.Visible = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(598, 96);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(34, 20);
-            this.label28.TabIndex = 44;
-            this.label28.Text = "BsF.";
-            this.label28.Visible = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(598, 62);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(34, 20);
-            this.label26.TabIndex = 43;
-            this.label26.Text = "BsF.";
-            this.label26.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(598, 27);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 20);
-            this.label25.TabIndex = 42;
-            this.label25.Text = "BsF.";
-            this.label25.Visible = false;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(328, 161);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(229, 28);
-            this.comboBox5.TabIndex = 9;
+            this.comboInstrumentalEspecial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboInstrumentalEspecial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboInstrumentalEspecial.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboInstrumentalEspecial.FormattingEnabled = true;
+            this.comboInstrumentalEspecial.Location = new System.Drawing.Point(617, 56);
+            this.comboInstrumentalEspecial.Name = "comboInstrumentalEspecial";
+            this.comboInstrumentalEspecial.Size = new System.Drawing.Size(229, 24);
+            this.comboInstrumentalEspecial.TabIndex = 9;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(177, 169);
+            this.label24.Location = new System.Drawing.Point(465, 60);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(128, 20);
             this.label24.TabIndex = 8;
             this.label24.Text = "Instrumental Especial";
             // 
-            // comboBox4
+            // comboCirculante
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(328, 127);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(229, 28);
-            this.comboBox4.TabIndex = 7;
+            this.comboCirculante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboCirculante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboCirculante.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboCirculante.FormattingEnabled = true;
+            this.comboCirculante.Location = new System.Drawing.Point(617, 22);
+            this.comboCirculante.Name = "comboCirculante";
+            this.comboCirculante.Size = new System.Drawing.Size(229, 24);
+            this.comboCirculante.TabIndex = 7;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(238, 135);
+            this.label23.Location = new System.Drawing.Point(527, 26);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(66, 20);
             this.label23.TabIndex = 6;
             this.label23.Text = "Circulante";
             // 
-            // comboBox3
+            // comboInstrumentista
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(329, 93);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(229, 28);
-            this.comboBox3.TabIndex = 5;
+            this.comboInstrumentista.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboInstrumentista.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboInstrumentista.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboInstrumentista.FormattingEnabled = true;
+            this.comboInstrumentista.Location = new System.Drawing.Point(172, 91);
+            this.comboInstrumentista.Name = "comboInstrumentista";
+            this.comboInstrumentista.Size = new System.Drawing.Size(229, 24);
+            this.comboInstrumentista.TabIndex = 5;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(218, 101);
+            this.label22.Location = new System.Drawing.Point(62, 95);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(86, 20);
             this.label22.TabIndex = 4;
             this.label22.Text = "Instrumentista";
             // 
-            // comboBox2
+            // comboAnestesiologo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(329, 59);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(229, 28);
-            this.comboBox2.TabIndex = 3;
+            this.comboAnestesiologo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboAnestesiologo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboAnestesiologo.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboAnestesiologo.FormattingEnabled = true;
+            this.comboAnestesiologo.Location = new System.Drawing.Point(172, 57);
+            this.comboAnestesiologo.Name = "comboAnestesiologo";
+            this.comboAnestesiologo.Size = new System.Drawing.Size(229, 24);
+            this.comboAnestesiologo.TabIndex = 3;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(218, 67);
+            this.label21.Location = new System.Drawing.Point(62, 61);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(86, 20);
             this.label21.TabIndex = 2;
             this.label21.Text = "Anestesiólogo";
             // 
-            // comboBox1
+            // combo1erAyudante
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(329, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(229, 28);
-            this.comboBox1.TabIndex = 1;
+            this.combo1erAyudante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo1erAyudante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo1erAyudante.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo1erAyudante.FormattingEnabled = true;
+            this.combo1erAyudante.Location = new System.Drawing.Point(172, 22);
+            this.combo1erAyudante.Name = "combo1erAyudante";
+            this.combo1erAyudante.Size = new System.Drawing.Size(229, 24);
+            this.combo1erAyudante.TabIndex = 1;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(225, 32);
+            this.label17.Location = new System.Drawing.Point(68, 26);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(80, 20);
             this.label17.TabIndex = 0;
@@ -361,7 +370,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(508, 312);
+            this.label20.Location = new System.Drawing.Point(503, 231);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(12, 20);
             this.label20.TabIndex = 59;
@@ -370,7 +379,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(447, 311);
+            this.label18.Location = new System.Drawing.Point(442, 230);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(12, 20);
             this.label18.TabIndex = 58;
@@ -378,36 +387,39 @@
             // 
             // textAnoIQX1
             // 
-            this.textAnoIQX1.Location = new System.Drawing.Point(526, 309);
+            this.textAnoIQX1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textAnoIQX1.Location = new System.Drawing.Point(521, 228);
             this.textAnoIQX1.Name = "textAnoIQX1";
-            this.textAnoIQX1.Size = new System.Drawing.Size(75, 25);
+            this.textAnoIQX1.Size = new System.Drawing.Size(75, 21);
             this.textAnoIQX1.TabIndex = 56;
             this.textAnoIQX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textMesIQX1
             // 
-            this.textMesIQX1.Location = new System.Drawing.Point(464, 309);
+            this.textMesIQX1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMesIQX1.Location = new System.Drawing.Point(459, 228);
             this.textMesIQX1.Name = "textMesIQX1";
-            this.textMesIQX1.Size = new System.Drawing.Size(38, 25);
+            this.textMesIQX1.Size = new System.Drawing.Size(38, 21);
             this.textMesIQX1.TabIndex = 55;
             this.textMesIQX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textDiaIQX1
             // 
-            this.textDiaIQX1.Location = new System.Drawing.Point(405, 309);
+            this.textDiaIQX1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDiaIQX1.Location = new System.Drawing.Point(400, 228);
             this.textDiaIQX1.Name = "textDiaIQX1";
-            this.textDiaIQX1.Size = new System.Drawing.Size(38, 25);
+            this.textDiaIQX1.Size = new System.Drawing.Size(38, 21);
             this.textDiaIQX1.TabIndex = 54;
             this.textDiaIQX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(408, 286);
+            this.label16.Location = new System.Drawing.Point(420, 205);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(191, 20);
+            this.label16.Size = new System.Drawing.Size(153, 20);
             this.label16.TabIndex = 53;
-            this.label16.Text = "Fecha Operacion - DD/MM/YYYY";
+            this.label16.Text = "Fecha IQX - DD/MM/YYYY";
             // 
             // label15
             // 
@@ -431,7 +443,7 @@
             // button4
             // 
             this.button4.Image = global::CECLIMI.Properties.Resources.icono_calcular;
-            this.button4.Location = new System.Drawing.Point(743, 302);
+            this.button4.Location = new System.Drawing.Point(730, 219);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(38, 29);
             this.button4.TabIndex = 50;
@@ -440,7 +452,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(141, 286);
+            this.label14.Location = new System.Drawing.Point(136, 205);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 20);
             this.label14.TabIndex = 46;
@@ -448,37 +460,37 @@
             // 
             // textDescuento1
             // 
-            this.textDescuento1.Location = new System.Drawing.Point(65, 308);
+            this.textDescuento1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescuento1.Location = new System.Drawing.Point(60, 227);
             this.textDescuento1.Name = "textDescuento1";
-            this.textDescuento1.Size = new System.Drawing.Size(201, 25);
+            this.textDescuento1.Size = new System.Drawing.Size(201, 21);
             this.textDescuento1.TabIndex = 45;
-            this.textDescuento1.Text = "100";
+            this.textDescuento1.Text = "0";
             this.textDescuento1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label19
+            // textoBsFHonorarios
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(614, 47);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 20);
-            this.label19.TabIndex = 41;
-            this.label19.Text = "BsF.";
-            this.label19.Visible = false;
+            this.textoBsFHonorarios.AutoSize = true;
+            this.textoBsFHonorarios.Location = new System.Drawing.Point(614, 47);
+            this.textoBsFHonorarios.Name = "textoBsFHonorarios";
+            this.textoBsFHonorarios.Size = new System.Drawing.Size(34, 20);
+            this.textoBsFHonorarios.TabIndex = 41;
+            this.textoBsFHonorarios.Text = "BsF.";
+            this.textoBsFHonorarios.Visible = false;
             // 
-            // button3
+            // botonQuitarIntervencionQuirurgica
             // 
-            this.button3.Image = global::CECLIMI.Properties.Resources.menos;
-            this.button3.Location = new System.Drawing.Point(859, 302);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(38, 29);
-            this.button3.TabIndex = 40;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.botonQuitarIntervencionQuirurgica.Image = global::CECLIMI.Properties.Resources.menos;
+            this.botonQuitarIntervencionQuirurgica.Location = new System.Drawing.Point(846, 219);
+            this.botonQuitarIntervencionQuirurgica.Name = "botonQuitarIntervencionQuirurgica";
+            this.botonQuitarIntervencionQuirurgica.Size = new System.Drawing.Size(38, 29);
+            this.botonQuitarIntervencionQuirurgica.TabIndex = 40;
+            this.botonQuitarIntervencionQuirurgica.UseVisualStyleBackColor = true;
             // 
             // botonAgregarIntervencionQuirurgica
             // 
             this.botonAgregarIntervencionQuirurgica.Image = global::CECLIMI.Properties.Resources.mas;
-            this.botonAgregarIntervencionQuirurgica.Location = new System.Drawing.Point(800, 302);
+            this.botonAgregarIntervencionQuirurgica.Location = new System.Drawing.Point(787, 219);
             this.botonAgregarIntervencionQuirurgica.Name = "botonAgregarIntervencionQuirurgica";
             this.botonAgregarIntervencionQuirurgica.Size = new System.Drawing.Size(38, 29);
             this.botonAgregarIntervencionQuirurgica.TabIndex = 25;
@@ -487,12 +499,15 @@
             // 
             // comboCirujano1
             // 
+            this.comboCirujano1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboCirujano1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboCirujano1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboCirujano1.FormattingEnabled = true;
             this.comboCirujano1.Location = new System.Drawing.Point(345, 47);
             this.comboCirujano1.Name = "comboCirujano1";
             this.comboCirujano1.Size = new System.Drawing.Size(229, 24);
             this.comboCirujano1.TabIndex = 11;
+            this.comboCirujano1.SelectedIndexChanged += new System.EventHandler(this.comboCirujano1_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -505,12 +520,15 @@
             // 
             // comboIntervencionQuirurgica1
             // 
+            this.comboIntervencionQuirurgica1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboIntervencionQuirurgica1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboIntervencionQuirurgica1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboIntervencionQuirurgica1.FormattingEnabled = true;
             this.comboIntervencionQuirurgica1.Location = new System.Drawing.Point(85, 47);
             this.comboIntervencionQuirurgica1.Name = "comboIntervencionQuirurgica1";
             this.comboIntervencionQuirurgica1.Size = new System.Drawing.Size(232, 24);
             this.comboIntervencionQuirurgica1.TabIndex = 9;
+            this.comboIntervencionQuirurgica1.SelectedIndexChanged += new System.EventHandler(this.comboIntervencionQuirurgica1_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -540,7 +558,7 @@
             this.grupoDatosPaciente1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grupoDatosPaciente1.Location = new System.Drawing.Point(4, 20);
             this.grupoDatosPaciente1.Name = "grupoDatosPaciente1";
-            this.grupoDatosPaciente1.Size = new System.Drawing.Size(977, 122);
+            this.grupoDatosPaciente1.Size = new System.Drawing.Size(977, 114);
             this.grupoDatosPaciente1.TabIndex = 8;
             this.grupoDatosPaciente1.TabStop = false;
             this.grupoDatosPaciente1.Text = "Informacion del Paciente";
@@ -877,35 +895,42 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "* Primer Nombre";
             // 
-            // botonCancelar
+            // columnaNumero
             // 
-            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonCancelar.Location = new System.Drawing.Point(427, 504);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
-            this.botonCancelar.TabIndex = 25;
-            this.botonCancelar.Text = "Cancelar";
-            this.botonCancelar.UseVisualStyleBackColor = true;
+            this.columnaNumero.FillWeight = 30F;
+            this.columnaNumero.HeaderText = "#";
+            this.columnaNumero.Name = "columnaNumero";
+            this.columnaNumero.ReadOnly = true;
             // 
-            // botonAceptar
+            // columnaIQX
             // 
-            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAceptar.Location = new System.Drawing.Point(722, 504);
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
-            this.botonAceptar.TabIndex = 24;
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseVisualStyleBackColor = true;
+            this.columnaIQX.HeaderText = "IQX";
+            this.columnaIQX.Name = "columnaIQX";
+            this.columnaIQX.ReadOnly = true;
             // 
-            // botonRestaurarDatosPaciente
+            // ColumnaCirujano
             // 
-            this.botonRestaurarDatosPaciente.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRestaurarDatosPaciente.Location = new System.Drawing.Point(135, 504);
-            this.botonRestaurarDatosPaciente.Name = "botonRestaurarDatosPaciente";
-            this.botonRestaurarDatosPaciente.Size = new System.Drawing.Size(111, 29);
-            this.botonRestaurarDatosPaciente.TabIndex = 23;
-            this.botonRestaurarDatosPaciente.Text = "Restaurar";
-            this.botonRestaurarDatosPaciente.UseVisualStyleBackColor = true;
+            this.ColumnaCirujano.HeaderText = "Cirujano";
+            this.ColumnaCirujano.Name = "ColumnaCirujano";
+            this.ColumnaCirujano.ReadOnly = true;
+            // 
+            // columnaProtesis
+            // 
+            this.columnaProtesis.HeaderText = "Protesis";
+            this.columnaProtesis.Name = "columnaProtesis";
+            this.columnaProtesis.ReadOnly = true;
+            // 
+            // columnaFechaCirugia
+            // 
+            this.columnaFechaCirugia.HeaderText = "Fecha IQX";
+            this.columnaFechaCirugia.Name = "columnaFechaCirugia";
+            this.columnaFechaCirugia.ReadOnly = true;
+            // 
+            // columnaPrecioCirugia
+            // 
+            this.columnaPrecioCirugia.HeaderText = "Precio";
+            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
+            this.columnaPrecioCirugia.ReadOnly = true;
             // 
             // AgregarPaciente
             // 
@@ -920,6 +945,7 @@
             this.panelInformacionUsuario.PerformLayout();
             this.grupoIntervencionQuirurgica.ResumeLayout(false);
             this.grupoIntervencionQuirurgica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCirugias)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grupoDatosPaciente1.ResumeLayout(false);
@@ -935,7 +961,22 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelInformacionUsuario;
+        private System.Windows.Forms.Button botonCancelar;
+        private System.Windows.Forms.Button botonAceptar;
+        private System.Windows.Forms.Label textInformacionVentana;
         private System.Windows.Forms.GroupBox grupoDatosPacientes;
+        private System.Windows.Forms.Button botonAgregarIQX;
+        private System.Windows.Forms.TextBox textCorreoElectronico;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textTelefonoMovil;
+        private System.Windows.Forms.TextBox textCodigoAreaMovil;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textTelefonoFijo;
+        private System.Windows.Forms.TextBox textCodigoAreaFijo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textIdPaciente;
         private System.Windows.Forms.TextBox textSegundoApellido;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textPrimerApellido;
@@ -945,31 +986,20 @@
         private System.Windows.Forms.TextBox textPrimerNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textIdPaciente;
-        private System.Windows.Forms.TextBox textTelefonoFijo;
-        private System.Windows.Forms.TextBox textCodigoAreaFijo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textTelefonoMovil;
-        private System.Windows.Forms.TextBox textCodigoAreaMovil;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textCorreoElectronico;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox grupoIntervencionQuirurgica;
-        private System.Windows.Forms.ComboBox comboIntervencionQuirurgica1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboCirujano1;
-        private System.Windows.Forms.Button botonAgregarIntervencionQuirurgica;
-        private System.Windows.Forms.Button botonCancelar;
-        private System.Windows.Forms.Button botonAceptar;
-        private System.Windows.Forms.Button botonRestaurarDatosPaciente;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textDescuento1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textProtesis;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboInstrumentalEspecial;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboCirculante;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboInstrumentista;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox comboAnestesiologo;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox combo1erAyudante;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textAnoIQX1;
@@ -978,8 +1008,22 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label textoHonorarioCirujano;
-        private System.Windows.Forms.Button botonAgregarIQX;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textDescuento1;
+        private System.Windows.Forms.Label textoBsFHonorarios;
+        private System.Windows.Forms.Button botonQuitarIntervencionQuirurgica;
+        private System.Windows.Forms.Button botonAgregarIntervencionQuirurgica;
+        private System.Windows.Forms.ComboBox comboCirujano1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboIntervencionQuirurgica1;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox grupoDatosPaciente1;
+        private System.Windows.Forms.Button botonModificarInformacion;
+        private System.Windows.Forms.Label textoApellidoPacienteIngresado;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label textoTelefonoFijoPacienteIngresado;
+        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label textoCIPacienteIngresado;
         private System.Windows.Forms.Label textoNombrePacienteIngresado;
@@ -988,29 +1032,12 @@
         private System.Windows.Forms.Label textoTelefonoMovilIngresado;
         private System.Windows.Forms.Label textoCorreoElectronicoPacienteIngresado;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label textoTelefonoFijoPacienteIngresado;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label textoApellidoPacienteIngresado;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button botonModificarInformacion;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label textInformacionVentana;
+        private System.Windows.Forms.DataGridView dataGridCirugias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaIQX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCirujano;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaProtesis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaFechaCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioCirugia;
     }
 }

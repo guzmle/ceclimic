@@ -10,7 +10,6 @@ namespace Entidades
         #region Atributos
         private DateTime _fechaPaquete;
         private DateTime _fechaLimite;
-        private Cirujano _cirujano = new Cirujano();
         private Paciente _paciente = new Paciente();
         #endregion
 
@@ -28,11 +27,6 @@ namespace Entidades
             set { _fechaLimite = value; }
         }
 
-        public Cirujano Cirujano
-        {
-            get { return _cirujano; }
-            set { _cirujano = value; }
-        }
         public Paciente Paciente
         {
             get { return _paciente; }

@@ -10,12 +10,18 @@ namespace Entidades
         #region Atributos
         private DateTime _fechaOperacion;
         private PaqueteFinanciero _paqueteFinanciero;
-        private Cirugia _cirugia;
+        private Cirugia _cirugia = new Cirugia();
         private float _protesis;
+        private Cirujano _cirujano = new Cirujano();
         #endregion
 
         #region Encapsulamiento
 
+        public Cirujano Cirujano
+        {
+            get { return _cirujano; }
+            set { _cirujano = value; }
+        }
         public DateTime FechaOperacion
         {
             get { return _fechaOperacion; }

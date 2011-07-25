@@ -53,9 +53,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -93,9 +93,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -119,11 +119,42 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
+        }
+
+        public List<Personal> ObtenerPersonalQ()
+        {
+            List<Personal> retorno = new List<Personal>();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerPersonalQ";
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Personal personal = new Personal();
+                    personal.Nombre = reader.GetString(0);
+                    personal.Id = reader.GetInt64(1);
+                    retorno.Add(personal);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return retorno;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return retorno;
+            }
+
         }
     }
 }

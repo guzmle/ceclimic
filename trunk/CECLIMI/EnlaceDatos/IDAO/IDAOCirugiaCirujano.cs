@@ -11,5 +11,6 @@ namespace EnlaceDatos.IDAO
         bool AgregarCirugiaCirujano(CirugiaCirujano objeto);
         bool EditarCirugiaCirujano(CirugiaCirujano objeto);
         bool EliminarCirugiaCirujano(CirugiaCirujano objeto);
+        float PrecioOperacion(Cirugia cirugia, Cirujano cirujano);
     }
 }

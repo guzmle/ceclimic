@@ -1,4 +1,6 @@
-﻿using EnlaceDatos.IDAO;
+﻿using System;
+using System.Collections.Generic;
+using EnlaceDatos.IDAO;
 using Entidades;
 using MySql.Data.MySqlClient;
 using System.Data;
@@ -33,9 +35,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -64,9 +66,9 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
         }
@@ -98,11 +100,42 @@ namespace EnlaceDatos.DAOMySql
                 CerrarConexion();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
-
+                Console.Write(e.Message);
                 return false;
             }
+        }
+
+        public List<Cirugia> ObtenerCirugias()
+        {
+            List<Cirugia> retorno = new List<Cirugia>();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerCirugias";
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Cirugia cirugia = new Cirugia();
+                    cirugia.Nombre = reader.GetString(0);
+                    cirugia.Id = reader.GetInt64(1);
+                    retorno.Add(cirugia);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return retorno;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return retorno;
+            }
+            
         }
     }
 }

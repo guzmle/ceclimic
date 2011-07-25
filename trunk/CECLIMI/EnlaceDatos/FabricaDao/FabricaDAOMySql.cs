@@ -31,19 +31,19 @@ namespace EnlaceDatos.FabricaDao
         }
         public override IDAOCirugiaCirujano ObtenerDAOCirugiaCirujano()
         {
-            throw new System.NotImplementedException();
+            return new DAOCirugiaCirujanoMySql();
         }
         public override IDAOTransferencia ObtenerDAOTransferencia()
         {
-            throw new System.NotImplementedException();
+            return new DAOTransferenciaMySql();
         }
         public override IDAOCirugiaPaquete ObtenerDAOCirugiaPaquete()
         {
-            throw new System.NotImplementedException();
+            return new DAOCirugiaPaquete();
         }
         public override IDAOCirugiaPaquetePersonalQ ObetenerDAOCirugiaPaquetePersonalQ()
         {
-            throw new System.NotImplementedException();
+            return new DAOCirugiaPaquetePersonalQ();
         }
     }
 }
