@@ -17,8 +17,11 @@ namespace Prueba
             Cirugia cirugia = new Cirugia();
             cirugia.Nombre = "Cirugia";
             cirugia.Descripcion = "Descripcion";
-            bool respuesta = DAO.ObtenerDAO(1).ObtenerDAOCirugia().AgregarCirugia(cirugia);
-            Assert.IsTrue(respuesta);
+            int respuesta = DAO.ObtenerDAO(1).ObtenerDAOCirugia().AgregarCirugia(cirugia);
+            bool h = false;
+            if (respuesta != -1)
+                h = true;
+            Assert.IsTrue(h);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace EnlaceDatos.DAOMySql
         /// </summary>
         /// <param name="cirugia">Objeto que posee los datos a almacenar en la base de datos</param>
         /// <returns>verdadero si se realizo la insercion con exito de lo contrario false</returns>
-        public bool AgregarCirugia(Cirugia cirugia)
+        public int AgregarCirugia(Cirugia cirugia)
         {
             try
             {
@@ -26,19 +26,22 @@ namespace EnlaceDatos.DAOMySql
 
                 comando.Parameters.AddWithValue("@NOMBRE", cirugia.Nombre);
                 comando.Parameters.AddWithValue("@DESCRIPCION", cirugia.Descripcion);
+                comando.Parameters.AddWithValue("@IDMAX", MySqlDbType.Int32);
 
                 comando.Parameters["@NOMBRE"].Direction = ParameterDirection.Input;
                 comando.Parameters["@DESCRIPCION"].Direction = ParameterDirection.Input;
+                comando.Parameters["@IDMAX"].Direction = ParameterDirection.Output;
 
                 comando.ExecuteNonQuery();
+                int id = (int) comando.Parameters["@IDMAX"].Value;
 
                 CerrarConexion();
-                return true;
+                return id;
             }
             catch (MySqlException e)
             {
                 Console.Write(e.Message);
-                return false;
+                return -1;
             }
         }
 

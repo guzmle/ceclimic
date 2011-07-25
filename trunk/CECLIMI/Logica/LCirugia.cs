@@ -16,7 +16,7 @@ namespace Logica
         /// metodo que lleva el control de la logica de agregar cirugia
         /// </summary>
         /// <param name="cirugia"></param>
-        public bool AgregarCirugia( Cirugia cirugia)
+        public long AgregarCirugia( Cirugia cirugia)
         {
             return DAO.ObtenerDAO(1).ObtenerDAOCirugia().AgregarCirugia(cirugia);
         }

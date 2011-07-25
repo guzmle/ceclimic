@@ -18,7 +18,7 @@ namespace Prueba
             PaqueteFinanciero paquete = new PaqueteFinanciero();
 
             paquete.Paciente.Id = 1;
-            paquete.Cirujano.Id = 1;
+            //paquete.Cirujano.Id = 1;
             paquete.FechaLimite = new DateTime(2010, 12, 20);
             paquete.FechaPaquete = new DateTime(2010, 12, 31);
             bool respuesta = DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().AgregarPaqueteFinanciero(paquete);
