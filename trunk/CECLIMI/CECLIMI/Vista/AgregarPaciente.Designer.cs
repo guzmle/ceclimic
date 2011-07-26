@@ -35,6 +35,12 @@
             this.textInformacionVentana = new System.Windows.Forms.Label();
             this.grupoIntervencionQuirurgica = new System.Windows.Forms.GroupBox();
             this.dataGridCirugias = new System.Windows.Forms.DataGridView();
+            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaFechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textProtesis = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -102,12 +108,6 @@
             this.textPrimerNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaFechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelInformacionUsuario.SuspendLayout();
             this.grupoIntervencionQuirurgica.SuspendLayout();
@@ -230,6 +230,43 @@
             this.dataGridCirugias.Size = new System.Drawing.Size(943, 97);
             this.dataGridCirugias.TabIndex = 63;
             this.dataGridCirugias.Visible = false;
+            // 
+            // columnaNumero
+            // 
+            this.columnaNumero.FillWeight = 30F;
+            this.columnaNumero.HeaderText = "#";
+            this.columnaNumero.Name = "columnaNumero";
+            this.columnaNumero.ReadOnly = true;
+            // 
+            // columnaIQX
+            // 
+            this.columnaIQX.HeaderText = "IQX";
+            this.columnaIQX.Name = "columnaIQX";
+            this.columnaIQX.ReadOnly = true;
+            // 
+            // ColumnaCirujano
+            // 
+            this.ColumnaCirujano.HeaderText = "Cirujano";
+            this.ColumnaCirujano.Name = "ColumnaCirujano";
+            this.ColumnaCirujano.ReadOnly = true;
+            // 
+            // columnaProtesis
+            // 
+            this.columnaProtesis.HeaderText = "Protesis";
+            this.columnaProtesis.Name = "columnaProtesis";
+            this.columnaProtesis.ReadOnly = true;
+            // 
+            // columnaFechaCirugia
+            // 
+            this.columnaFechaCirugia.HeaderText = "Fecha IQX";
+            this.columnaFechaCirugia.Name = "columnaFechaCirugia";
+            this.columnaFechaCirugia.ReadOnly = true;
+            // 
+            // columnaPrecioCirugia
+            // 
+            this.columnaPrecioCirugia.HeaderText = "Precio";
+            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
+            this.columnaPrecioCirugia.ReadOnly = true;
             // 
             // textProtesis
             // 
@@ -895,47 +932,10 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "* Primer Nombre";
             // 
-            // columnaNumero
-            // 
-            this.columnaNumero.FillWeight = 30F;
-            this.columnaNumero.HeaderText = "#";
-            this.columnaNumero.Name = "columnaNumero";
-            this.columnaNumero.ReadOnly = true;
-            // 
-            // columnaIQX
-            // 
-            this.columnaIQX.HeaderText = "IQX";
-            this.columnaIQX.Name = "columnaIQX";
-            this.columnaIQX.ReadOnly = true;
-            // 
-            // ColumnaCirujano
-            // 
-            this.ColumnaCirujano.HeaderText = "Cirujano";
-            this.ColumnaCirujano.Name = "ColumnaCirujano";
-            this.ColumnaCirujano.ReadOnly = true;
-            // 
-            // columnaProtesis
-            // 
-            this.columnaProtesis.HeaderText = "Protesis";
-            this.columnaProtesis.Name = "columnaProtesis";
-            this.columnaProtesis.ReadOnly = true;
-            // 
-            // columnaFechaCirugia
-            // 
-            this.columnaFechaCirugia.HeaderText = "Fecha IQX";
-            this.columnaFechaCirugia.Name = "columnaFechaCirugia";
-            this.columnaFechaCirugia.ReadOnly = true;
-            // 
-            // columnaPrecioCirugia
-            // 
-            this.columnaPrecioCirugia.HeaderText = "Precio";
-            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
-            this.columnaPrecioCirugia.ReadOnly = true;
-            // 
             // AgregarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1264, 762);
+            this.ClientSize = new System.Drawing.Size(1264, 750);
             this.Controls.Add(this.panel1);
             this.Name = "AgregarPaciente";
             this.Text = "SOFTWARE ADMINISTRATIVO CECLIMI - NUEVO PACIENTE";
