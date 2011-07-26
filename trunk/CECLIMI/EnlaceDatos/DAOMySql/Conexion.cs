@@ -10,7 +10,7 @@ namespace EnlaceDatos.DAOMySql
     {
         private string _direccion = "127.0.0.1";
         private string _usuario = "root";
-        private string _password = "1234";
+        private string _password = "asdasd";
         private string _nombreBaseDatos = "ceclimi";
         private MySqlConnection conn;
 

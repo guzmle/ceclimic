@@ -155,38 +155,42 @@ namespace CECLIMI.Presentador
         public void ClickAceptar()
         {
             LPaciente logica = new LPaciente();
-            Paciente _paciente = new Paciente();
+            Paciente paciente = new Paciente();
             
-            _paciente.Nombre = _vista.TextPrimerNombre.Text;
-            _paciente.SegundoNombre = _vista.TextSegundoNombre.Text;
-            _paciente.SegundoApellido = _vista.TextSegundoApellido.Text;
-            _paciente.PrimerApellido = _vista.TextPrimerApellido.Text;
-            _paciente.Cedula = Convert.ToInt64(_vista.TextIdPaciente.Text);
-            _paciente.Correo = _vista.TextCorreoElectronico.Text;
-            _paciente.FechaIngreso = DateTime.Now;
-            _paciente.Telefono = _vista.TextCodigoAreaFijo.Text + _vista.TextTelefonoFijo.Text;
-            _paciente.TelefonoMovil = _vista.TextCodigoAreaMovil.Text + _vista.TextTelefonoMovil.Text;
+            paciente.Nombre = _vista.TextPrimerNombre.Text;
+            paciente.SegundoNombre = _vista.TextSegundoNombre.Text;
+            paciente.SegundoApellido = _vista.TextSegundoApellido.Text;
+            paciente.PrimerApellido = _vista.TextPrimerApellido.Text;
+            paciente.Cedula = Convert.ToInt64(_vista.TextIdPaciente.Text);
+            paciente.Correo = _vista.TextCorreoElectronico.Text;
+            paciente.FechaIngreso = DateTime.Now;
+            paciente.Telefono = _vista.TextCodigoAreaFijo.Text + _vista.TextTelefonoFijo.Text;
+            paciente.TelefonoMovil = _vista.TextCodigoAreaMovil.Text + _vista.TextTelefonoMovil.Text;
+
+            logica.AgregarPaciente(paciente);
 
             //luego de insertar un paciente debo agregar un paquete financiero a ese paciente
+            LPaqueteFinanciero logicaP = new LPaqueteFinanciero();
+            PaqueteFinanciero paqueteFinanciero = new PaqueteFinanciero();
+
+            paqueteFinanciero.FechaPaquete = DateTime.Now;
+            paqueteFinanciero.Paciente = paciente;
+            int idPaqueteFinanciero = logicaP.AgregarPaqueteFinanciero(paqueteFinanciero);
+
+            LCirugiaPaqueteFinanciero lCirugiaPaqueteFinanciero = new LCirugiaPaqueteFinanciero();
+            CirugiaPqtFinanciero cirugiaPqtFinanciero = new CirugiaPqtFinanciero();
+
+            cirugiaPqtFinanciero.Protesis = Convert.ToInt64(_vista.TextProtesis.Text);
+            cirugiaPqtFinanciero.FechaOperacion = DateTime.Now;
+            cirugiaPqtFinanciero.Cirugia = (Cirugia)_vista.ComboIntervencionQuirurgica.SelectedItem;
+            cirugiaPqtFinanciero.Cirujano = (Cirujano)_vista.ComboCirujano.SelectedItem;
+            cirugiaPqtFinanciero.PaqueteFinanciero.Id = idPaqueteFinanciero;
+
+            int idCirugiaPqtFinanciero = lCirugiaPaqueteFinanciero.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
 
             //luego debo crear por cada cirugia que se va a hacer un insert en la tabla cirugia_paquete financiero
-            
-            if(logica.AgregarPaciente(_paciente))
-            {
 
-                DialogResult result = MessageBox.Show("Paciente Agregado Con Exito!!", "Mensaje", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
-                {
-                }    
-            }
-            else
-            {
 
-                DialogResult result = MessageBox.Show("Paciente No pudo ser Agregado Con Exito!!", "Error", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
-                {
-                } 
-            }
 
         }
     }

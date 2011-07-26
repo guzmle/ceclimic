@@ -8,7 +8,7 @@ namespace EnlaceDatos.DAOMySql
 {
     public class DAOPaqueteFinancieroMySql: ConexionMySql,IDAOPaqueteFinanciero 
     {
-        public bool AgregarPaqueteFinanciero(PaqueteFinanciero paquete)
+        public int AgregarPaqueteFinanciero(PaqueteFinanciero paquete)
         {
             try
             {
@@ -19,23 +19,23 @@ namespace EnlaceDatos.DAOMySql
 
 
                 comando.Parameters.AddWithValue("@FECHA_PAQUETE", paquete.FechaPaquete);
-                comando.Parameters.AddWithValue("@FECHA_LIMITE", paquete.FechaLimite);
-                comando.Parameters.AddWithValue("@PACIENTE", paquete.Paciente.Id);
+                comando.Parameters.AddWithValue("@PACIENTE", paquete.Paciente.Cedula);
+                comando.Parameters.AddWithValue("@idMax", MySqlDbType.Int32);
 
                 comando.Parameters["@FECHA_PAQUETE"].Direction = ParameterDirection.Input;
-                comando.Parameters["@FECHA_LIMITE"].Direction = ParameterDirection.Input;
-                comando.Parameters["@CIRUJANO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@PACIENTE"].Direction = ParameterDirection.Input;
+                comando.Parameters["@idMax"].Direction = ParameterDirection.Output;
 
                 comando.ExecuteNonQuery();
+                int id = (int)comando.Parameters["@idMax"].Value;
 
                 CerrarConexion();
-                return true;
+                return id;
             }
             catch (MySqlException)
             {
 
-                return false;
+                return -1;
             }
         }
 

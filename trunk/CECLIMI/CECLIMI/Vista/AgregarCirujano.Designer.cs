@@ -34,6 +34,15 @@
             this.botonAceptar = new System.Windows.Forms.Button();
             this.botonRestaurarDatosPaciente = new System.Windows.Forms.Button();
             this.GrupoCirugias = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.botonAgregarIntervencionQuirurgica = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grupoDatosCirujano = new System.Windows.Forms.GroupBox();
             this.textCorreoElectronico = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,19 +64,10 @@
             this.textPrimerNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.botonAgregarIntervencionQuirurgica = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.GrupoCirugias.SuspendLayout();
-            this.grupoDatosCirujano.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grupoDatosCirujano.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -139,6 +139,84 @@
             this.GrupoCirugias.TabIndex = 2;
             this.GrupoCirugias.TabStop = false;
             this.GrupoCirugias.Text = "Cirugias";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(607, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(232, 26);
+            this.textBox1.TabIndex = 20;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(555, 41);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 20);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Monto";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cirugia,
+            this.Monto});
+            this.dataGridView1.Location = new System.Drawing.Point(110, 87);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(394, 150);
+            this.dataGridView1.TabIndex = 43;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Cirugia
+            // 
+            this.Cirugia.HeaderText = "Cirugía";
+            this.Cirugia.Name = "Cirugia";
+            this.Cirugia.Width = 200;
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.Width = 150;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::CECLIMI.Properties.Resources.menos;
+            this.button3.Location = new System.Drawing.Point(801, 87);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(38, 29);
+            this.button3.TabIndex = 42;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // botonAgregarIntervencionQuirurgica
+            // 
+            this.botonAgregarIntervencionQuirurgica.Image = global::CECLIMI.Properties.Resources.mas;
+            this.botonAgregarIntervencionQuirurgica.Location = new System.Drawing.Point(742, 87);
+            this.botonAgregarIntervencionQuirurgica.Name = "botonAgregarIntervencionQuirurgica";
+            this.botonAgregarIntervencionQuirurgica.Size = new System.Drawing.Size(38, 29);
+            this.botonAgregarIntervencionQuirurgica.TabIndex = 41;
+            this.botonAgregarIntervencionQuirurgica.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(106, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 20);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Cirugía";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(163, 33);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(232, 28);
+            this.comboBox1.TabIndex = 0;
             // 
             // grupoDatosCirujano
             // 
@@ -331,84 +409,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "* Primer Nombre";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 28);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(106, 41);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 20);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Cirugía";
-            // 
-            // button3
-            // 
-            this.button3.Image = global::CECLIMI.Properties.Resources.menos;
-            this.button3.Location = new System.Drawing.Point(801, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(38, 29);
-            this.button3.TabIndex = 42;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // botonAgregarIntervencionQuirurgica
-            // 
-            this.botonAgregarIntervencionQuirurgica.Image = global::CECLIMI.Properties.Resources.mas;
-            this.botonAgregarIntervencionQuirurgica.Location = new System.Drawing.Point(742, 87);
-            this.botonAgregarIntervencionQuirurgica.Name = "botonAgregarIntervencionQuirurgica";
-            this.botonAgregarIntervencionQuirurgica.Size = new System.Drawing.Size(38, 29);
-            this.botonAgregarIntervencionQuirurgica.TabIndex = 41;
-            this.botonAgregarIntervencionQuirurgica.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cirugia,
-            this.Monto});
-            this.dataGridView1.Location = new System.Drawing.Point(110, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(394, 150);
-            this.dataGridView1.TabIndex = 43;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Cirugia
-            // 
-            this.Cirugia.HeaderText = "Cirugía";
-            this.Cirugia.Name = "Cirugia";
-            this.Cirugia.Width = 200;
-            // 
-            // Monto
-            // 
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.Width = 150;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(555, 41);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 20);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "Monto";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(607, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 26);
-            this.textBox1.TabIndex = 20;
-            // 
             // AgregarCirujano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,9 +420,9 @@
             this.panel1.ResumeLayout(false);
             this.GrupoCirugias.ResumeLayout(false);
             this.GrupoCirugias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grupoDatosCirujano.ResumeLayout(false);
             this.grupoDatosCirujano.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

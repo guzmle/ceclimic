@@ -9,7 +9,7 @@ namespace Entidades
     {
         #region Atributos
         private DateTime _fechaOperacion;
-        private PaqueteFinanciero _paqueteFinanciero;
+        private PaqueteFinanciero _paqueteFinanciero = new PaqueteFinanciero();
         private Cirugia _cirugia = new Cirugia();
         private float _protesis;
         private Cirujano _cirujano = new Cirujano();

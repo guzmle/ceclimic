@@ -8,7 +8,7 @@ namespace EnlaceDatos.IDAO
 {
     public interface IDAOCirugiaPaquete
     {
-        bool AgregarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
+        int AgregarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
         bool EditarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
         bool EliminarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
     }

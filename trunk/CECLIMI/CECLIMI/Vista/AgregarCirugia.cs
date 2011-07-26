@@ -44,10 +44,5 @@ namespace CECLIMI.Vista
         {
             _presentador.BotonAceptar();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

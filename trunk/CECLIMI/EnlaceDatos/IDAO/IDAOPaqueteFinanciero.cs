@@ -7,7 +7,7 @@ namespace EnlaceDatos.IDAO
 {
     public interface IDAOPaqueteFinanciero
     {
-        bool AgregarPaqueteFinanciero(PaqueteFinanciero paquete);
+        int AgregarPaqueteFinanciero(PaqueteFinanciero paquete);
         bool EditarPaqueteFinanciero(PaqueteFinanciero paquete);
         bool EliminarPaqueteFinanciero(PaqueteFinanciero paquete);
     }
