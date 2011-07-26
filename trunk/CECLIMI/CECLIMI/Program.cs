@@ -16,7 +16,7 @@ namespace CECLIMI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AgregarPaciente());
+            Application.Run(new AgregarCirugia());
         }
     }
 }
