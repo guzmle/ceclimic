@@ -21,8 +21,12 @@ namespace Prueba
             //paquete.Cirujano.Id = 1;
             paquete.FechaLimite = new DateTime(2010, 12, 20);
             paquete.FechaPaquete = new DateTime(2010, 12, 31);
-            bool respuesta = DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().AgregarPaqueteFinanciero(paquete);
-            Assert.IsTrue(respuesta);
+            int respuesta = DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().AgregarPaqueteFinanciero(paquete);
+            Console.WriteLine(respuesta);
+            bool h = false;
+            if (respuesta != -1)
+                h = true;
+            Assert.IsTrue(h);
         }
     }
 }

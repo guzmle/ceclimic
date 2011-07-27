@@ -20,9 +20,11 @@ namespace EnlaceDatos.DAOMySql
 
                 comando.Parameters.AddWithValue("@CIRUGIA_PAQUETE", personalPaquete.Cirugia.Id);
                 comando.Parameters.AddWithValue("@PERSONAL", personalPaquete.Personal.Id);
+                comando.Parameters.AddWithValue("@ESPECIALIZACION", personalPaquete.Especialidad);
 
                 comando.Parameters["@CIRUGIA_PAQUETE"].Direction = ParameterDirection.Input;
                 comando.Parameters["@PERSONAL"].Direction = ParameterDirection.Input;
+                comando.Parameters["@ESPECIALIZACION"].Direction = ParameterDirection.Input;
 
                 comando.ExecuteNonQuery();
 

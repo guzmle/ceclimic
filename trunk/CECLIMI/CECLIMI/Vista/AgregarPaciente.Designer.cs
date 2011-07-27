@@ -35,13 +35,6 @@
             this.textInformacionVentana = new System.Windows.Forms.Label();
             this.grupoIntervencionQuirurgica = new System.Windows.Forms.GroupBox();
             this.dataGridCirugias = new System.Windows.Forms.DataGridView();
-            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaFechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textProtesis = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -109,6 +102,15 @@
             this.textPrimerNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelInformacionUsuario.SuspendLayout();
             this.grupoIntervencionQuirurgica.SuspendLayout();
@@ -220,11 +222,13 @@
             this.dataGridCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCirugias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaNumero,
+            this.idCirugia,
+            this.idCirujano,
             this.columnaDesc,
             this.columnaIQX,
             this.ColumnaCirujano,
             this.columnaProtesis,
-            this.columnaFechaCirugia,
+            this.fechaCirugia,
             this.columnaPrecioCirugia});
             this.dataGridCirugias.Location = new System.Drawing.Point(16, 261);
             this.dataGridCirugias.Name = "dataGridCirugias";
@@ -232,55 +236,6 @@
             this.dataGridCirugias.Size = new System.Drawing.Size(943, 97);
             this.dataGridCirugias.TabIndex = 63;
             this.dataGridCirugias.Visible = false;
-            // 
-            // columnaNumero
-            // 
-            this.columnaNumero.FillWeight = 27.06585F;
-            this.columnaNumero.HeaderText = "#";
-            this.columnaNumero.Name = "columnaNumero";
-            this.columnaNumero.ReadOnly = true;
-            // 
-            // columnaDesc
-            // 
-            this.columnaDesc.FillWeight = 30F;
-            this.columnaDesc.HeaderText = "%D";
-            this.columnaDesc.Name = "columnaDesc";
-            this.columnaDesc.ReadOnly = true;
-            // 
-            // columnaIQX
-            // 
-            this.columnaIQX.FillWeight = 90.2195F;
-            this.columnaIQX.HeaderText = "IQX";
-            this.columnaIQX.Name = "columnaIQX";
-            this.columnaIQX.ReadOnly = true;
-            // 
-            // ColumnaCirujano
-            // 
-            this.ColumnaCirujano.FillWeight = 90.2195F;
-            this.ColumnaCirujano.HeaderText = "Cirujano";
-            this.ColumnaCirujano.Name = "ColumnaCirujano";
-            this.ColumnaCirujano.ReadOnly = true;
-            // 
-            // columnaProtesis
-            // 
-            this.columnaProtesis.FillWeight = 90.2195F;
-            this.columnaProtesis.HeaderText = "Protesis IQX (BsF)";
-            this.columnaProtesis.Name = "columnaProtesis";
-            this.columnaProtesis.ReadOnly = true;
-            // 
-            // columnaFechaCirugia
-            // 
-            this.columnaFechaCirugia.FillWeight = 90.2195F;
-            this.columnaFechaCirugia.HeaderText = "Fecha IQX";
-            this.columnaFechaCirugia.Name = "columnaFechaCirugia";
-            this.columnaFechaCirugia.ReadOnly = true;
-            // 
-            // columnaPrecioCirugia
-            // 
-            this.columnaPrecioCirugia.FillWeight = 90.2195F;
-            this.columnaPrecioCirugia.HeaderText = "Precio IQX (BsF)";
-            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
-            this.columnaPrecioCirugia.ReadOnly = true;
             // 
             // textProtesis
             // 
@@ -947,6 +902,69 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "* Primer Nombre";
             // 
+            // columnaNumero
+            // 
+            this.columnaNumero.FillWeight = 27.06585F;
+            this.columnaNumero.HeaderText = "#";
+            this.columnaNumero.Name = "columnaNumero";
+            this.columnaNumero.ReadOnly = true;
+            // 
+            // idCirugia
+            // 
+            this.idCirugia.HeaderText = "idCirugia";
+            this.idCirugia.Name = "idCirugia";
+            this.idCirugia.ReadOnly = true;
+            this.idCirugia.Visible = false;
+            // 
+            // idCirujano
+            // 
+            this.idCirujano.HeaderText = "idCirujano";
+            this.idCirujano.Name = "idCirujano";
+            this.idCirujano.ReadOnly = true;
+            this.idCirujano.Visible = false;
+            // 
+            // columnaDesc
+            // 
+            this.columnaDesc.FillWeight = 30F;
+            this.columnaDesc.HeaderText = "%D";
+            this.columnaDesc.Name = "columnaDesc";
+            this.columnaDesc.ReadOnly = true;
+            // 
+            // columnaIQX
+            // 
+            this.columnaIQX.FillWeight = 90.2195F;
+            this.columnaIQX.HeaderText = "IQX";
+            this.columnaIQX.Name = "columnaIQX";
+            this.columnaIQX.ReadOnly = true;
+            // 
+            // ColumnaCirujano
+            // 
+            this.ColumnaCirujano.FillWeight = 90.2195F;
+            this.ColumnaCirujano.HeaderText = "Cirujano";
+            this.ColumnaCirujano.Name = "ColumnaCirujano";
+            this.ColumnaCirujano.ReadOnly = true;
+            // 
+            // columnaProtesis
+            // 
+            this.columnaProtesis.FillWeight = 90.2195F;
+            this.columnaProtesis.HeaderText = "Protesis IQX (BsF)";
+            this.columnaProtesis.Name = "columnaProtesis";
+            this.columnaProtesis.ReadOnly = true;
+            // 
+            // fechaCirugia
+            // 
+            this.fechaCirugia.FillWeight = 90.2195F;
+            this.fechaCirugia.HeaderText = "Fecha IQX";
+            this.fechaCirugia.Name = "fechaCirugia";
+            this.fechaCirugia.ReadOnly = true;
+            // 
+            // columnaPrecioCirugia
+            // 
+            this.columnaPrecioCirugia.FillWeight = 90.2195F;
+            this.columnaPrecioCirugia.HeaderText = "Precio IQX (BsF)";
+            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
+            this.columnaPrecioCirugia.ReadOnly = true;
+            // 
             // AgregarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1049,11 +1067,13 @@
         private System.Windows.Forms.ComboBox comboIntervencionQuirurgica1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCirujano;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaIQX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCirujano;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaProtesis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaFechaCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCirugia;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioCirugia;
     }
 }

@@ -12,16 +12,21 @@ namespace CECLIMI.Presentador
 {
     public class PresentadorAgregarPaciente
     {
+        #region atributos
         private IContratoAgregarPaciente _vista;
         private List<Cirugia> _cirugias = new List<Cirugia>();
         private int iteracion = 0;
         private List<List<Personal>> personalCirugia = new List<List<Personal>>();
+        #endregion
 
+        #region constructor
         public PresentadorAgregarPaciente (IContratoAgregarPaciente vista)
         {
             _vista = vista;
         }
+        #endregion
 
+        #region Metodos
         /// <summary>
         /// metodo agregar nueva intervencion quirurgica - hace el caso de uso de AgregarIQX
         /// </summary>
@@ -166,46 +171,58 @@ namespace CECLIMI.Presentador
             else
             {
                 iteracion++;
+                Cirujano cirujano = new Cirujano();
+                cirujano = (Cirujano) _vista.ComboCirujano.SelectedItem;
+                Cirugia cirugia = new Cirugia();
+                cirugia = (Cirugia) _vista.ComboIntervencionQuirurgica.SelectedItem;
                 _vista.DataGridCirugias.Visible = true;
-                _vista.DataGridCirugias.Rows.Add(iteracion.ToString(),_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
-                    _vista.ComboCirujano.Text,_vista.TextProtesis.Text, _vista.TextDiaIQX1.Text + " / " + _vista.TextmesIQX1.Text + " / " + _vista.TextAnoIQX1.Text
+                _vista.DataGridCirugias.Rows.Add(iteracion.ToString(),cirujano.Id,cirugia.Id,_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
+                    _vista.ComboCirujano.Text,_vista.TextProtesis.Text, _vista.TextDiaIQX1.Text + "/" + _vista.TextmesIQX1.Text + "/" + _vista.TextAnoIQX1.Text
                     ,_vista.TextoHonorarioCirujano.Text);
 
                 List<Personal> miListaPersonal = new List<Personal>();
-                Personal personal = new Personal();
+
+                Personal personal1 = new Personal();
+                personal1.Id = iteracion - 1;
+                miListaPersonal.Add(personal1);
 
                 if (_vista.Combo1ErAyudante.SelectedIndex != -1)
                 {
+                    Personal personal = new Personal();
                     personal = (Personal)_vista.Combo1ErAyudante.SelectedItem;
                     personal.Especializacion = _vista.Label1.Text;
                     miListaPersonal.Add(personal);
                 }
                 if (_vista.ComboAnestesiologo.SelectedIndex != -1)
                 {
+                    Personal personal = new Personal();
                     personal = (Personal)_vista.ComboAnestesiologo.SelectedItem;
                     personal.Especializacion = _vista.Label2.Text;
                     miListaPersonal.Add(personal);
                 }
                 if (_vista.ComboInstrumentista.SelectedIndex != -1)
                 {
+                    Personal personal = new Personal();
                     personal = (Personal)_vista.ComboInstrumentista.SelectedItem;
                     personal.Especializacion = _vista.Label3.Text;
                     miListaPersonal.Add(personal);
                 }
                 if (_vista.ComboCirculante.SelectedIndex != -1)
                 {
+                    Personal personal = new Personal();
                     personal = (Personal)_vista.ComboCirculante.SelectedItem;
                     personal.Especializacion = _vista.Label4.Text;
                     miListaPersonal.Add(personal);
                 }
                 if (_vista.ComboInstrumentalEspecial.SelectedIndex != -1)
                 {
+                    Personal personal = new Personal();
                     personal = (Personal)_vista.ComboInstrumentalEspecial.SelectedItem;
                     personal.Especializacion = _vista.Label5.Text;
                     miListaPersonal.Add(personal);
                 }
-                Console.Write(miListaPersonal);
-                personalCirugia.Add(miListaPersonal);
+                if (miListaPersonal.Count>1)
+                    personalCirugia.Add(miListaPersonal);
 
                 _vista.ComboIntervencionQuirurgica.SelectedIndex = -1;
                 _vista.ComboCirujano.SelectedIndex = -1;
@@ -227,12 +244,16 @@ namespace CECLIMI.Presentador
         {
             if(_vista.DataGridCirugias.Rows.Count >= 1)
             {
-                if (personalCirugia.Count == _vista.DataGridCirugias.Rows.Count)
+                for (int i = 0; i < personalCirugia.Count; i++)
                 {
-                    personalCirugia.RemoveAt(personalCirugia.Count-1);
+                    if (_vista.DataGridCirugias.Rows.Count - 1 == personalCirugia.ElementAt(i).ElementAt(0).Id)
+                    {
+                        personalCirugia.RemoveAt(i);
+                    }
                 }
                 _vista.DataGridCirugias.Rows.RemoveAt(_vista.DataGridCirugias.Rows.Count-1);
             }
+            iteracion--;
         }
 
         /// <summary>
@@ -263,21 +284,42 @@ namespace CECLIMI.Presentador
             paqueteFinanciero.Paciente = paciente;
             int idPaqueteFinanciero = logicaP.AgregarPaqueteFinanciero(paqueteFinanciero);
 
+            //Luego del paquete financiero, se deben crear las cirugias asociadas a este.
             LCirugiaPaqueteFinanciero lCirugiaPaqueteFinanciero = new LCirugiaPaqueteFinanciero();
-            CirugiaPqtFinanciero cirugiaPqtFinanciero = new CirugiaPqtFinanciero();
+            int j = 0;
+            for (int i = 0; i < _vista.DataGridCirugias.Rows.Count; i++)
+            {
+                //luego debo crear por cada cirugia que se va a hacer un insert en la tabla cirugia_paquete financiero
+                CirugiaPqtFinanciero cirugiaPqtFinanciero = new CirugiaPqtFinanciero();
+                //cirugiaPqtFinanciero.Protesis = Convert.ToInt64(_vista.TextProtesis.Text);
+                cirugiaPqtFinanciero.Protesis = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["columnaProtesis"].Value);
+                string[] splt = Convert.ToString(_vista.DataGridCirugias.Rows[i].Cells["fechaCirugia"].Value).Split('/');
+                cirugiaPqtFinanciero.FechaOperacion = new DateTime(Convert.ToInt32(splt[2]), Convert.ToInt32(splt[1]), Convert.ToInt32(splt[0]));
+                cirugiaPqtFinanciero.Cirugia.Id = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["idCirugia"].Value);
+                cirugiaPqtFinanciero.Cirujano.Id = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["idCirujano"].Value);
+                cirugiaPqtFinanciero.PaqueteFinanciero.Id = idPaqueteFinanciero;
+                int idCirugiaPqtFinanciero = lCirugiaPaqueteFinanciero.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
+                if (personalCirugia.Count > 0)
+                {
+                    if (personalCirugia.ElementAt(0).ElementAt(0).Id == i)
+                    {
+                        //or cada personla quirurgico de la cirugia debo hacer un insert
+                        for (int k = 1; k < personalCirugia.ElementAt(0).Count; k++)
+                        {
+                            PersonalPaquete personalPaquete = new PersonalPaquete();
+                            LCirugiaPersonalQ lCirugiaPersonalQ = new LCirugiaPersonalQ();
+                            personalPaquete.Personal = personalCirugia.ElementAt(0).ElementAt(k);
+                            personalPaquete.Especialidad = personalCirugia.ElementAt(0).ElementAt(k).Especializacion;
+                            personalPaquete.Cirugia.Id = idCirugiaPqtFinanciero;
+                            lCirugiaPersonalQ.AgregarCirugiaPersonalQ(personalPaquete);
+                        }
+                        personalCirugia.RemoveAt(0);
+                    }
+                }
 
-            cirugiaPqtFinanciero.Protesis = Convert.ToInt64(_vista.TextProtesis.Text);
-            cirugiaPqtFinanciero.FechaOperacion = DateTime.Now;
-            cirugiaPqtFinanciero.Cirugia = (Cirugia)_vista.ComboIntervencionQuirurgica.SelectedItem;
-            cirugiaPqtFinanciero.Cirujano = (Cirujano)_vista.ComboCirujano.SelectedItem;
-            cirugiaPqtFinanciero.PaqueteFinanciero.Id = idPaqueteFinanciero;
-
-            int idCirugiaPqtFinanciero = lCirugiaPaqueteFinanciero.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
-
-            //luego debo crear por cada cirugia que se va a hacer un insert en la tabla cirugia_paquete financiero
-
-
+            }
 
         }
+        #endregion
     }
 }
