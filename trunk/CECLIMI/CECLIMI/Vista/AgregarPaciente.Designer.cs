@@ -36,6 +36,7 @@
             this.grupoIntervencionQuirurgica = new System.Windows.Forms.GroupBox();
             this.dataGridCirugias = new System.Windows.Forms.DataGridView();
             this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,7 +127,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(991, 620);
             this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1Paint);
             // 
             // panelInformacionUsuario
             // 
@@ -164,7 +165,7 @@
             this.botonAceptar.TabIndex = 33;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
-            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
+            this.botonAceptar.Click += new System.EventHandler(this.BotonAceptarClick);
             // 
             // textInformacionVentana
             // 
@@ -219,6 +220,7 @@
             this.dataGridCirugias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCirugias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaNumero,
+            this.columnaDesc,
             this.columnaIQX,
             this.ColumnaCirujano,
             this.columnaProtesis,
@@ -233,38 +235,50 @@
             // 
             // columnaNumero
             // 
-            this.columnaNumero.FillWeight = 30F;
+            this.columnaNumero.FillWeight = 27.06585F;
             this.columnaNumero.HeaderText = "#";
             this.columnaNumero.Name = "columnaNumero";
             this.columnaNumero.ReadOnly = true;
             // 
+            // columnaDesc
+            // 
+            this.columnaDesc.FillWeight = 30F;
+            this.columnaDesc.HeaderText = "%D";
+            this.columnaDesc.Name = "columnaDesc";
+            this.columnaDesc.ReadOnly = true;
+            // 
             // columnaIQX
             // 
+            this.columnaIQX.FillWeight = 90.2195F;
             this.columnaIQX.HeaderText = "IQX";
             this.columnaIQX.Name = "columnaIQX";
             this.columnaIQX.ReadOnly = true;
             // 
             // ColumnaCirujano
             // 
+            this.ColumnaCirujano.FillWeight = 90.2195F;
             this.ColumnaCirujano.HeaderText = "Cirujano";
             this.ColumnaCirujano.Name = "ColumnaCirujano";
             this.ColumnaCirujano.ReadOnly = true;
             // 
             // columnaProtesis
             // 
-            this.columnaProtesis.HeaderText = "Protesis";
+            this.columnaProtesis.FillWeight = 90.2195F;
+            this.columnaProtesis.HeaderText = "Protesis IQX (BsF)";
             this.columnaProtesis.Name = "columnaProtesis";
             this.columnaProtesis.ReadOnly = true;
             // 
             // columnaFechaCirugia
             // 
+            this.columnaFechaCirugia.FillWeight = 90.2195F;
             this.columnaFechaCirugia.HeaderText = "Fecha IQX";
             this.columnaFechaCirugia.Name = "columnaFechaCirugia";
             this.columnaFechaCirugia.ReadOnly = true;
             // 
             // columnaPrecioCirugia
             // 
-            this.columnaPrecioCirugia.HeaderText = "Precio";
+            this.columnaPrecioCirugia.FillWeight = 90.2195F;
+            this.columnaPrecioCirugia.HeaderText = "Precio IQX (BsF)";
             this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
             this.columnaPrecioCirugia.ReadOnly = true;
             // 
@@ -523,6 +537,7 @@
             this.botonQuitarIntervencionQuirurgica.Size = new System.Drawing.Size(38, 29);
             this.botonQuitarIntervencionQuirurgica.TabIndex = 40;
             this.botonQuitarIntervencionQuirurgica.UseVisualStyleBackColor = true;
+            this.botonQuitarIntervencionQuirurgica.Click += new System.EventHandler(this.BotonQuitarIntervencionQuirurgicaClick);
             // 
             // botonAgregarIntervencionQuirurgica
             // 
@@ -532,7 +547,7 @@
             this.botonAgregarIntervencionQuirurgica.Size = new System.Drawing.Size(38, 29);
             this.botonAgregarIntervencionQuirurgica.TabIndex = 25;
             this.botonAgregarIntervencionQuirurgica.UseVisualStyleBackColor = true;
-            this.botonAgregarIntervencionQuirurgica.Click += new System.EventHandler(this.botonAgregarIntervencionQuirurgica_Click);
+            this.botonAgregarIntervencionQuirurgica.Click += new System.EventHandler(this.BotonAgregarIntervencionQuirurgicaClick);
             // 
             // comboCirujano1
             // 
@@ -544,7 +559,7 @@
             this.comboCirujano1.Name = "comboCirujano1";
             this.comboCirujano1.Size = new System.Drawing.Size(229, 24);
             this.comboCirujano1.TabIndex = 11;
-            this.comboCirujano1.SelectedIndexChanged += new System.EventHandler(this.comboCirujano1_SelectedIndexChanged);
+            this.comboCirujano1.SelectedIndexChanged += new System.EventHandler(this.ComboCirujano1SelectedIndexChanged);
             // 
             // label13
             // 
@@ -565,7 +580,7 @@
             this.comboIntervencionQuirurgica1.Name = "comboIntervencionQuirurgica1";
             this.comboIntervencionQuirurgica1.Size = new System.Drawing.Size(232, 24);
             this.comboIntervencionQuirurgica1.TabIndex = 9;
-            this.comboIntervencionQuirurgica1.SelectedIndexChanged += new System.EventHandler(this.comboIntervencionQuirurgica1_SelectedIndexChanged);
+            this.comboIntervencionQuirurgica1.SelectedIndexChanged += new System.EventHandler(this.ComboIntervencionQuirurgica1SelectedIndexChanged);
             // 
             // label12
             // 
@@ -612,7 +627,7 @@
             this.botonModificarInformacion.Text = "Modificar Informacion";
             this.botonModificarInformacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botonModificarInformacion.UseVisualStyleBackColor = true;
-            this.botonModificarInformacion.Click += new System.EventHandler(this.button6_Click);
+            this.botonModificarInformacion.Click += new System.EventHandler(this.Button6Click);
             // 
             // textoApellidoPacienteIngresado
             // 
@@ -770,7 +785,7 @@
             this.botonAgregarIQX.Text = "Agregar IQX";
             this.botonAgregarIQX.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botonAgregarIQX.UseVisualStyleBackColor = true;
-            this.botonAgregarIQX.Click += new System.EventHandler(this.button5_Click);
+            this.botonAgregarIQX.Click += new System.EventHandler(this.Button5Click);
             // 
             // textCorreoElectronico
             // 
@@ -986,7 +1001,22 @@
         private System.Windows.Forms.TextBox textPrimerNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox grupoDatosPaciente1;
+        private System.Windows.Forms.Button botonModificarInformacion;
+        private System.Windows.Forms.Label textoApellidoPacienteIngresado;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label textoTelefonoFijoPacienteIngresado;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label textoCIPacienteIngresado;
+        private System.Windows.Forms.Label textoNombrePacienteIngresado;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label textoTelefonoMovilIngresado;
+        private System.Windows.Forms.Label textoCorreoElectronicoPacienteIngresado;
+        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.GroupBox grupoIntervencionQuirurgica;
+        private System.Windows.Forms.DataGridView dataGridCirugias;
         private System.Windows.Forms.TextBox textProtesis;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1018,22 +1048,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboIntervencionQuirurgica1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox grupoDatosPaciente1;
-        private System.Windows.Forms.Button botonModificarInformacion;
-        private System.Windows.Forms.Label textoApellidoPacienteIngresado;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label textoTelefonoFijoPacienteIngresado;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label textoCIPacienteIngresado;
-        private System.Windows.Forms.Label textoNombrePacienteIngresado;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label textoTelefonoMovilIngresado;
-        private System.Windows.Forms.Label textoCorreoElectronicoPacienteIngresado;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.DataGridView dataGridCirugias;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaIQX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCirujano;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaProtesis;

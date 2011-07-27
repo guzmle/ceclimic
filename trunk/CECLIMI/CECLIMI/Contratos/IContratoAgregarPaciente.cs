@@ -30,6 +30,7 @@ namespace CECLIMI.Contratos
         TextBox TextTelefonoMovil { get; }
         TextBox TextCorreoElectronico { get; }
         TextBox TextProtesis { get; }
+        TextBox TextDescuento { get; }
         Label TextInformacionVentana { get; }
         ComboBox ComboIntervencionQuirurgica { get; }
         ComboBox ComboCirujano { get; }

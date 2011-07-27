@@ -23,37 +23,83 @@ namespace CECLIMI.Presentador
         }
 
         /// <summary>
-        /// metodo agregar nueva intervencion quirurgica
+        /// metodo agregar nueva intervencion quirurgica - hace el caso de uso de AgregarIQX
         /// </summary>
-        public void agregarIntervencionesQuirurgicas ()
+        public void AgregarIntervencionesQuirurgicas ()
         {
-            LCirugia logica = new LCirugia();
-            LPersonalQuirurgico logicaPQ = new LPersonalQuirurgico();
-            _vista.ComboIntervencionQuirurgica.Items.Clear();
-            _vista.GrupoDatosPaciente.Visible = false;
-            _vista.GrupoDatosPaciente1.Visible = true;
-            _vista.GrupoIntervencionQuirurgica.Visible = true;
-            _vista.TextoNombrePacienteIngresado.Text = _vista.TextPrimerNombre.Text + " " + _vista.TextSegundoNombre.Text;
-            _vista.TextoApellidoPacienteIngresado.Text = _vista.TextPrimerApellido.Text + " " + _vista.TextSegundoApellido.Text;
-            _vista.TextoCIPacienteIngresado.Text = _vista.TextIdPaciente.Text;
-            _vista.TextoCorreoElectronicoPacienteIngresado.Text = _vista.TextCorreoElectronico.Text;
-            _vista.TextoTelefonoFijoPacienteIngresado.Text = _vista.TextCodigoAreaFijo.Text + " - " + _vista.TextTelefonoFijo.Text;
-            _vista.TextoTelefonoMovilIngresado.Text = _vista.TextCodigoAreaMovil.Text + " - " + _vista.TextTelefonoMovil.Text;
-            _vista.TextInformacionVentana.Text = "Nuevo Paciente - Agregar Intervencion Quirurgica";
-
-            foreach (Cirugia cirugia in logica.ObtenerCirugias())
+            if(_vista.TextPrimerNombre.Text.Equals("") || _vista.TextPrimerApellido.Text.Equals("") || _vista.TextIdPaciente.Text.Equals(""))
             {
-                _vista.ComboIntervencionQuirurgica.Items.Add(cirugia);
+                DialogResult result =
+                MessageBox.Show("Asegurese de estar llenando los campos obligatorios (*)", "Cuidado!", MessageBoxButtons.OK);
             }
-            _vista.ComboIntervencionQuirurgica.DisplayMember = "Nombre";
-            _vista.ComboIntervencionQuirurgica.ValueMember = "Id";
-
-            foreach (Personal personal in logicaPQ.ObtenerPersonalQ())
+            else if(RevisarErrorAlCombertirAInt(_vista.TextIdPaciente.Text) != -1)
             {
-                _vista.Combo1ErAyudante.Items.Add(personal);
+                LCirugia logica = new LCirugia();
+                LPersonalQuirurgico logicaPQ = new LPersonalQuirurgico();
+                _vista.ComboIntervencionQuirurgica.Items.Clear();
+                _vista.GrupoDatosPaciente.Visible = false;
+                _vista.GrupoDatosPaciente1.Visible = true;
+                _vista.GrupoIntervencionQuirurgica.Visible = true;
+                _vista.TextoNombrePacienteIngresado.Text = _vista.TextPrimerNombre.Text + " " + _vista.TextSegundoNombre.Text;
+                _vista.TextoApellidoPacienteIngresado.Text = _vista.TextPrimerApellido.Text + " " + _vista.TextSegundoApellido.Text;
+                _vista.TextoCIPacienteIngresado.Text = _vista.TextIdPaciente.Text;
+
+                if (_vista.TextCorreoElectronico.Text.Equals("")) _vista.TextoCorreoElectronicoPacienteIngresado.Text = "N/A";
+                else _vista.TextoCorreoElectronicoPacienteIngresado.Text = _vista.TextCorreoElectronico.Text;
+
+                if (_vista.TextTelefonoFijo.Text.Equals("")) _vista.TextoTelefonoFijoPacienteIngresado.Text = "N/A";
+                else _vista.TextoTelefonoFijoPacienteIngresado.Text = _vista.TextCodigoAreaFijo.Text + " - " + _vista.TextTelefonoFijo.Text;
+
+                if (_vista.TextTelefonoMovil.Text.Equals("")) _vista.TextoTelefonoMovilIngresado.Text = "N/A";
+                else _vista.TextoTelefonoMovilIngresado.Text = _vista.TextCodigoAreaMovil.Text + " - " + _vista.TextTelefonoMovil.Text;
+                
+                
+
+                _vista.TextInformacionVentana.Text = "Nuevo Paciente - Agregar Intervencion Quirurgica";
+                foreach (Cirugia cirugia in logica.ObtenerCirugias())
+                {
+                    _vista.ComboIntervencionQuirurgica.Items.Add(cirugia);
+                }
+                _vista.ComboIntervencionQuirurgica.DisplayMember = "Nombre";
+                _vista.ComboIntervencionQuirurgica.ValueMember = "Id";
+
+                foreach (Personal personal in logicaPQ.ObtenerPersonalQ())
+                {
+                    _vista.Combo1ErAyudante.Items.Add(personal);
+                    _vista.ComboAnestesiologo.Items.Add(personal);
+                    _vista.ComboCirculante.Items.Add(personal);
+                    _vista.ComboInstrumentalEspecial.Items.Add(personal);
+                    _vista.ComboInstrumentista.Items.Add(personal);
+                }
+                _vista.Combo1ErAyudante.DisplayMember = _vista.ComboAnestesiologo.DisplayMember = _vista.ComboCirculante.DisplayMember =
+                    _vista.ComboInstrumentalEspecial.DisplayMember = _vista.ComboInstrumentista.DisplayMember = "Nombre";
+                _vista.Combo1ErAyudante.ValueMember = _vista.ComboAnestesiologo.ValueMember = _vista.ComboCirculante.ValueMember =
+                    _vista.ComboInstrumentalEspecial.ValueMember = _vista.ComboInstrumentista.ValueMember = "Id";
             }
-            _vista.Combo1ErAyudante.DisplayMember = "Nombre";
-            _vista.Combo1ErAyudante.ValueMember = "Id";
+            else
+            {
+                DialogResult result =
+                MessageBox.Show("La cedula de identidad no puede contener caracteres alfabeticos (*)", "Cuidado!", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        /// <summary>
+        /// metodo que revisa si una cedula de identidad no contiene caracteres alfabeticos, este metodo es utilizado por la Vista
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <returns></returns>
+        public int RevisarErrorAlCombertirAInt(String cedula)
+        {
+            try
+            {
+                return Convert.ToInt32(cedula);
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
         }
 
         /// <summary>
@@ -72,20 +118,21 @@ namespace CECLIMI.Presentador
         /// </summary>
         public void SeleccionCirugia()
         {
-            LCirujano logica = new LCirujano();
-            _vista.ComboCirujano.Items.Clear();
-            _vista.ComboCirujano.Text = "";
-            _vista.TextoHonorarioCirujano.Visible = false;
-            _vista.TextoBsFHonorarios.Visible = false;
-            _vista.TextoHonorarioCirujano.Text = "";
-            foreach (Cirujano cirujano in logica.ObtenerCirujanos((Cirugia) _vista.ComboIntervencionQuirurgica.SelectedItem))
-            {
-                _vista.ComboCirujano.Items.Add(cirujano);
-            }
+            if(_vista.ComboIntervencionQuirurgica.SelectedIndex != -1)
+            {   LCirujano logica = new LCirujano();
+                _vista.ComboCirujano.Items.Clear();
+                _vista.ComboCirujano.Text = "";
+                _vista.TextoHonorarioCirujano.Visible = false;
+                _vista.TextoBsFHonorarios.Visible = false;
+                _vista.TextoHonorarioCirujano.Text = "";
+                foreach (Cirujano cirujano in logica.ObtenerCirujanos((Cirugia) _vista.ComboIntervencionQuirurgica.SelectedItem))
+                {
+                    _vista.ComboCirujano.Items.Add(cirujano);
+                }
             
-            _vista.ComboCirujano.DisplayMember = "Nombre";
-            _vista.ComboCirujano.ValueMember = "Id";
-
+                _vista.ComboCirujano.DisplayMember = "Nombre";
+                _vista.ComboCirujano.ValueMember = "Id";
+            }
             
         }
 
@@ -94,12 +141,15 @@ namespace CECLIMI.Presentador
         /// </summary>
         public void PrecioOperacion()
         {
-            LCirugiaCirujano logica = new LCirugiaCirujano();
-            _vista.TextoHonorarioCirujano.Text =
-                logica.ObtenerCirugiaCirujano((Cirugia) _vista.ComboIntervencionQuirurgica.SelectedItem,
-                                              (Cirujano) _vista.ComboCirujano.SelectedItem).ToString();
-            _vista.TextoHonorarioCirujano.Visible = true;
-            _vista.TextoBsFHonorarios.Visible = true;
+            if (_vista.ComboCirujano.SelectedIndex != -1)
+            {
+                LCirugiaCirujano logica = new LCirugiaCirujano();
+                _vista.TextoHonorarioCirujano.Text =
+                    logica.ObtenerCirugiaCirujano((Cirugia)_vista.ComboIntervencionQuirurgica.SelectedItem,
+                                                  (Cirujano)_vista.ComboCirujano.SelectedItem).ToString();
+                _vista.TextoHonorarioCirujano.Visible = true;
+                _vista.TextoBsFHonorarios.Visible = true;
+            }
         }
 
         /// <summary>
@@ -107,46 +157,82 @@ namespace CECLIMI.Presentador
         /// </summary>
         public void AgregarNuevaIntervencionQuirurgica()
         {
-            iteracion++;
-            _vista.DataGridCirugias.Visible = true;
-            _vista.DataGridCirugias.Rows.Add(iteracion.ToString(),_vista.ComboIntervencionQuirurgica.Text,
-                _vista.ComboCirujano.Text,"BsF. "+_vista.TextProtesis.Text,_vista.TextDiaIQX1.Text +" / "+_vista.TextmesIQX1.Text+" / "+_vista.TextAnoIQX1.Text
-                ,"BsF. "+ _vista.TextoHonorarioCirujano.Text,"pro");
+            if (_vista.ComboCirujano.SelectedIndex == -1 || _vista.TextAnoIQX1.Text.Equals("") || 
+                _vista.TextDiaIQX1.Text.Equals("") || _vista.TextmesIQX1.Text.Equals("") || _vista.TextAnoIQX1.Text.Length != 4)
+            {
+                DialogResult result =
+                MessageBox.Show("Asegurese de estar llenando los campos obligatorios (*)", "Cuidado!", MessageBoxButtons.OK);
+            }
+            else
+            {
+                iteracion++;
+                _vista.DataGridCirugias.Visible = true;
+                _vista.DataGridCirugias.Rows.Add(iteracion.ToString(),_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
+                    _vista.ComboCirujano.Text,_vista.TextProtesis.Text, _vista.TextDiaIQX1.Text + " / " + _vista.TextmesIQX1.Text + " / " + _vista.TextAnoIQX1.Text
+                    ,_vista.TextoHonorarioCirujano.Text);
 
-            List<Personal> miListaPersonal = new List<Personal>();
-            Personal personal = new Personal();
-            if (!_vista.Combo1ErAyudante.Text.Equals(""))
-            {
-                personal =  (Personal) _vista.Combo1ErAyudante.SelectedItem;
-                personal.Especializacion = _vista.Label1.Text;
-                miListaPersonal.Add(personal);
+                List<Personal> miListaPersonal = new List<Personal>();
+                Personal personal = new Personal();
+
+                if (_vista.Combo1ErAyudante.SelectedIndex != -1)
+                {
+                    personal = (Personal)_vista.Combo1ErAyudante.SelectedItem;
+                    personal.Especializacion = _vista.Label1.Text;
+                    miListaPersonal.Add(personal);
+                }
+                if (_vista.ComboAnestesiologo.SelectedIndex != -1)
+                {
+                    personal = (Personal)_vista.ComboAnestesiologo.SelectedItem;
+                    personal.Especializacion = _vista.Label2.Text;
+                    miListaPersonal.Add(personal);
+                }
+                if (_vista.ComboInstrumentista.SelectedIndex != -1)
+                {
+                    personal = (Personal)_vista.ComboInstrumentista.SelectedItem;
+                    personal.Especializacion = _vista.Label3.Text;
+                    miListaPersonal.Add(personal);
+                }
+                if (_vista.ComboCirculante.SelectedIndex != -1)
+                {
+                    personal = (Personal)_vista.ComboCirculante.SelectedItem;
+                    personal.Especializacion = _vista.Label4.Text;
+                    miListaPersonal.Add(personal);
+                }
+                if (_vista.ComboInstrumentalEspecial.SelectedIndex != -1)
+                {
+                    personal = (Personal)_vista.ComboInstrumentalEspecial.SelectedItem;
+                    personal.Especializacion = _vista.Label5.Text;
+                    miListaPersonal.Add(personal);
+                }
+                Console.Write(miListaPersonal);
+                personalCirugia.Add(miListaPersonal);
+
+                _vista.ComboIntervencionQuirurgica.SelectedIndex = -1;
+                _vista.ComboCirujano.SelectedIndex = -1;
+                _vista.Combo1ErAyudante.SelectedIndex =
+                    _vista.ComboAnestesiologo.SelectedIndex = _vista.ComboCirculante.SelectedIndex = -1;
+                _vista.ComboInstrumentalEspecial.SelectedIndex = _vista.ComboInstrumentista.SelectedIndex = -1;
+                _vista.TextoHonorarioCirujano.Text = "";
+                _vista.TextoBsFHonorarios.Visible = false;
+                _vista.TextAnoIQX1.Text = _vista.TextmesIQX1.Text = _vista.TextDiaIQX1.Text = _vista.TextProtesis.Text = "";
+                _vista.TextDescuento.Text = "";
             }
-            if (!_vista.ComboAnestesiologo.Text.Equals(""))
+            
+        }
+
+        /// <summary>
+        /// Metodo para eliminar intervencion del datagrid o modificar una que este
+        /// </summary>
+        public void EliminarIntervencionQuirurgica()
+        {
+            if(_vista.DataGridCirugias.Rows.Count >= 1)
             {
-                personal.Id = (long)_vista.ComboAnestesiologo.SelectedItem;
-                personal.Especializacion = _vista.Label2.Text;
-                miListaPersonal.Add(personal);
+                if (personalCirugia.Count == _vista.DataGridCirugias.Rows.Count)
+                {
+                    personalCirugia.RemoveAt(personalCirugia.Count-1);
+                }
+                _vista.DataGridCirugias.Rows.RemoveAt(_vista.DataGridCirugias.Rows.Count-1);
             }
-            if (!_vista.ComboInstrumentista.Text.Equals(""))
-            {
-                personal.Id = (long)_vista.ComboInstrumentista.SelectedItem;
-                personal.Especializacion = _vista.Label3.Text;
-                miListaPersonal.Add(personal);
-            }
-            if (!_vista.ComboCirculante.Text.Equals(""))
-            {
-                personal.Id = (long)_vista.ComboCirculante.SelectedItem;
-                personal.Especializacion = _vista.Label4.Text;
-                miListaPersonal.Add(personal);
-            }
-            if (!_vista.ComboInstrumentalEspecial.Text.Equals(""))
-            {
-                personal.Id = (long)_vista.ComboInstrumentalEspecial.SelectedItem;
-                personal.Especializacion = _vista.Label5.Text;
-                miListaPersonal.Add(personal);
-            }
-            Console.Write(miListaPersonal);
-            personalCirugia.Add(miListaPersonal);
         }
 
         /// <summary>

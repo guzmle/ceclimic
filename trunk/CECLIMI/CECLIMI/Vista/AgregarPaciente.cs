@@ -12,22 +12,30 @@ namespace CECLIMI.Vista
 {
     public partial class AgregarPaciente : CECLIMI.Vista.formInicial,IContratoAgregarPaciente
     {
+        #region Atributos
         private PresentadorAgregarPaciente _presentador;
+        #endregion
+
+        #region Constructor
         public AgregarPaciente()
         {
             InitializeComponent();
             _presentador = new PresentadorAgregarPaciente(this);
         }
+        #endregion
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        #region Metodos
+        private void Panel1Paint(object sender, PaintEventArgs e)
         {
-            textCodigoAreaFijo.MaxLength = 4;textTelefonoFijo.MaxLength = 7;
-            textCodigoAreaMovil.MaxLength = 4;textTelefonoMovil.MaxLength = 7;
+            textCodigoAreaFijo.MaxLength = 3;textTelefonoFijo.MaxLength = 7;
+            textCodigoAreaMovil.MaxLength = 3;textTelefonoMovil.MaxLength = 7;
             textDescuento1.MaxLength = 3;textDiaIQX1.MaxLength = textMesIQX1.MaxLength = 2;
             textAnoIQX1.MaxLength = 4;
+            textPrimerNombre.MaxLength = textPrimerApellido.MaxLength = textSegundoNombre.MaxLength = textSegundoApellido.MaxLength = 15;
+            textCorreoElectronico.MaxLength = 100;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3Click(object sender, EventArgs e)
         {
             textCodigoAreaFijo.Text = "";textCodigoAreaMovil.Text = "";textCorreoElectronico.Text = "";textIdPaciente.Text = "";
             textPrimerApellido.Text = "";textSegundoApellido.Text = "";textPrimerNombre.Text = "";textSegundoNombre.Text = "";
@@ -35,38 +43,43 @@ namespace CECLIMI.Vista
 
         }
 
-        private void botonAgregarIntervencionQuirurgica_Click(object sender, EventArgs e)
+        private void BotonAgregarIntervencionQuirurgicaClick(object sender, EventArgs e)
         {
             _presentador.AgregarNuevaIntervencionQuirurgica();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5Click(object sender, EventArgs e)
         {
-            _presentador.agregarIntervencionesQuirurgicas();
+            _presentador.AgregarIntervencionesQuirurgicas();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Button6Click(object sender, EventArgs e)
         {
             _presentador.ModificarInformacionPaciente();
         }
 
-        private void botonAceptar_Click(object sender, EventArgs e)
+        private void BotonAceptarClick(object sender, EventArgs e)
         {
             _presentador.ClickAceptar();
         }
 
-        private void comboIntervencionQuirurgica1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboIntervencionQuirurgica1SelectedIndexChanged(object sender, EventArgs e)
         {
             _presentador.SeleccionCirugia();
         }
 
-        private void comboCirujano1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboCirujano1SelectedIndexChanged(object sender, EventArgs e)
         {
             _presentador.PrecioOperacion();
         }
 
+        private void BotonQuitarIntervencionQuirurgicaClick(object sender, EventArgs e)
+        {
+            _presentador.EliminarIntervencionQuirurgica();
+        }
+        #endregion
 
-        #region Implementation of IContratoAgregarPaciente
+        #region Implementacion del Contrato - IContratoAgregarPaciente
 
         public GroupBox GrupoDatosPaciente
         {
@@ -178,6 +191,11 @@ namespace CECLIMI.Vista
             get { return textProtesis; }
         }
 
+        public TextBox TextDescuento
+        {
+            get { return textDescuento1; }
+        }
+
         public Label TextInformacionVentana
         {
             get { return textInformacionVentana; }
@@ -284,6 +302,8 @@ namespace CECLIMI.Vista
         }
 
         #endregion
+
+        
 
 
     }
