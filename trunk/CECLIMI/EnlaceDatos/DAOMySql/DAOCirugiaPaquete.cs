@@ -22,6 +22,8 @@ namespace EnlaceDatos.DAOMySql
 
                 comando.Parameters.AddWithValue("@PROTESIS", cirugiaPaquete.Protesis);
                 comando.Parameters.AddWithValue("@FECHA_OPERACION", cirugiaPaquete.FechaOperacion);
+                comando.Parameters.AddWithValue("@DESCUENTO", cirugiaPaquete.Descuento);
+                comando.Parameters.AddWithValue("@MONTO_CIRUJANO", cirugiaPaquete.MontoCirujano);
                 comando.Parameters.AddWithValue("@CIRUGIA", cirugiaPaquete.Cirugia.Id);
                 comando.Parameters.AddWithValue("@CIRUJANO", cirugiaPaquete.Cirujano.Id);
                 comando.Parameters.AddWithValue("@PAQUETE", cirugiaPaquete.PaqueteFinanciero.Id);
@@ -29,6 +31,8 @@ namespace EnlaceDatos.DAOMySql
 
                 comando.Parameters["@PROTESIS"].Direction = ParameterDirection.Input;
                 comando.Parameters["@FECHA_OPERACION"].Direction = ParameterDirection.Input;
+                comando.Parameters["@DESCUENTO"].Direction = ParameterDirection.Input;
+                comando.Parameters["@MONTO_CIRUJANO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@CIRUGIA"].Direction = ParameterDirection.Input;
                 comando.Parameters["@CIRUJANO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@PAQUETE"].Direction = ParameterDirection.Input;

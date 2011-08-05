@@ -11,5 +11,7 @@ namespace EnlaceDatos.IDAO
         bool AgregarPago(Pago pago);
         bool EditarPago(Pago pago);
         bool EliminarPago(Pago pago);
+        List<Pago> ObtenerPagosPaciente(Paciente paciente);
+        int ValidarPagoExistente(int idpago);
     }
 }

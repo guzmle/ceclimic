@@ -15,8 +15,9 @@ namespace CECLIMI.Presentador
         #region atributos
         private IContratoAgregarPaciente _vista;
         private List<Cirugia> _cirugias = new List<Cirugia>();
-        private int iteracion = 0;
+        private int _iteracion = 0;
         private List<List<Personal>> personalCirugia = new List<List<Personal>>();
+        LPaciente lPaciente = new LPaciente();
         #endregion
 
         #region constructor
@@ -37,7 +38,17 @@ namespace CECLIMI.Presentador
                 DialogResult result =
                 MessageBox.Show("Asegurese de estar llenando los campos obligatorios (*)", "Cuidado!", MessageBoxButtons.OK);
             }
-            else if(RevisarErrorAlCombertirAInt(_vista.TextIdPaciente.Text) != -1)
+            else if (RevisarErrorAlConvertirAInt(_vista.TextIdPaciente.Text) == -1)
+            {
+                DialogResult result =
+                MessageBox.Show("La cedula de identidad no puede contener caracteres alfabeticos (*)", "Cuidado!", MessageBoxButtons.OK);
+            }
+            else if (lPaciente.ValidarPacienteExistente(Convert.ToInt32(_vista.TextIdPaciente.Text))==1)
+            {
+                DialogResult result =
+                MessageBox.Show("Cliente existente en el sistema", "Cuidado!", MessageBoxButtons.OK);
+            }
+            else 
             {
                 LCirugia logica = new LCirugia();
                 LPersonalQuirurgico logicaPQ = new LPersonalQuirurgico();
@@ -80,11 +91,8 @@ namespace CECLIMI.Presentador
                     _vista.ComboInstrumentalEspecial.DisplayMember = _vista.ComboInstrumentista.DisplayMember = "Nombre";
                 _vista.Combo1ErAyudante.ValueMember = _vista.ComboAnestesiologo.ValueMember = _vista.ComboCirculante.ValueMember =
                     _vista.ComboInstrumentalEspecial.ValueMember = _vista.ComboInstrumentista.ValueMember = "Id";
-            }
-            else
-            {
-                DialogResult result =
-                MessageBox.Show("La cedula de identidad no puede contener caracteres alfabeticos (*)", "Cuidado!", MessageBoxButtons.OK);
+
+                
             }
             
         }
@@ -94,7 +102,7 @@ namespace CECLIMI.Presentador
         /// </summary>
         /// <param name="cedula"></param>
         /// <returns></returns>
-        public int RevisarErrorAlCombertirAInt(String cedula)
+        public int RevisarErrorAlConvertirAInt(String cedula)
         {
             try
             {
@@ -134,7 +142,6 @@ namespace CECLIMI.Presentador
                 {
                     _vista.ComboCirujano.Items.Add(cirujano);
                 }
-            
                 _vista.ComboCirujano.DisplayMember = "Nombre";
                 _vista.ComboCirujano.ValueMember = "Id";
             }
@@ -170,20 +177,20 @@ namespace CECLIMI.Presentador
             }
             else
             {
-                iteracion++;
+                _iteracion++;
                 Cirujano cirujano = new Cirujano();
                 cirujano = (Cirujano) _vista.ComboCirujano.SelectedItem;
                 Cirugia cirugia = new Cirugia();
                 cirugia = (Cirugia) _vista.ComboIntervencionQuirurgica.SelectedItem;
                 _vista.DataGridCirugias.Visible = true;
-                _vista.DataGridCirugias.Rows.Add(iteracion.ToString(),cirujano.Id,cirugia.Id,_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
+                _vista.DataGridCirugias.Rows.Add(_iteracion.ToString(),cirujano.Id,cirugia.Id,_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
                     _vista.ComboCirujano.Text,_vista.TextProtesis.Text, _vista.TextDiaIQX1.Text + "/" + _vista.TextmesIQX1.Text + "/" + _vista.TextAnoIQX1.Text
                     ,_vista.TextoHonorarioCirujano.Text);
 
                 List<Personal> miListaPersonal = new List<Personal>();
 
                 Personal personal1 = new Personal();
-                personal1.Id = iteracion - 1;
+                personal1.Id = _iteracion - 1;
                 miListaPersonal.Add(personal1);
 
                 if (_vista.Combo1ErAyudante.SelectedIndex != -1)
@@ -253,7 +260,7 @@ namespace CECLIMI.Presentador
                 }
                 _vista.DataGridCirugias.Rows.RemoveAt(_vista.DataGridCirugias.Rows.Count-1);
             }
-            iteracion--;
+            _iteracion--;
         }
 
         /// <summary>
@@ -298,6 +305,8 @@ namespace CECLIMI.Presentador
                 cirugiaPqtFinanciero.Cirugia.Id = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["idCirugia"].Value);
                 cirugiaPqtFinanciero.Cirujano.Id = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["idCirujano"].Value);
                 cirugiaPqtFinanciero.PaqueteFinanciero.Id = idPaqueteFinanciero;
+                cirugiaPqtFinanciero.Descuento = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["columnaDesc"].Value);
+                cirugiaPqtFinanciero.MontoCirujano = Convert.ToInt64(_vista.DataGridCirugias.Rows[i].Cells["columnaPrecioCirugia"].Value);
                 int idCirugiaPqtFinanciero = lCirugiaPaqueteFinanciero.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
                 if (personalCirugia.Count > 0)
                 {

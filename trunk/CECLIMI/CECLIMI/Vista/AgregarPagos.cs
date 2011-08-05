@@ -19,17 +19,16 @@ namespace CECLIMI.Vista
             _presentador = new PresentadorAgregarPagos(this);
         }
 
-        private void AgregarPagos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void Button6Click(object sender, EventArgs e)
         {
            _presentador.ClickBotonBuscar();
 
         }
 
+        private void BotonAgregarPagoClick(object sender, EventArgs e)
+        {
+            _presentador.ClickBotonAgregarPagos();
+        }
         #region Implementacion de contratos para AgregarPagos
         public TextBox TextoCiPaciente
         {
@@ -39,17 +38,15 @@ namespace CECLIMI.Vista
         {
             get { return gridInformacionPagos; }
         }
+
+        public DataGridView GridPagosNuevos
+        {
+            get { return gridPagosNuevos; }
+        }
+
         public Label TextoInformacionGrid
         {
             get { return textoInformacionEstatusCliente; }
-        }
-        public Label TextoTotalAbonado
-        {
-            get { return textoTotalAbonado; }
-        }
-        public Label TextoTotalAbonadoModificar
-        {
-            get { return textoTotalAbonadoModificar; }
         }
         public Label TextoSaldoFavor
         {
@@ -58,14 +55,6 @@ namespace CECLIMI.Vista
         public Label TextoSaldoFavorModificar
         {
             get { return textoSaldoFavorModificar; }
-        }
-        public Label TextoSaldoDeudor
-        {
-            get { return textoSaldoDeudor; }
-        }
-        public Label TextoSaldoDeudorModificar
-        {
-            get { return textoSaldoDeudorModificar; }
         }
         public TextBox TextoMontoFactura
         {
@@ -87,6 +76,12 @@ namespace CECLIMI.Vista
         {
             get { return textMesPago; }
         }
+
+        public TextBox TextQuienPaga
+        {
+            get { return textNombreQuienPaga; }
+        }
+
         public Button BotonBuscar
         {
             get { return botonBuscar; }
@@ -103,8 +98,23 @@ namespace CECLIMI.Vista
         {
             get { return botonAceptar; }
         }
+
+        public TextBox TextSeguro
+        {
+            get { return textSeguro; }
+        }
+
+        public TextBox TextTipoPago
+        {
+            get { return textTipoPago; }
+        }
+
         #endregion
 
+        private void BotonAceptarClick(object sender, EventArgs e)
+        {
+            _presentador.ClickBotonAceptar();
+        }
 
     }
 }

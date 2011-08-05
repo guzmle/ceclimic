@@ -83,7 +83,6 @@ namespace EnlaceDatos.DAOMySql
                 comando.Parameters.AddWithValue("@TELEFONOFIJO", paciente.Telefono);
                 comando.Parameters.AddWithValue("@TELEFONOMOVIL", paciente.TelefonoMovil);
                 comando.Parameters.AddWithValue("@CORREO", paciente.Correo);
-                comando.Parameters.AddWithValue("@FECHA_INGRESO", paciente.FechaIngreso);
 
                 comando.Parameters["@CEDULA"].Direction = ParameterDirection.Input;
                 comando.Parameters["@PRIMERNOMBRE"].Direction = ParameterDirection.Input;
@@ -93,7 +92,6 @@ namespace EnlaceDatos.DAOMySql
                 comando.Parameters["@TELEFONOFIJO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@TELEFONOMOVIL"].Direction = ParameterDirection.Input;
                 comando.Parameters["@CORREO"].Direction = ParameterDirection.Input;
-                comando.Parameters["@FECHA_INGRESO"].Direction = ParameterDirection.Input;
 
 
                 comando.ExecuteNonQuery();
@@ -137,6 +135,80 @@ namespace EnlaceDatos.DAOMySql
             {
                 Console.Write(e.Message);
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// metodo utilizado para validar que un paciente no este en la base de datos al insertarlo
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <returns></returns>
+        public int ValidarPacienteExistente(int cedula)
+        {
+            try
+            {
+                
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ValidacionPacienteExistente";
+
+
+                comando.Parameters.AddWithValue("@CEDULA",cedula);
+                comando.Parameters.AddWithValue("@resultado", MySqlDbType.Int32);
+
+                comando.Parameters["@CEDULA"].Direction = ParameterDirection.Input;
+                comando.Parameters["@resultado"].Direction = ParameterDirection.Output;
+
+                comando.ExecuteNonQuery();
+                int resultado = Convert.ToInt32(comando.Parameters["@resultado"].Value);
+                return resultado;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return -1;
+            }
+            
+        }
+
+        /// <summary>
+        /// Obtiene la informacion del paciente a consultar.
+        /// </summary>
+        public Paciente ObtenerInformacionPaciente(int cedula)
+        {
+            try
+            {
+                Paciente paciente = new Paciente();
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerInformacionPaciente";
+
+
+                comando.Parameters.AddWithValue("@Cedula", cedula);
+                comando.Parameters["@Cedula"].Direction = ParameterDirection.Input;
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    paciente.Nombre = reader.GetString(0);
+                    paciente.SegundoNombre = reader.GetString(1);
+                    paciente.PrimerApellido = reader.GetString(2);
+                    paciente.SegundoApellido = reader.GetString(3);
+                    paciente.Telefono = reader.GetString(4);
+                    paciente.TelefonoMovil = reader.GetString(5);
+                    paciente.Correo = reader.GetString(6);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return paciente;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return null;
             }
         }
     }

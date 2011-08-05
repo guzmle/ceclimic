@@ -35,6 +35,15 @@
             this.textInformacionVentana = new System.Windows.Forms.Label();
             this.grupoIntervencionQuirurgica = new System.Windows.Forms.GroupBox();
             this.dataGridCirugias = new System.Windows.Forms.DataGridView();
+            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textProtesis = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,7 +65,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textoHonorarioCirujano = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textDescuento1 = new System.Windows.Forms.TextBox();
             this.textoBsFHonorarios = new System.Windows.Forms.Label();
@@ -102,15 +110,6 @@
             this.textPrimerNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.columnaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaIQX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaProtesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaPrecioCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelInformacionUsuario.SuspendLayout();
             this.grupoIntervencionQuirurgica.SuspendLayout();
@@ -193,7 +192,6 @@
             this.grupoIntervencionQuirurgica.Controls.Add(this.label16);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label15);
             this.grupoIntervencionQuirurgica.Controls.Add(this.textoHonorarioCirujano);
-            this.grupoIntervencionQuirurgica.Controls.Add(this.button4);
             this.grupoIntervencionQuirurgica.Controls.Add(this.label14);
             this.grupoIntervencionQuirurgica.Controls.Add(this.textDescuento1);
             this.grupoIntervencionQuirurgica.Controls.Add(this.textoBsFHonorarios);
@@ -236,6 +234,69 @@
             this.dataGridCirugias.Size = new System.Drawing.Size(943, 97);
             this.dataGridCirugias.TabIndex = 63;
             this.dataGridCirugias.Visible = false;
+            // 
+            // columnaNumero
+            // 
+            this.columnaNumero.FillWeight = 27.06585F;
+            this.columnaNumero.HeaderText = "#";
+            this.columnaNumero.Name = "columnaNumero";
+            this.columnaNumero.ReadOnly = true;
+            // 
+            // idCirugia
+            // 
+            this.idCirugia.HeaderText = "idCirugia";
+            this.idCirugia.Name = "idCirugia";
+            this.idCirugia.ReadOnly = true;
+            this.idCirugia.Visible = false;
+            // 
+            // idCirujano
+            // 
+            this.idCirujano.HeaderText = "idCirujano";
+            this.idCirujano.Name = "idCirujano";
+            this.idCirujano.ReadOnly = true;
+            this.idCirujano.Visible = false;
+            // 
+            // columnaDesc
+            // 
+            this.columnaDesc.FillWeight = 30F;
+            this.columnaDesc.HeaderText = "%D";
+            this.columnaDesc.Name = "columnaDesc";
+            this.columnaDesc.ReadOnly = true;
+            // 
+            // columnaIQX
+            // 
+            this.columnaIQX.FillWeight = 90.2195F;
+            this.columnaIQX.HeaderText = "IQX";
+            this.columnaIQX.Name = "columnaIQX";
+            this.columnaIQX.ReadOnly = true;
+            // 
+            // ColumnaCirujano
+            // 
+            this.ColumnaCirujano.FillWeight = 90.2195F;
+            this.ColumnaCirujano.HeaderText = "Cirujano";
+            this.ColumnaCirujano.Name = "ColumnaCirujano";
+            this.ColumnaCirujano.ReadOnly = true;
+            // 
+            // columnaProtesis
+            // 
+            this.columnaProtesis.FillWeight = 90.2195F;
+            this.columnaProtesis.HeaderText = "Protesis IQX (BsF)";
+            this.columnaProtesis.Name = "columnaProtesis";
+            this.columnaProtesis.ReadOnly = true;
+            // 
+            // fechaCirugia
+            // 
+            this.fechaCirugia.FillWeight = 90.2195F;
+            this.fechaCirugia.HeaderText = "Fecha IQX";
+            this.fechaCirugia.Name = "fechaCirugia";
+            this.fechaCirugia.ReadOnly = true;
+            // 
+            // columnaPrecioCirugia
+            // 
+            this.columnaPrecioCirugia.FillWeight = 90.2195F;
+            this.columnaPrecioCirugia.HeaderText = "Precio IQX (BsF)";
+            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
+            this.columnaPrecioCirugia.ReadOnly = true;
             // 
             // textProtesis
             // 
@@ -445,15 +506,6 @@
             this.textoHonorarioCirujano.TabIndex = 51;
             this.textoHonorarioCirujano.Text = "24.000,00";
             this.textoHonorarioCirujano.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::CECLIMI.Properties.Resources.icono_calcular;
-            this.button4.Location = new System.Drawing.Point(730, 219);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(38, 29);
-            this.button4.TabIndex = 50;
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -902,69 +954,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "* Primer Nombre";
             // 
-            // columnaNumero
-            // 
-            this.columnaNumero.FillWeight = 27.06585F;
-            this.columnaNumero.HeaderText = "#";
-            this.columnaNumero.Name = "columnaNumero";
-            this.columnaNumero.ReadOnly = true;
-            // 
-            // idCirugia
-            // 
-            this.idCirugia.HeaderText = "idCirugia";
-            this.idCirugia.Name = "idCirugia";
-            this.idCirugia.ReadOnly = true;
-            this.idCirugia.Visible = false;
-            // 
-            // idCirujano
-            // 
-            this.idCirujano.HeaderText = "idCirujano";
-            this.idCirujano.Name = "idCirujano";
-            this.idCirujano.ReadOnly = true;
-            this.idCirujano.Visible = false;
-            // 
-            // columnaDesc
-            // 
-            this.columnaDesc.FillWeight = 30F;
-            this.columnaDesc.HeaderText = "%D";
-            this.columnaDesc.Name = "columnaDesc";
-            this.columnaDesc.ReadOnly = true;
-            // 
-            // columnaIQX
-            // 
-            this.columnaIQX.FillWeight = 90.2195F;
-            this.columnaIQX.HeaderText = "IQX";
-            this.columnaIQX.Name = "columnaIQX";
-            this.columnaIQX.ReadOnly = true;
-            // 
-            // ColumnaCirujano
-            // 
-            this.ColumnaCirujano.FillWeight = 90.2195F;
-            this.ColumnaCirujano.HeaderText = "Cirujano";
-            this.ColumnaCirujano.Name = "ColumnaCirujano";
-            this.ColumnaCirujano.ReadOnly = true;
-            // 
-            // columnaProtesis
-            // 
-            this.columnaProtesis.FillWeight = 90.2195F;
-            this.columnaProtesis.HeaderText = "Protesis IQX (BsF)";
-            this.columnaProtesis.Name = "columnaProtesis";
-            this.columnaProtesis.ReadOnly = true;
-            // 
-            // fechaCirugia
-            // 
-            this.fechaCirugia.FillWeight = 90.2195F;
-            this.fechaCirugia.HeaderText = "Fecha IQX";
-            this.fechaCirugia.Name = "fechaCirugia";
-            this.fechaCirugia.ReadOnly = true;
-            // 
-            // columnaPrecioCirugia
-            // 
-            this.columnaPrecioCirugia.FillWeight = 90.2195F;
-            this.columnaPrecioCirugia.HeaderText = "Precio IQX (BsF)";
-            this.columnaPrecioCirugia.Name = "columnaPrecioCirugia";
-            this.columnaPrecioCirugia.ReadOnly = true;
-            // 
             // AgregarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,7 +1045,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label textoHonorarioCirujano;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textDescuento1;
         private System.Windows.Forms.Label textoBsFHonorarios;

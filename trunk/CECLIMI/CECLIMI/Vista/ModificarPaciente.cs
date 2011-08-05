@@ -19,11 +19,6 @@ namespace CECLIMI.Vista
             _presentador = new PresentadorModificarPaciente(this);
         }
 
-        private void Panel1Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         #region Implementation of IContratoModificarPaciente
 
         public TextBox TextoCiPaciente
@@ -126,11 +121,21 @@ namespace CECLIMI.Vista
             get { return textCorreoElectronico; }
         }
 
+        public GroupBox GrupoDatosPaciente
+        {
+            get { return grupoDatosPacientes; }
+        }
+
         #endregion
 
         private void BotonBuscarClick(object sender, EventArgs e)
         {
             _presentador.BuscarInformacionPaciente();
+        }
+
+        private void BotonAceptarClick(object sender, EventArgs e)
+        {
+            _presentador.ClickBotonAceptar();
         }
     }
 }

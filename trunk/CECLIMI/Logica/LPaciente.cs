@@ -15,12 +15,33 @@ namespace Logica
         /// <summary>
         /// metodo que se encarga de la logica de agregar paciente
         /// </summary>
-        /// <param name="paciente"></param>
-        /// <returns></returns>
         public bool AgregarPaciente(Paciente paciente)
         {
-            
             return DAO.ObtenerDAO(1).ObtenerDAOPaciente().AgregarPaciente(paciente);
+        }
+
+        /// <summary>
+        /// metodo que revisa si el paciente que va a ser agregado no existe en el sistema
+        /// </summary>
+        public int ValidarPacienteExistente(int cedula)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOPaciente().ValidarPacienteExistente(cedula);
+        }
+
+        /// <summary>
+        /// metodo que obtiene la informacion de un paciente consultado.
+        /// </summary>
+        public Paciente ObtenerInformacionPaciente(int cedula)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOPaciente().ObtenerInformacionPaciente(cedula);
+        }
+
+        /// <summary>
+        /// metodo que modifica la informacion de un paciente
+        /// </summary>
+        public bool EditarPaciente(Paciente paciente)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOPaciente().EditarPaciente(paciente);
         }
     }
 }

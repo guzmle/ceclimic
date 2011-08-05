@@ -28,5 +28,6 @@ namespace CECLIMI.Contratos
         TextBox TextTelefonoFijo { get; }
         TextBox TextTelefonoMovil { get; }
         TextBox TextCorreoElectronico { get; }
+        GroupBox GrupoDatosPaciente { get; }
     }
 }

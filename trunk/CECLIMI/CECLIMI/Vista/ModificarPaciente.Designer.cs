@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonCancelar = new System.Windows.Forms.Button();
+            this.botonAceptar = new System.Windows.Forms.Button();
             this.grupoDatosPacientes = new System.Windows.Forms.GroupBox();
             this.textCorreoElectronico = new System.Windows.Forms.TextBox();
             this.correoElectrico = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@
             this.textoCiPaciente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textModificarPaciente = new System.Windows.Forms.Label();
-            this.botonCancelar = new System.Windows.Forms.Button();
-            this.botonAceptar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.grupoDatosPacientes.SuspendLayout();
             this.grupoInformacionPaciente.SuspendLayout();
@@ -75,7 +75,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(990, 619);
             this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1Paint);
+            // 
+            // botonCancelar
+            // 
+            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCancelar.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
+            this.botonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonCancelar.Location = new System.Drawing.Point(505, 344);
+            this.botonCancelar.Name = "botonCancelar";
+            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
+            this.botonCancelar.TabIndex = 34;
+            this.botonCancelar.Text = "Cancelar";
+            this.botonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // botonAceptar
+            // 
+            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptar.Location = new System.Drawing.Point(800, 344);
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptar.TabIndex = 33;
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.BotonAceptarClick);
             // 
             // grupoDatosPacientes
             // 
@@ -106,6 +130,7 @@
             this.grupoDatosPacientes.TabIndex = 30;
             this.grupoDatosPacientes.TabStop = false;
             this.grupoDatosPacientes.Text = "Informacion del paciente";
+            this.grupoDatosPacientes.Visible = false;
             // 
             // textCorreoElectronico
             // 
@@ -337,30 +362,6 @@
             this.textModificarPaciente.Size = new System.Drawing.Size(182, 22);
             this.textModificarPaciente.TabIndex = 28;
             this.textModificarPaciente.Text = "Modificar Paciente";
-            // 
-            // botonCancelar
-            // 
-            this.botonCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonCancelar.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
-            this.botonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonCancelar.Location = new System.Drawing.Point(505, 344);
-            this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(111, 29);
-            this.botonCancelar.TabIndex = 34;
-            this.botonCancelar.Text = "Cancelar";
-            this.botonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // botonAceptar
-            // 
-            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
-            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAceptar.Location = new System.Drawing.Point(800, 344);
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
-            this.botonAceptar.TabIndex = 33;
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseVisualStyleBackColor = true;
             // 
             // ModificarPaciente
             // 

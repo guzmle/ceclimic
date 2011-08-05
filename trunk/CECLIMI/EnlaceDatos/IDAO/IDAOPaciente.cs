@@ -11,5 +11,7 @@ namespace EnlaceDatos.IDAO
         bool AgregarPaciente(Paciente paciente);
         bool EditarPaciente(Paciente paciente);
         bool EliminarPaciente(Entidad paciente);
+        int ValidarPacienteExistente(int cedula);
+        Paciente ObtenerInformacionPaciente(int cedula);
     }
 }

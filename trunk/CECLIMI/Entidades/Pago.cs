@@ -14,9 +14,27 @@ namespace Entidades
 
         private float _monto;
         private Persona _usuario = new Persona();
+        private DateTime _fecha;
+        private String _seguro;
+        private String _tipoPago;
         #endregion
 
         #region Encapsulamiento
+        public String TipoPago
+        {
+            get { return _tipoPago; }
+            set { _tipoPago = value; }
+        }
+        public String Seguro
+        {
+            get { return _seguro; }
+            set { _seguro = value; }
+        }
+        public DateTime Fecha
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
         public float Monto
         {
             get { return _monto; }
