@@ -109,8 +109,8 @@ namespace EnlaceDatos.DAOMySql
                 comando.Parameters.AddWithValue("@SEGUNDONOMBRE", cirujano.SegundoNombre);
                 comando.Parameters.AddWithValue("@PRIMERAPELLIDO", cirujano.PrimerApellido);
                 comando.Parameters.AddWithValue("@SEGUNDOAPELLIDO", cirujano.SegundoApellido);
-                comando.Parameters.AddWithValue("@TELEFONOFIJO", cirujano.TelefonoFijo);
                 comando.Parameters.AddWithValue("@TELEFONOMOVIL", cirujano.TelefonoMovil);
+                comando.Parameters.AddWithValue("@TELEFONOFIJO", cirujano.Telefono);
                 comando.Parameters.AddWithValue("@CORREO", cirujano.Correo);
 
                 comando.Parameters["@ID"].Direction = ParameterDirection.Input;
@@ -118,8 +118,8 @@ namespace EnlaceDatos.DAOMySql
                 comando.Parameters["@SEGUNDONOMBRE"].Direction = ParameterDirection.Input;
                 comando.Parameters["@PRIMERAPELLIDO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@SEGUNDOAPELLIDO"].Direction = ParameterDirection.Input;
-                comando.Parameters["@TELEFONOFIJO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@TELEFONOMOVIL"].Direction = ParameterDirection.Input;
+                comando.Parameters["@TELEFONOFIJO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@CORREO"].Direction = ParameterDirection.Input;
 
 
@@ -132,6 +132,46 @@ namespace EnlaceDatos.DAOMySql
             {
                 Console.Write(e.Message);
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Obtiene la informacion del paciente a consultar.
+        /// </summary>
+        public Cirujano ObtenerInformacionCirujano(int cedula)
+        {
+            try
+            {
+                Cirujano cirujano = new Cirujano();
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerInformacionCirujano";
+
+
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                comando.Parameters["@cedula"].Direction = ParameterDirection.Input;
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    cirujano.Nombre = reader.GetString(0);
+                    cirujano.SegundoNombre = reader.GetString(1);
+                    cirujano.PrimerApellido = reader.GetString(2);
+                    cirujano.SegundoApellido = reader.GetString(3);
+                    cirujano.Telefono = reader.GetString(4);
+                    cirujano.TelefonoMovil = reader.GetString(5);
+                    cirujano.Correo = reader.GetString(6);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return cirujano;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return null;
             }
         }
 

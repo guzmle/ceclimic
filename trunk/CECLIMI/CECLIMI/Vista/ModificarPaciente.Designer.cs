@@ -54,7 +54,7 @@
             this.primerNombre = new System.Windows.Forms.Label();
             this.grupoInformacionPaciente = new System.Windows.Forms.GroupBox();
             this.botonBuscar = new System.Windows.Forms.Button();
-            this.textoCiPaciente = new System.Windows.Forms.TextBox();
+            this.textoCiCirujano = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textModificarPaciente = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -134,7 +134,7 @@
             // 
             // textCorreoElectronico
             // 
-            this.textCorreoElectronico.Location = new System.Drawing.Point(610, 138);
+            this.textCorreoElectronico.Location = new System.Drawing.Point(610, 103);
             this.textCorreoElectronico.Name = "textCorreoElectronico";
             this.textCorreoElectronico.Size = new System.Drawing.Size(229, 25);
             this.textCorreoElectronico.TabIndex = 19;
@@ -143,7 +143,7 @@
             // correoElectrico
             // 
             this.correoElectrico.AutoSize = true;
-            this.correoElectrico.Location = new System.Drawing.Point(490, 141);
+            this.correoElectrico.Location = new System.Drawing.Point(490, 106);
             this.correoElectrico.Name = "correoElectrico";
             this.correoElectrico.Size = new System.Drawing.Size(113, 20);
             this.correoElectrico.TabIndex = 18;
@@ -153,7 +153,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(653, 102);
+            this.label9.Location = new System.Drawing.Point(653, 67);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 20);
             this.label9.TabIndex = 17;
@@ -162,7 +162,7 @@
             // 
             // textTelefonoMovil
             // 
-            this.textTelefonoMovil.Location = new System.Drawing.Point(671, 102);
+            this.textTelefonoMovil.Location = new System.Drawing.Point(671, 67);
             this.textTelefonoMovil.Name = "textTelefonoMovil";
             this.textTelefonoMovil.Size = new System.Drawing.Size(168, 25);
             this.textTelefonoMovil.TabIndex = 16;
@@ -170,7 +170,7 @@
             // 
             // textCodigoAreaMovil
             // 
-            this.textCodigoAreaMovil.Location = new System.Drawing.Point(610, 102);
+            this.textCodigoAreaMovil.Location = new System.Drawing.Point(610, 67);
             this.textCodigoAreaMovil.Name = "textCodigoAreaMovil";
             this.textCodigoAreaMovil.Size = new System.Drawing.Size(42, 25);
             this.textCodigoAreaMovil.TabIndex = 15;
@@ -179,7 +179,7 @@
             // telefonoMovil
             // 
             this.telefonoMovil.AutoSize = true;
-            this.telefonoMovil.Location = new System.Drawing.Point(512, 105);
+            this.telefonoMovil.Location = new System.Drawing.Point(512, 70);
             this.telefonoMovil.Name = "telefonoMovil";
             this.telefonoMovil.Size = new System.Drawing.Size(91, 20);
             this.telefonoMovil.TabIndex = 14;
@@ -189,7 +189,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(653, 69);
+            this.label8.Location = new System.Drawing.Point(653, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 20);
             this.label8.TabIndex = 13;
@@ -198,7 +198,7 @@
             // 
             // textTelefonoFijo
             // 
-            this.textTelefonoFijo.Location = new System.Drawing.Point(671, 69);
+            this.textTelefonoFijo.Location = new System.Drawing.Point(671, 34);
             this.textTelefonoFijo.Name = "textTelefonoFijo";
             this.textTelefonoFijo.Size = new System.Drawing.Size(168, 25);
             this.textTelefonoFijo.TabIndex = 12;
@@ -206,7 +206,7 @@
             // 
             // textCodigoAreaFijo
             // 
-            this.textCodigoAreaFijo.Location = new System.Drawing.Point(610, 69);
+            this.textCodigoAreaFijo.Location = new System.Drawing.Point(610, 34);
             this.textCodigoAreaFijo.Name = "textCodigoAreaFijo";
             this.textCodigoAreaFijo.Size = new System.Drawing.Size(42, 25);
             this.textCodigoAreaFijo.TabIndex = 11;
@@ -215,7 +215,7 @@
             // telefonoFijo
             // 
             this.telefonoFijo.AutoSize = true;
-            this.telefonoFijo.Location = new System.Drawing.Point(520, 69);
+            this.telefonoFijo.Location = new System.Drawing.Point(520, 34);
             this.telefonoFijo.Name = "telefonoFijo";
             this.telefonoFijo.Size = new System.Drawing.Size(83, 20);
             this.telefonoFijo.TabIndex = 10;
@@ -224,7 +224,7 @@
             // 
             // textIdPaciente
             // 
-            this.textIdPaciente.Location = new System.Drawing.Point(610, 35);
+            this.textIdPaciente.Location = new System.Drawing.Point(610, 142);
             this.textIdPaciente.Name = "textIdPaciente";
             this.textIdPaciente.Size = new System.Drawing.Size(229, 25);
             this.textIdPaciente.TabIndex = 9;
@@ -269,7 +269,7 @@
             // ciPaciente
             // 
             this.ciPaciente.AutoSize = true;
-            this.ciPaciente.Location = new System.Drawing.Point(530, 34);
+            this.ciPaciente.Location = new System.Drawing.Point(530, 141);
             this.ciPaciente.Name = "ciPaciente";
             this.ciPaciente.Size = new System.Drawing.Size(73, 20);
             this.ciPaciente.TabIndex = 4;
@@ -315,7 +315,7 @@
             // grupoInformacionPaciente
             // 
             this.grupoInformacionPaciente.Controls.Add(this.botonBuscar);
-            this.grupoInformacionPaciente.Controls.Add(this.textoCiPaciente);
+            this.grupoInformacionPaciente.Controls.Add(this.textoCiCirujano);
             this.grupoInformacionPaciente.Controls.Add(this.label2);
             this.grupoInformacionPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grupoInformacionPaciente.Location = new System.Drawing.Point(13, 33);
@@ -337,12 +337,12 @@
             this.botonBuscar.UseVisualStyleBackColor = true;
             this.botonBuscar.Click += new System.EventHandler(this.BotonBuscarClick);
             // 
-            // textoCiPaciente
+            // textoCiCirujano
             // 
-            this.textoCiPaciente.Location = new System.Drawing.Point(237, 45);
-            this.textoCiPaciente.Name = "textoCiPaciente";
-            this.textoCiPaciente.Size = new System.Drawing.Size(220, 26);
-            this.textoCiPaciente.TabIndex = 1;
+            this.textoCiCirujano.Location = new System.Drawing.Point(237, 45);
+            this.textoCiCirujano.Name = "textoCiCirujano";
+            this.textoCiCirujano.Size = new System.Drawing.Size(220, 26);
+            this.textoCiCirujano.TabIndex = 1;
             // 
             // label2
             // 
@@ -387,7 +387,7 @@
         private System.Windows.Forms.Label textModificarPaciente;
         private System.Windows.Forms.GroupBox grupoInformacionPaciente;
         private System.Windows.Forms.Button botonBuscar;
-        private System.Windows.Forms.TextBox textoCiPaciente;
+        private System.Windows.Forms.TextBox textoCiCirujano;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grupoDatosPacientes;
         private System.Windows.Forms.TextBox textCorreoElectronico;
@@ -400,18 +400,18 @@
         private System.Windows.Forms.TextBox textTelefonoFijo;
         private System.Windows.Forms.TextBox textCodigoAreaFijo;
         private System.Windows.Forms.Label telefonoFijo;
-        private System.Windows.Forms.TextBox textIdPaciente;
         private System.Windows.Forms.TextBox textSegundoApellido;
         private System.Windows.Forms.Label segundoApellido;
         private System.Windows.Forms.TextBox textPrimerApellido;
         private System.Windows.Forms.Label primerApellido;
-        private System.Windows.Forms.Label ciPaciente;
         private System.Windows.Forms.TextBox textSegundoNombre;
         private System.Windows.Forms.TextBox textPrimerNombre;
         private System.Windows.Forms.Label segundoNombre;
         private System.Windows.Forms.Label primerNombre;
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Button botonAceptar;
+        private System.Windows.Forms.TextBox textIdPaciente;
+        private System.Windows.Forms.Label ciPaciente;
 
     }
 }

@@ -43,5 +43,13 @@ namespace Logica
         {
             return DAO.ObtenerDAO(1).ObtenerDAOPaciente().EditarPaciente(paciente);
         }
+
+        /// <summary>
+        /// metodo que obtiene las cirugias pertenecientes a un paciente
+        /// </summary>
+        public List<Paciente> ObtenerCirugiasPaciente(int cedula)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOPaciente().ObtenerCirugiasPaciente(cedula);
+        }
     }
 }

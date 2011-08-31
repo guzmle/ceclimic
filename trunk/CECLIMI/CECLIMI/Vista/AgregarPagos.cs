@@ -16,6 +16,12 @@ namespace CECLIMI.Vista
         public AgregarPagos()
         {
             InitializeComponent();
+            textNombreQuienPaga.MaxLength = 15;
+            textSeguro.MaxLength = 30;
+            textTipoPago.MaxLength = 3;
+            textDiaPago.MaxLength = 2;
+            textMesPago.MaxLength = 2;
+            textAnoPago.MaxLength = 4;
             _presentador = new PresentadorAgregarPagos(this);
         }
 
@@ -30,6 +36,52 @@ namespace CECLIMI.Vista
             _presentador.ClickBotonAgregarPagos();
         }
         #region Implementacion de contratos para AgregarPagos
+
+        public GroupBox GroupInformacionPaciente
+        {
+            get { return grupoDatosPaciente1; }
+        }
+
+        public GroupBox GroupEstatusCuenta
+        {
+            get { return groupEstatusCuenta; }
+        }
+
+        public GroupBox GroupInformacionPago
+        {
+            get { return groupInformacionPago; }
+        }
+
+        public Label TextNombreModificar
+        {
+            get { return textoNombrePacienteIngresado; }
+        }
+
+        public Label TextApellidoModificar
+        {
+            get { return textoApellidoPacienteIngresado; }
+        }
+
+        public Label TextCedulaModificar
+        {
+            get { return textoCIPacienteIngresado; }
+        }
+
+        public Label TextCorreoModificar
+        {
+            get { return textoCorreoElectronicoPacienteIngresado; }
+        }
+
+        public Label TextTelefonoFijoModificar
+        {
+            get { return textoTelefonoFijoPacienteIngresado; }
+        }
+
+        public Label TextTelefonoMovilModificar
+        {
+            get { return textoTelefonoMovilIngresado; }
+        }
+
         public TextBox TextoCiPaciente
         {
             get { return textoCiPaciente; }

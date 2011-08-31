@@ -10,23 +10,23 @@ using CECLIMI.Contratos;
 
 namespace CECLIMI.Vista
 {
-    public partial class ModificarPaciente : CECLIMI.Vista.formInicial, IContratoModificarPaciente
+    public partial class ModificarCirujano : CECLIMI.Vista.formInicial, IContratoModificarCirujano
     {
-        private PresentadorModificarPaciente _presentador;
-        public ModificarPaciente()
+        private PresentadorModificarCirujano _presentador;
+        public ModificarCirujano()
         {
             InitializeComponent();
             textCodigoAreaFijo.MaxLength = textCodigoAreaMovil.MaxLength = 3;
-            textTelefonoFijo.MaxLength = textTelefonoMovil.MaxLength = 7;
+            textTelefonoFijo.MaxLength = textTelefonoMovil.MaxLength= 7;
             textPrimerNombre.MaxLength =
                 textPrimerApellido.MaxLength = textSegundoNombre.MaxLength = textSegundoApellido.MaxLength = 30;
             textCorreoElectronico.MaxLength = 100;
-            _presentador = new PresentadorModificarPaciente(this);
+            _presentador = new PresentadorModificarCirujano(this);
         }
 
-        #region Implementation of IContratoModificarPaciente
+        #region Implementation of IContratoModificarCirujano
 
-        public TextBox TextoCiPaciente
+        public TextBox TextCiCirujano
         {
             get { return textoCiCirujano; }
         }
@@ -36,44 +36,9 @@ namespace CECLIMI.Vista
             get { return botonBuscar; }
         }
 
-        public Label PrimerNombre
+        public GroupBox GrupoDatosCirujano
         {
-            get { return primerNombre; }
-        }
-
-        public Label SegundoNombre
-        {
-            get { return segundoNombre; }
-        }
-
-        public Label PrimerApellido
-        {
-            get { return primerApellido; }
-        }
-
-        public Label SegundoApellido
-        {
-            get { return segundoApellido; }
-        }
-
-        public Label CiPaciente
-        {
-            get { return ciPaciente; }
-        }
-
-        public Label TelefonoFijo
-        {
-            get { return telefonoFijo; }
-        }
-
-        public Label TelefonoMovil
-        {
-            get { return telefonoMovil; }
-        }
-
-        public Label CorreoElectronico
-        {
-            get { return correoElectrico; }
+            get { return grupoDatosCirujano; }
         }
 
         public TextBox TextPrimerNombre
@@ -94,11 +59,6 @@ namespace CECLIMI.Vista
         public TextBox TextSegundoApellido
         {
             get { return textSegundoApellido; }
-        }
-
-        public TextBox TextIdPaciente
-        {
-            get { return textIdPaciente; }
         }
 
         public TextBox TextCodigoAreaFijo
@@ -126,21 +86,28 @@ namespace CECLIMI.Vista
             get { return textCorreoElectronico; }
         }
 
-        public GroupBox GrupoDatosPaciente
+        public Button BotonAceptar
         {
-            get { return grupoDatosPacientes; }
+            get { return botonAceptar; }
+        }
+
+        public Button BotonCancelar
+        {
+            get { return botonCancelar; }
         }
 
         #endregion
 
         private void BotonBuscarClick(object sender, EventArgs e)
         {
-            _presentador.BuscarInformacionPaciente();
+            _presentador.BuscarCirujano();
         }
 
         private void BotonAceptarClick(object sender, EventArgs e)
         {
             _presentador.ClickBotonAceptar();
         }
+
+        
     }
 }

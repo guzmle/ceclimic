@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using EnlaceDatos.IDAO;
 using Entidades;
@@ -210,6 +211,51 @@ namespace EnlaceDatos.DAOMySql
                 Console.Write(e.Message);
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Obtener cirugias de paciente, dada su cedula de identidad
+        /// </summary>
+        /// <param name="cirugia"></param>
+        /// <returns></returns>
+        public List<Paciente> ObtenerCirugiasPaciente(int cedula)
+        {
+            List<Paciente> retorno = new List<Paciente>();
+            try
+            {
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerCirugiasPaciente";
+
+
+                comando.Parameters.AddWithValue("@idPaciente", cedula);
+                comando.Parameters["@idPaciente"].Direction = ParameterDirection.Input;
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Paciente paciente = new Paciente();
+                    paciente.Cedula = reader.GetInt32(0);
+                    paciente.Nombre = reader.GetString(1);
+                    paciente.SegundoNombre = reader.GetString(2);
+                    paciente.FechaIngreso = reader.GetDateTime(3);
+                    paciente.Id = reader.GetInt32(4);
+                    paciente.PrimerApellido = reader.GetString(5);
+                    retorno.Add(paciente);
+                }
+
+                reader.Close();
+                CerrarConexion();
+                return retorno;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return retorno;
+            }
+
         }
     }
 }

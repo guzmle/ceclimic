@@ -119,8 +119,6 @@
             // 
             // groupInformacionTransferencia
             // 
-            this.groupInformacionTransferencia.Controls.Add(this.textApellidoBeneficiario);
-            this.groupInformacionTransferencia.Controls.Add(this.textAB);
             this.groupInformacionTransferencia.Controls.Add(this.buscarBeneficiario);
             this.groupInformacionTransferencia.Controls.Add(this.textoCIBeneficiario);
             this.groupInformacionTransferencia.Controls.Add(this.label8);
@@ -129,6 +127,8 @@
             this.groupInformacionTransferencia.Controls.Add(this.textMP);
             this.groupInformacionTransferencia.Controls.Add(this.textNB);
             this.groupInformacionTransferencia.Controls.Add(this.textNombreBeneficiario);
+            this.groupInformacionTransferencia.Controls.Add(this.textApellidoBeneficiario);
+            this.groupInformacionTransferencia.Controls.Add(this.textAB);
             this.groupInformacionTransferencia.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.groupInformacionTransferencia.Location = new System.Drawing.Point(9, 327);
             this.groupInformacionTransferencia.Name = "groupInformacionTransferencia";
@@ -352,6 +352,7 @@
             this.botonModificarInformacion.Text = "Buscar otro paciente";
             this.botonModificarInformacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.botonModificarInformacion.UseVisualStyleBackColor = true;
+            this.botonModificarInformacion.Visible = false;
             this.botonModificarInformacion.Click += new System.EventHandler(this.BotonModificarInformacionClick);
             // 
             // textoApellidoPacienteIngresado

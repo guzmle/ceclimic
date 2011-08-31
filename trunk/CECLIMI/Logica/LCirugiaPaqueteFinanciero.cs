@@ -21,5 +21,10 @@ namespace Logica
         {
             return DAO.ObtenerDAO(1).ObtenerDAOCirugiaPaquete().AgregarCirugiaPaquete(cirugiaPqtFinanciero);
         }
+
+        public bool EliminarCirugiaPaquete(int id)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOCirugiaPaquete().EliminarCirugiaPaquete(id);
+        }
     }
 }

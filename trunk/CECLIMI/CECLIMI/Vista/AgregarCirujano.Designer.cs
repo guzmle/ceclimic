@@ -78,7 +78,6 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -155,7 +154,6 @@
             this.label13.Size = new System.Drawing.Size(46, 20);
             this.label13.TabIndex = 44;
             this.label13.Text = "Monto";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // dataGridView1
             // 
@@ -169,7 +167,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(394, 150);
             this.dataGridView1.TabIndex = 43;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Cirugia
             // 
@@ -247,7 +244,6 @@
             this.grupoDatosCirujano.TabIndex = 1;
             this.grupoDatosCirujano.TabStop = false;
             this.grupoDatosCirujano.Text = "Informacion del Cirujano";
-            this.grupoDatosCirujano.Enter += new System.EventHandler(this.grupoDatosPacientes_Enter);
             // 
             // textCorreoElectronico
             // 
@@ -415,7 +411,6 @@
             this.ClientSize = new System.Drawing.Size(1264, 750);
             this.Controls.Add(this.panel1);
             this.Name = "AgregarCirujano";
-            this.Load += new System.EventHandler(this.AgregarCirujano_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.GrupoCirugias.ResumeLayout(false);

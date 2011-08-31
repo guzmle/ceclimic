@@ -183,7 +183,7 @@ namespace CECLIMI.Presentador
                 Cirugia cirugia = new Cirugia();
                 cirugia = (Cirugia) _vista.ComboIntervencionQuirurgica.SelectedItem;
                 _vista.DataGridCirugias.Visible = true;
-                _vista.DataGridCirugias.Rows.Add(_iteracion.ToString(),cirujano.Id,cirugia.Id,_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
+                _vista.DataGridCirugias.Rows.Add(_iteracion.ToString(),cirugia.Id,cirujano.Id,_vista.TextDescuento.Text, _vista.ComboIntervencionQuirurgica.Text,
                     _vista.ComboCirujano.Text,_vista.TextProtesis.Text, _vista.TextDiaIQX1.Text + "/" + _vista.TextmesIQX1.Text + "/" + _vista.TextAnoIQX1.Text
                     ,_vista.TextoHonorarioCirujano.Text);
 
@@ -293,7 +293,6 @@ namespace CECLIMI.Presentador
 
             //Luego del paquete financiero, se deben crear las cirugias asociadas a este.
             LCirugiaPaqueteFinanciero lCirugiaPaqueteFinanciero = new LCirugiaPaqueteFinanciero();
-            int j = 0;
             for (int i = 0; i < _vista.DataGridCirugias.Rows.Count; i++)
             {
                 //luego debo crear por cada cirugia que se va a hacer un insert en la tabla cirugia_paquete financiero

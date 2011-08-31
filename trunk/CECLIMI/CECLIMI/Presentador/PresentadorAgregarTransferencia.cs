@@ -42,7 +42,7 @@ namespace CECLIMI.Presentador
                         monto += pago.Monto;
                     }
                     _vista.GridInformacionPagos.Visible = true;
-                    _vista.TextoTotalAbonadoModificar.Text = monto.ToString();
+                    _vista.TextoTotalAbonadoModificar.Text = monto.ToString("##,##.##") + " BsF.";
                     _vista.TextoTotalAbonadoModificar.Visible = _vista.TextoTotalAbonado.Visible = true;
                 }
                 else

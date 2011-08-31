@@ -83,7 +83,7 @@ namespace EnlaceDatos.DAOMySql
             }
         }
 
-        public bool EliminarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete)
+        public bool EliminarCirugiaPaquete(int id)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace EnlaceDatos.DAOMySql
                 comando.CommandText = "EliminarCirugiaPaqueteF";
 
 
-                comando.Parameters.AddWithValue("@ID", cirugiaPaquete.Id);
+                comando.Parameters.AddWithValue("@ID", id);
 
                 comando.Parameters["@ID"].Direction = ParameterDirection.Input;
 

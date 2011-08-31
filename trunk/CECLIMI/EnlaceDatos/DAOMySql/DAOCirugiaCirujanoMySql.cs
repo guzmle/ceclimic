@@ -42,7 +42,7 @@ namespace EnlaceDatos.DAOMySql
             }
         }
 
-        public bool EditarCirugiaCirujano(CirugiaCirujano objeto)
+        public bool EditarCirugiaCirujano(float honorario,int cirugia, int cirujano)
         {
             try
             {
@@ -51,12 +51,12 @@ namespace EnlaceDatos.DAOMySql
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "ModificarCirugiaCirujano";
 
-                comando.Parameters.AddWithValue("@ID", objeto.Id);
-                comando.Parameters.AddWithValue("@HONORARIOS", objeto.Honorarios);
-                comando.Parameters.AddWithValue("@CIRUJANO", objeto.Cirujano.Id);
-                comando.Parameters.AddWithValue("@CIRUGIA", objeto.Cirugia.Id);
+                Console.WriteLine("aaaaaa" + honorario);
 
-                comando.Parameters["@ID"].Direction = ParameterDirection.Input;
+                comando.Parameters.AddWithValue("@HONORARIOS", honorario);
+                comando.Parameters.AddWithValue("@CIRUJANO", cirujano);
+                comando.Parameters.AddWithValue("@CIRUGIA", cirugia);
+
                 comando.Parameters["@HONORARIOS"].Direction = ParameterDirection.Input;
                 comando.Parameters["@CIRUJANO"].Direction = ParameterDirection.Input;
                 comando.Parameters["@CIRUGIA"].Direction = ParameterDirection.Input;
@@ -132,6 +132,41 @@ namespace EnlaceDatos.DAOMySql
                 Console.Write(e.Message);
                 return retorno;
             }
+        }
+
+        public List<CirugiaCirujano> ObtenerCirugiasCirujano (int cedula)
+        {
+            List<CirugiaCirujano> retorno = new List<CirugiaCirujano>();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ObtenerCirugiaCirujano";
+
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                comando.Parameters["@cedula"].Direction = ParameterDirection.Input;
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    CirugiaCirujano cirugiaCirujano = new CirugiaCirujano();
+                    cirugiaCirujano.Nombre = reader.GetString(0);
+                    cirugiaCirujano.Honorarios = reader.GetFloat(1);
+                    cirugiaCirujano.Cirugia.Id = reader.GetInt32(2);
+                    cirugiaCirujano.Cirujano.Id = reader.GetInt32(3);
+                    retorno.Add(cirugiaCirujano);
+                }
+                reader.Close();
+                CerrarConexion();
+                return retorno;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return retorno;
+            }
+
         }
     }
 }

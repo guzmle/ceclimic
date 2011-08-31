@@ -21,5 +21,15 @@ namespace Logica
         {
             return DAO.ObtenerDAO(1).ObtenerDAOCirujano().ObtenerCirujanos(cirugia);
         }
+
+        public Cirujano ObtenerInformacionCirujano (int cedula)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOCirujano().ObtenerInformacionCirujano(cedula);
+        }
+
+        public bool EditarCirujano(Cirujano cirujano)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOCirujano().EditarCirujano(cirujano);
+        }
     }
 }

@@ -10,6 +10,6 @@ namespace EnlaceDatos.IDAO
     {
         int AgregarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
         bool EditarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
-        bool EliminarCirugiaPaquete(CirugiaPqtFinanciero cirugiaPaquete);
+        bool EliminarCirugiaPaquete(int id);
     }
 }

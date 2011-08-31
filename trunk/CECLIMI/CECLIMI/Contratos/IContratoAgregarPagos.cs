@@ -8,6 +8,17 @@ namespace CECLIMI.Contratos
 {
     public interface IContratoAgregarPagos
     {
+        GroupBox GroupInformacionPaciente { get; }
+        GroupBox GroupEstatusCuenta { get; }
+        GroupBox GroupInformacionPago { get; }
+
+        Label TextNombreModificar { get; }
+        Label TextApellidoModificar { get; }
+        Label TextCedulaModificar { get; }
+        Label TextCorreoModificar { get; }
+        Label TextTelefonoFijoModificar { get; }
+        Label TextTelefonoMovilModificar { get; }
+
         TextBox TextoCiPaciente { get; }
         DataGridView GridInformacionPagos { get; }
         DataGridView GridPagosNuevos { get; }

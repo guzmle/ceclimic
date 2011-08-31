@@ -32,12 +32,12 @@ namespace CECLIMI.Presentador
                 _vista.TextPrimerApellido.Text = paciente.PrimerApellido;
                 _vista.TextSegundoNombre.Text = paciente.SegundoNombre;
                 _vista.TextSegundoApellido.Text = paciente.SegundoApellido;
-                if (paciente.Telefono.Length != 0)
+                if (paciente.Telefono.Length > 3)
                 {
                     _vista.TextCodigoAreaFijo.Text = paciente.Telefono.Substring(0, 3);
                     _vista.TextTelefonoFijo.Text = paciente.Telefono.Substring(3);
                 }
-                if (paciente.TelefonoMovil.Length != 0)
+                if (paciente.TelefonoMovil.Length > 3)
                 {
                     _vista.TextCodigoAreaMovil.Text = paciente.TelefonoMovil.Substring(0, 3);
                     _vista.TextTelefonoMovil.Text = paciente.TelefonoMovil.Substring(3);
@@ -75,7 +75,12 @@ namespace CECLIMI.Presentador
 
         public void ClickBotonAceptar()
         {
-            if (!cedula.Equals(""))
+            if (!ValidarCamposTelefonicos())
+            {
+                DialogResult result =
+                MessageBox.Show("Los campos telefonicos estan en el formato incorrecto.", "Cuidado!", MessageBoxButtons.OK);
+            }
+            else if (!cedula.Equals(""))
             {
                 paciente.Cedula = Convert.ToInt32(_vista.TextoCiPaciente.Text);
                 paciente.Nombre = _vista.TextPrimerNombre.Text;
@@ -91,6 +96,44 @@ namespace CECLIMI.Presentador
             {
                 DialogResult result =
                 MessageBox.Show("Debe buscar al cliente para poder completar la operacion.", "Cuidado!", MessageBoxButtons.OK);
+            }
+        }
+
+        public bool ValidarCamposTelefonicos()
+        {
+            try
+            {
+                if (_vista.TextTelefonoFijo.Text.Length > 0)
+                {
+                    if (_vista.TextCodigoAreaFijo.Text.Length != 3)
+                        return false;
+                }
+                else if (_vista.TextCodigoAreaFijo.Text.Length != 0)
+                {
+                    return false;
+                }
+
+                if (_vista.TextTelefonoMovil.Text.Length > 0)
+                {
+                    if (_vista.TextCodigoAreaMovil.Text.Length != 3)
+                        return false;
+                }
+                else if (_vista.TextCodigoAreaMovil.Text.Length != 0)
+                {
+                    return false;
+                }
+
+                if (_vista.TextTelefonoFijo.Text.Length != 7 && _vista.TextTelefonoFijo.Text.Length != 0)
+                    return false;
+                if (_vista.TextTelefonoMovil.Text.Length != 7 && _vista.TextTelefonoMovil.Text.Length != 0)
+                    return false;
+
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

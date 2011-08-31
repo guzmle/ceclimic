@@ -13,6 +13,7 @@ namespace CECLIMI.Presentador
     public class PresentadorAgregarPagos
     {
         #region variables
+        private Paciente paciente = new Paciente();
         private IContratoAgregarPagos _vista;
         private bool _pacienteEncontrado = false;
         private LPagos logica = new LPagos();
@@ -31,7 +32,8 @@ namespace CECLIMI.Presentador
         public void ClickBotonBuscar ()
         {
             LPaciente lPaciente = new LPaciente();
-            if (lPaciente.ValidarPacienteExistente(Convert.ToInt32(_vista.TextoCiPaciente.Text)) == 1)
+            paciente = lPaciente.ObtenerInformacionPaciente(Convert.ToInt32(_vista.TextoCiPaciente.Text));
+            if (paciente.Nombre != null)
             {
                 _pacienteEncontrado = true;
                 _vista.GridInformacionPagos.Rows.Clear();
@@ -39,7 +41,6 @@ namespace CECLIMI.Presentador
                 _vista.TextoInformacionGrid.Text = "";
                 _vista.GridInformacionPagos.Visible = true;
                 _vista.TextoSaldoFavor.Visible = true;
-                Paciente paciente = new Paciente();
                 paciente.Id = Convert.ToInt64(_vista.TextoCiPaciente.Text);
                 Double monto = 0;
                 foreach (Pago pago in logica.ObtenerPagosPaciente(paciente))
@@ -47,9 +48,18 @@ namespace CECLIMI.Presentador
                     _vista.GridInformacionPagos.Rows.Add(pago.Id,pago.Fecha,pago.Monto);
                     monto += pago.Monto;
                 }
-                _vista.TextoSaldoFavorModificar.Text = monto.ToString();
+                _vista.TextoSaldoFavorModificar.Text = monto.ToString("##,##.##");
                 _vista.TextoSaldoFavorModificar.Visible = true;
                 cedula = _vista.TextoCiPaciente.Text;
+                _vista.GroupInformacionPago.Visible =
+                    _vista.GroupEstatusCuenta.Visible = _vista.GroupInformacionPaciente.Visible = true;
+
+                _vista.TextNombreModificar.Text = paciente.Nombre + " " + paciente.SegundoNombre;
+                _vista.TextApellidoModificar.Text = paciente.PrimerApellido + " " + paciente.SegundoApellido;
+                _vista.TextCedulaModificar.Text = paciente.Id.ToString();
+                _vista.TextCorreoModificar.Text = paciente.Correo;
+                _vista.TextTelefonoFijoModificar.Text = paciente.Telefono;
+                _vista.TextTelefonoMovilModificar.Text = paciente.TelefonoMovil;
             }
             else
             {
@@ -67,27 +77,40 @@ namespace CECLIMI.Presentador
 
         public void ClickBotonAgregarPagos()
         {
-            if (!_pacienteEncontrado)
+            try
+            {
+                if (!_pacienteEncontrado)
+                {
+                    DialogResult result =
+                    MessageBox.Show("Debe buscar el paciente antes de agregar pagos.", "Cuidado!", MessageBoxButtons.OK);
+                }
+                else if (logica.ValidarPagoExistente(Convert.ToInt32(_vista.TextoNumeroFactura.Text)) == 1)
+                {
+                    DialogResult result =
+                    MessageBox.Show("Esta factura ya esta en sistema.", "Cuidado!", MessageBoxButtons.OK);
+                }
+                else if (RevisarFacturaRepetidaEnDataGrid(_vista.TextoNumeroFactura.Text))
+                {
+                    DialogResult result =
+                    MessageBox.Show("No puede agregar esta factura dos (2) veces", "Cuidado!", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    _vista.GridPagosNuevos.Rows.Add(_vista.TextoNumeroFactura.Text, _vista.TextoMontoFactura.Text,
+                        _vista.TextoDia.Text + "/" + _vista.TextoMes.Text + "/" + _vista.TextoAno.Text, _vista.TextQuienPaga.Text
+                        , _vista.TextSeguro.Text, _vista.TextTipoPago.Text);
+                    _vista.TextoNumeroFactura.Text =
+                        _vista.TextoMontoFactura.Text =
+                        _vista.TextoDia.Text = _vista.TextoMes.Text = _vista.TextoAno.Text = "";
+                    _vista.TextQuienPaga.Text = _vista.TextTipoPago.Text = _vista.TextSeguro.Text = "";
+                }
+            }
+            catch (Exception)
             {
                 DialogResult result =
-                MessageBox.Show("Debe buscar el paciente antes de agregar pagos.", "Cuidado!", MessageBoxButtons.OK);
+                    MessageBox.Show("Verifique que la informacion proporcionada sea correcta.", "Cuidado!", MessageBoxButtons.OK);
             }
-            else if (logica.ValidarPagoExistente(Convert.ToInt32(_vista.TextoNumeroFactura.Text)) == 1)
-            {
-                DialogResult result =
-                MessageBox.Show("Esta factura ya esta en sistema.", "Cuidado!", MessageBoxButtons.OK);
-            }
-            else if (RevisarFacturaRepetidaEnDataGrid(_vista.TextoNumeroFactura.Text))
-            {
-                DialogResult result =
-                MessageBox.Show("No puede agregar esta factura dos (2) veces", "Cuidado!", MessageBoxButtons.OK);
-            }
-            else
-            {
-                _vista.GridPagosNuevos.Rows.Add(_vista.TextoNumeroFactura.Text,_vista.TextoMontoFactura.Text,
-                    _vista.TextoDia.Text+"/"+_vista.TextoMes.Text+"/"+_vista.TextoAno.Text,_vista.TextQuienPaga.Text
-                    ,_vista.TextSeguro.Text,_vista.TextTipoPago.Text);
-            }
+            
         }
 
         // metodo que busca si en el grid esa factura fue agregada, regresando true si fue y false si no fue encontrada.
@@ -110,7 +133,7 @@ namespace CECLIMI.Presentador
             {
                 Pago pago = new Pago();
                 pago.Id = Convert.ToInt32(_vista.GridPagosNuevos.Rows[i].Cells["idFactura"].Value);
-                pago.Monto = Convert.ToInt32(_vista.GridPagosNuevos.Rows[i].Cells["monto"].Value);
+                pago.Monto = float.Parse(_vista.GridPagosNuevos.Rows[i].Cells["monto"].Value.ToString());
                 pago.Nombre = _vista.GridPagosNuevos.Rows[i].Cells["quienPaga"].Value.ToString();
                 pago.Fecha = ConvertirFecha((string) _vista.GridPagosNuevos.Rows[i].Cells["fechaPago"].Value);
                 pago.Seguro = (string) _vista.GridPagosNuevos.Rows[i].Cells["columnaSeguro"].Value; ;
@@ -119,7 +142,6 @@ namespace CECLIMI.Presentador
                 logica.AgregarPagos(pago);
             }
         }
-
 
         public DateTime ConvertirFecha(String fecha)
         {

@@ -11,6 +11,7 @@ namespace EnlaceDatos.IDAO
         bool AgregarCirujano(Cirujano cirujano);
         bool EliminarCirujano(Entidad cirujano);
         bool EditarCirujano(Cirujano cirujano);
+        Cirujano ObtenerInformacionCirujano(int cedula);
         List<Cirujano> ObtenerCirujanos(Entidad cirugia);
     }
 }
