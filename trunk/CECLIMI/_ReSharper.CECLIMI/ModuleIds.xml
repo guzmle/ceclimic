@@ -1,6 +1,0 @@
-<Modules>
-  <Module PersistentId="C075BC1A-C919-4064-A80D-F80F57444AE5" ModuleId="EnlaceDatos" />
-  <Module PersistentId="CD2714CE-2FE6-4AA4-8EF2-5CB68EADC173" ModuleId="Logica" />
-  <Module PersistentId="64AAEA75-C282-498A-AD48-0DE3FADA0A82" ModuleId="Entidades" />
-  <Module PersistentId="D98374ED-0298-4A9F-B1A5-D671E799293E" ModuleId="CECLIMI" />
-</Modules>
