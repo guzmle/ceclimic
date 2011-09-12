@@ -12,6 +12,14 @@ namespace Entidades
         private Cirujano _cirujano = new Cirujano();
         private Cirugia _cirugia = new Cirugia();
         #endregion
+        #region Constructores
+
+        public CirugiaCirujano()
+        {
+            _cirugia = new Cirugia();
+            _cirujano = new Cirujano();
+        }
+        #endregion
 
         #region Encapsulamiento
         public float Honorarios
