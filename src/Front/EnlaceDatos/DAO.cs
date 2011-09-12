@@ -17,7 +17,7 @@ namespace EnlaceDatos
             {
                 case 1:
                     {
-                        return null;
+                        return new FabricaDao.DAOServicio();
                         break;
                     }
                 case 2:

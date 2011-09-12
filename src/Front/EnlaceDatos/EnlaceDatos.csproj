@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO.cs" />
+    <Compile Include="DAOServicio\DAOCirugiaCirujanoServicio.cs" />
+    <Compile Include="DAOServicio\DAOCirugiaPaqueteFinancieroServicio.cs" />
+    <Compile Include="DAOServicio\DAOCirugiaPaquetePersonalQServicio.cs" />
+    <Compile Include="DAOServicio\DAOCirugiaServicio.cs" />
+    <Compile Include="DAOServicio\DAOCirujanoServicio.cs" />
+    <Compile Include="DAOServicio\DAOPacienteServicio.cs" />
+    <Compile Include="DAOServicio\DAOPagosServicios.cs" />
+    <Compile Include="DAOServicio\DAOPaqueteFinancieroServicio.cs" />
+    <Compile Include="DAOServicio\DAOTransferenciaServicio.cs" />
+    <Compile Include="FabricaDao\DAOServicio.cs" />
     <Compile Include="IDAO\IDAOCirugia.cs" />
     <Compile Include="IDAO\IDAOCirugiaCirujano.cs" />
     <Compile Include="IDAO\IDAOCirugiaPaquete.cs" />
@@ -62,10 +73,12 @@
       <Project>{64AAEA75-C282-498A-AD48-0DE3FADA0A82}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Proxy\Proxy.csproj">
+      <Project>{CE77AE2F-9128-4272-9942-C1D320F163FF}</Project>
+      <Name>Proxy</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FabricaDao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

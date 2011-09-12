@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using EnlaceDatos;
+﻿
+using Ceclimi.AccesoDatos.FabricaDao;
 using Entidades;
 
 namespace Logica
@@ -15,7 +12,7 @@ namespace Logica
         /// <summary>
         /// metodo que lleva el control de la logica de agregar cirugia - personalQ
         /// </summary>
-        /// <param name="cirugia"></param>
+        /// <param name="personalPaquete"></param>
         public bool AgregarCirugiaPersonalQ(PersonalPaquete personalPaquete)
         {
             return DAO.ObtenerDAO(1).ObetenerDAOCirugiaPaquetePersonalQ().AgregarCirugiaPaquetePersonalQ(personalPaquete);

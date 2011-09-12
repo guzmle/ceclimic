@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using EnlaceDatos;
+﻿using Ceclimi.AccesoDatos.FabricaDao;
 using Entidades;
 
 namespace Logica

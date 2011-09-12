@@ -197,10 +197,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\EnlaceDatos\EnlaceDatos.csproj">
-      <Project>{C075BC1A-C919-4064-A80D-F80F57444AE5}</Project>
-      <Name>EnlaceDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{64AAEA75-C282-498A-AD48-0DE3FADA0A82}</Project>
       <Name>Entidades</Name>
