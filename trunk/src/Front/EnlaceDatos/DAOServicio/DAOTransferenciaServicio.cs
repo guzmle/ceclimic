@@ -1,6 +1,7 @@
 ﻿using System;
 using EnlaceDatos.IDAO;
 using Proxy.ProxyTransferencia;
+using Persona = Proxy.ProxyTransferencia.Persona;
 using Transferencia = Entidades.Transferencia;
 using TransferenciaServicio = Proxy.ProxyTransferencia.Transferencia;
 
@@ -8,6 +9,7 @@ namespace EnlaceDatos.DAOServicio
 {
     class DAOTransferenciaServicio:IDAOTransferencia 
     {
+      
         #region Implementation of IDAOTransferencia
 
         public bool AgregarTransferencia(Transferencia transferencia)

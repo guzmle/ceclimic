@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using EnlaceDatos.IDAO;
 using Proxy.ProxyPaqueteFinanciero;
+using Paciente = Proxy.ProxyPaqueteFinanciero.Paciente;
 using PaqueteFinanciero = Entidades.PaqueteFinanciero;
 using PaqueteFinancieroServicio = Proxy.ProxyPaqueteFinanciero.PaqueteFinanciero;
 
