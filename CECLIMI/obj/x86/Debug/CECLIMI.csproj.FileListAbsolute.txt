@@ -1,0 +1,69 @@
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\CECLIMI.exe
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\CECLIMI.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Properties.Resources.resources
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.exe
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\Logica.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\bin\Debug\Logica.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Form1.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.exe
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\CECLIMI.exe
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\CECLIMI.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\EnlaceDatos.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\Entidades.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\Logica.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\EnlaceDatos.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\Entidades.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\bin\Debug\Logica.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirugia.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarPaciente.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarPagos.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarTransferencia.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.formInicial.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Properties.Resources.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarPaciente.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirugiaPaciente.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.EliminarCirugia.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarCirugiaCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.VentanaPrincipalPrograma.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarPago.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirugiaCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.exe
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\CECLIMI.exe
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\CECLIMI.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\EnlaceDatos.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\Entidades.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\Logica.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\EnlaceDatos.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\Entidades.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\bin\Debug\Logica.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirugia.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirugiaCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirugiaPaciente.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarPaciente.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarPagos.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.AgregarTransferencia.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.EliminarCirugia.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.formInicial.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Properties.Resources.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarCirugiaCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarCirujano.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarPaciente.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ModificarPago.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.VentanaPrincipalPrograma.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.BeremoDeOperaciones.resources
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\obj\x86\Debug\CECLIMI.Vista.ReportePaqueteFinanciero.resources
