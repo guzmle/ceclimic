@@ -1,0 +1,15 @@
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\bin\Debug\Entidades.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\bin\Debug\Entidades.pdb
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\obj\Debug\ResolveAssemblyReference.cache
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\obj\Debug\Entidades.dll
+c:\users\danielzamora\documents\visual studio 2010\Projects\CECLIMI\Entidades\obj\Debug\Entidades.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\Entidades\bin\Debug\Entidades.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\Entidades\bin\Debug\Entidades.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\Entidades\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\Entidades\obj\Debug\Entidades.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\CECLIMI\Entidades\obj\Debug\Entidades.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\Entidades\bin\Debug\Entidades.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\Entidades\bin\Debug\Entidades.pdb
+C:\Users\danieLzamora\Desktop\CECLIMI\Entidades\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\danieLzamora\Desktop\CECLIMI\Entidades\obj\Debug\Entidades.dll
+C:\Users\danieLzamora\Desktop\CECLIMI\Entidades\obj\Debug\Entidades.pdb
