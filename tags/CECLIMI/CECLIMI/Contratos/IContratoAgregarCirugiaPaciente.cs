@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CECLIMI.Contratos
 {
+    /// <summary>
+    /// Clase que hace de contrato para la vista de agregar cirujia paciente
+    /// </summary>
     public interface IContratoAgregarCirugiaPaciente
     {
         GroupBox GrupoInformacionPaciente { get; }
@@ -18,7 +17,7 @@ namespace CECLIMI.Contratos
         Label TextoCiPacienteIngresado { get; }
         Label TextoCorreoElectronicoPacienteIngresado { get; }
         Label TextoTelefonoFijoPacienteIngresado { get; }
-        Label TextoTelefonoMovilPacienteIngresado { get; }
+        Label TextoTelefonoMoviServicioPacienteSoapIngresado { get; }
 
         GroupBox GrupoIntervencionQuirurgica { get; }
         ComboBox ComboIntervencionQuirurgica { get; }
@@ -28,7 +27,7 @@ namespace CECLIMI.Contratos
         TextBox TextProtesis { get; }
         TextBox TextDescuento { get; }
         Label TextoBsfTotal { get; }
-        Label TextoTotalCirugia { get; }
+        Label TextoTotaServicioCirugiaSoap { get; }
         Button BotonCalculadora { get; }
         Button BotonAgregarCirugia { get; }
         Button BotonEliminarCirugia { get; }

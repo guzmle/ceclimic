@@ -66,7 +66,7 @@ namespace CECLIMI.Vista
             get { return textoTelefonoFijoPacienteIngresado; }
         }
 
-        public Label TextoTelefonoMovilPacienteIngresado
+        public Label TextoTelefonoMoviServicioPacienteSoapIngresado
         {
             get { return textoTelefonoMovilIngresado; }
         }

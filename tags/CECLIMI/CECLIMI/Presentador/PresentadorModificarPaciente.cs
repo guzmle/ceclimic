@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using EnlaceDatos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
     public class PresentadorModificarPaciente
     {
         private IContratoModificarPaciente _vista;
-        LPaciente logica = new LPaciente();
+        ServicioPacienteSoap logica = new ServicioPacienteSoap();
         Paciente paciente = new Paciente();
         private String cedula = "";
 

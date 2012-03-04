@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CECLIMI.Contratos
 {
+    /// <summary>
+    /// Clase que hace de contrato para la vista de agregar beremo de operaciones
+    /// </summary>
     public interface IContratoBeremoDeOperaciones
     {
         ComboBox UxCirujanos { get; }

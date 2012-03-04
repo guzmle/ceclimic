@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using EnlaceDatos;
-using Entidades;
-using Logica;
+
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -16,8 +16,8 @@ namespace CECLIMI.Presentador
         private IContratoAgregarPaciente _vista;
         private List<Cirugia> _cirugias = new List<Cirugia>();
         private int _iteracion = 0;
-        private List<List<Personal>> personalCirugia = new List<List<Personal>>();
-        LPaciente lPaciente = new LPaciente();
+        private List<List<Personal>> personaServicioCirugiaSoap = new List<List<Personal>>();
+        ServicioPacienteSoap ServicioPacienteSoap = new ServicioPacienteSoap();
         #endregion
 
         #region constructor
@@ -66,7 +66,7 @@ namespace CECLIMI.Presentador
                 DialogResult result =
                 MessageBox.Show("La cedula de identidad no puede contener caracteres alfabeticos.", "Cuidado!", MessageBoxButtons.OK);
             }
-            else if (lPaciente.ValidarPacienteExistente(Convert.ToInt32(_vista.TextIdPaciente.Text)) == 1)
+            else if (ServicioPacienteSoap.ValidarPacienteExistente(Convert.ToInt32(_vista.TextIdPaciente.Text)) == 1)
             {
                 respuesta = false;
                 DialogResult result =
@@ -83,7 +83,7 @@ namespace CECLIMI.Presentador
             bool respuesta = ValidarCampos();
             if (respuesta)
             {
-                LPaciente logica = new LPaciente();
+                ServicioPacienteSoap logica = new ServicioPacienteSoap();
                 Paciente paciente = new Paciente();
             
                 paciente.Nombre = _vista.TextPrimerNombre.Text;

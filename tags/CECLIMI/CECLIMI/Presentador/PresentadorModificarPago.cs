@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -22,16 +22,16 @@ namespace CECLIMI.Presentador
         {
             try
             {
-                LPaciente lPaciente = new LPaciente();
+                ServicioPacienteSoap ServicioPacienteSoap = new ServicioPacienteSoap();
                 Paciente paciente = new Paciente();
 
-                paciente = lPaciente.ObtenerInformacionPaciente(Convert.ToInt32(_vista.TextoCiPaciente.Text));
+                paciente = ServicioPacienteSoap.ObtenerInformacionPaciente(Convert.ToInt32(_vista.TextoCiPaciente.Text));
                 paciente.Id = Convert.ToInt32(_vista.TextoCiPaciente.Text);
 
                 if (paciente.Nombre != null)
                 {
                     CargarInformacionEnText(paciente);
-                    LPagos lPagos = new LPagos();
+                    ServicioPagosSoap lPagos = new ServicioPagosSoap();
                     float monto = 0;
                     foreach (Pago pago in lPagos.ObtenerPagosPaciente(paciente))
                     {
@@ -65,7 +65,7 @@ namespace CECLIMI.Presentador
             _vista.TextoCiPaciente.Text = "";
             _vista.TextoCorreoElectronicoPacienteIngresado.Text = paciente.Correo;
             _vista.TextoTelefonoFijoPacienteIngresado.Text = paciente.Telefono;
-            _vista.TextoTelefonoMovilPacienteIngresado.Text = paciente.TelefonoMovil;
+            _vista.TextoTelefonoMoviServicioPacienteSoapIngresado.Text = paciente.TelefonoMovil;
         }
 
         public void BuscarFactura()

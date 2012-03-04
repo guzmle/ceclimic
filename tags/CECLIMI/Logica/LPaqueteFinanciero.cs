@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using EnlaceDatos;
 using Entidades;
 
@@ -22,6 +19,11 @@ namespace Logica
             return DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().AgregarPaqueteFinanciero(paqueteFinanciero);
         }
 
+        /// <summary>
+        /// Metodo que obtiene los paquetes financiero de un paciente dado su numero de cedula
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <returns></returns>
         public List<PaqueteFinanciero> ObtenerPaqueteFPaciente(int cedula)
         {
             return DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().ObtenerPaqueteFPaciente(cedula);

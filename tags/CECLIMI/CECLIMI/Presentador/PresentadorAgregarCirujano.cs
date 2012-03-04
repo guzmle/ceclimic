@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -18,13 +15,17 @@ namespace CECLIMI.Presentador
             _vista = vista;
         }
 
+        /// <summary>
+        /// Metodo que inserta un cirjuano
+        /// </summary>
+        /// <returns></returns>
         public bool InsertarCirujano()
         {
             bool respuesta = false;
             if(ComprobarCamposObligatorios() && ComprobarCampoNumericoCedula())
             {
                 Cirujano cirujano = new Cirujano();
-                LCirujano logica = new LCirujano();
+                ServicioCirujanoSoap logica = new ServicioCirujanoSoap();
                 cirujano = logica.ObtenerInformacionCirujano(Convert.ToInt32(_vista.Cedula.Text));
                 if ( cirujano.Nombre == null )
                 {
@@ -85,6 +86,10 @@ namespace CECLIMI.Presentador
             return respuesta;
         }
 
+        /// <summary>
+        /// Metodo que comprueba el campo de cedula sea numerico
+        /// </summary>
+        /// <returns></returns>
         public bool ComprobarCampoNumericoCedula()
         {
             _vista.MensajeCedula.Visible = false;

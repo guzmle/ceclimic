@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -30,9 +30,9 @@ namespace CECLIMI.Presentador
         {
             try
             {
-                LPaciente lPaciente = new LPaciente();
+                ServicioPacienteSoap ServicioPacienteSoap = new ServicioPacienteSoap();
                 int cedula = Convert.ToInt32(_vista.TextoCiPaciente.Text);
-                _paciente = lPaciente.ObtenerInformacionPaciente(cedula);
+                _paciente = ServicioPacienteSoap.ObtenerInformacionPaciente(cedula);
                 _paciente.Id = cedula;
                 _paciente.Cedula = cedula;
                 if (_paciente.Nombre != null)
@@ -58,9 +58,9 @@ namespace CECLIMI.Presentador
         /// </summary>
         public void LLenarCirugias()
         {
-            LCirugia lCirugia = new LCirugia();
+            ServicioCirugiaSoap ServicioCirugiaSoap = new ServicioCirugiaSoap();
 
-            foreach (Cirugia cirugia  in lCirugia.ObtenerCirugias())
+            foreach (Cirugia cirugia  in ServicioCirugiaSoap.ObtenerCirugias())
             {
                 _vista.ComboIntervencionQuirurgica.Items.Add(cirugia);
             }
@@ -73,7 +73,7 @@ namespace CECLIMI.Presentador
         /// </summary>
         public void LlenarPersonalQuirurgico()
         {
-            LPersonalQuirurgico lPersonalQuirurgico = new LPersonalQuirurgico();
+            ServicioCirugiaPersonalQSoap lPersonalQuirurgico = new ServicioCirugiaPersonalQSoap();
             foreach (Personal personal in lPersonalQuirurgico.ObtenerPersonalQ())
             {
                 _vista.ComboPrimerAyudante.Items.Add(personal);
@@ -100,7 +100,7 @@ namespace CECLIMI.Presentador
             _vista.TextoCiPaciente.Text = "";
             _vista.TextoCorreoElectronicoPacienteIngresado.Text = paciente.Correo;
             _vista.TextoTelefonoFijoPacienteIngresado.Text = paciente.Telefono;
-            _vista.TextoTelefonoMovilPacienteIngresado.Text = paciente.TelefonoMovil;
+            _vista.TextoTelefonoMoviServicioPacienteSoapIngresado.Text = paciente.TelefonoMovil;
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace CECLIMI.Presentador
         {
             if (_vista.ComboIntervencionQuirurgica.SelectedIndex != -1)
             {
-                LCirujano logica = new LCirujano();
+                ServicioCirujanoSoap logica = new ServicioCirujanoSoap();
                 _vista.ComboCirujano.Items.Clear();
                 _vista.ComboCirujano.Text = "";
                 _vista.TextoHonorarioCirujano.Visible = false;
@@ -148,7 +148,7 @@ namespace CECLIMI.Presentador
         {
             if (_vista.ComboCirujano.SelectedIndex != -1)
             {
-                LCirugiaCirujano logica = new LCirugiaCirujano();
+                ServicioCirugiaCirujanoSoap logica = new ServicioCirugiaCirujanoSoap();
                 _vista.TextoHonorarioCirujano.Text =
                     logica.ObtenerCirugiaCirujano((Cirugia)_vista.ComboIntervencionQuirurgica.SelectedItem,
                                                   (Cirujano)_vista.ComboCirujano.SelectedItem).ToString();
@@ -241,7 +241,7 @@ namespace CECLIMI.Presentador
         public int InsertarPaqueteFinanciero()
         {
             PaqueteFinanciero paquete = new PaqueteFinanciero();
-            LPaqueteFinanciero lPaquete = new LPaqueteFinanciero();
+            ServicioPaqueteFinancieroSoap lPaquete = new ServicioPaqueteFinancieroSoap();
 
             paquete.FechaPaquete = new DateTime(Convert.ToInt32(_vista.TextAnoElaboracion.Text), 
                                                 Convert.ToInt32(_vista.TextMesElaboracion.Text),
@@ -260,11 +260,11 @@ namespace CECLIMI.Presentador
         /// <param name="paquete"></param>
         public void InsertarCirugias(int paquete)
         {
-            LCirugiaPaqueteFinanciero lCirugiaPaquete = new LCirugiaPaqueteFinanciero();
+            ServicioCirugiaPaqueteFinancieroSoap servicioCirugiaSoapPaquete = new ServicioCirugiaPaqueteFinancieroSoap();
             foreach (CirugiaPqtFinanciero cirugiaPqtFinanciero in cirugiaPqtFinancieros)
             {
                 cirugiaPqtFinanciero.PaqueteFinanciero.Id = paquete;
-                lCirugiaPaquete.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
+                servicioCirugiaSoapPaquete.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
             }
         }
 
@@ -274,14 +274,14 @@ namespace CECLIMI.Presentador
         /// <param name="paquete"></param>
         public void InsertarPersonalQuirurgico (int paquete)
         {
-            LCirugiaPersonalQ lCirugiaPersonal = new LCirugiaPersonalQ();
+            ServicioCirugiaPersonalQSoap logica = new ServicioCirugiaPersonalQSoap();
             if (_vista.ComboPrimerAyudante.SelectedIndex != -1)
             {
                 PersonalPaquete personalPaquete = new PersonalPaquete();
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal) _vista.ComboPrimerAyudante.SelectedItem).Id;
                 personalPaquete.Especialidad = "1er ayudante";
-                lCirugiaPersonal.AgregarCirugiaPersonalQ(personalPaquete);
+                logica.AgregarCirugiaPersonalQ(personalPaquete);
             }
             if (_vista.ComboAnestesiologo.SelectedIndex != -1)
             {
@@ -289,7 +289,7 @@ namespace CECLIMI.Presentador
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.ComboAnestesiologo.SelectedItem).Id;
                 personalPaquete.Especialidad = "Anestesiologo";
-                lCirugiaPersonal.AgregarCirugiaPersonalQ(personalPaquete);
+                logica.AgregarCirugiaPersonalQ(personalPaquete);
             }
             if (_vista.ComboInstrumentista.SelectedIndex != -1)
             {
@@ -297,7 +297,7 @@ namespace CECLIMI.Presentador
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.ComboInstrumentista.SelectedItem).Id;
                 personalPaquete.Especialidad = "Instrumentista";
-                lCirugiaPersonal.AgregarCirugiaPersonalQ(personalPaquete);
+                logica.AgregarCirugiaPersonalQ(personalPaquete);
             }
             if (_vista.ComboCirculante.SelectedIndex != -1)
             {
@@ -305,7 +305,7 @@ namespace CECLIMI.Presentador
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.ComboCirculante.SelectedItem).Id;
                 personalPaquete.Especialidad = "Circulante";
-                lCirugiaPersonal.AgregarCirugiaPersonalQ(personalPaquete);
+                logica.AgregarCirugiaPersonalQ(personalPaquete);
             }
             if (_vista.InstrumentistaEspecial.SelectedIndex != -1)
             {
@@ -313,7 +313,7 @@ namespace CECLIMI.Presentador
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.InstrumentistaEspecial.SelectedItem).Id;
                 personalPaquete.Especialidad = "Instrumentista Especial";
-                lCirugiaPersonal.AgregarCirugiaPersonalQ(personalPaquete);
+                logica.AgregarCirugiaPersonalQ(personalPaquete);
             }
         }
 

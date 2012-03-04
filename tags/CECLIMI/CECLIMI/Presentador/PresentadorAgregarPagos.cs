@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using EnlaceDatos;
-using Entidades;
-using Logica;
+
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -15,7 +15,7 @@ namespace CECLIMI.Presentador
         #region variables
         private Paciente paciente = new Paciente();
         private IContratoAgregarPagos _vista;
-        private LPagos logica = new LPagos();
+        private ServicioPagosSoap logica = new ServicioPagosSoap();
         private String cedula;
         private List<Pago> pagos = new List<Pago>();
         #endregion
@@ -36,9 +36,9 @@ namespace CECLIMI.Presentador
         {
             if (ValidarEntero(_vista.TextoCiPaciente.Text))
             {
-                LPaciente lPaciente = new LPaciente();
+                ServicioPacienteSoap logica = new ServicioPacienteSoap();
                 int cedula = Convert.ToInt32(_vista.TextoCiPaciente.Text);
-                paciente = lPaciente.ObtenerInformacionPaciente(cedula);
+                paciente = logica.ObtenerInformacionPaciente(cedula);
                 if (paciente.Nombre != null)
                 {
                     paciente.Id = cedula;
@@ -71,7 +71,7 @@ namespace CECLIMI.Presentador
 
         public void LlenarComboPaquetes()
         {
-            LPaqueteFinanciero lPaquete = new LPaqueteFinanciero();
+            ServicioPaqueteFinancieroSoap lPaquete = new ServicioPaqueteFinancieroSoap();
             foreach (PaqueteFinanciero paqueteFinanciero in lPaquete.ObtenerPaqueteFPaciente((int) paciente.Id))
             {
                 _vista.ComboPaquetes.Items.Add(paqueteFinanciero);

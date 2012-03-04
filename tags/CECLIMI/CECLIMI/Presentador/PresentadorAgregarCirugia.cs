@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
 
 namespace CECLIMI.Presentador
 {
@@ -25,7 +20,7 @@ namespace CECLIMI.Presentador
             long respuesta = -1;
             if (ComprobarCamposObligatorios())
             {
-                LCirugia logica = new LCirugia();
+                ServicioCirugiaSoap logica = new ServicioCirugiaSoap();
                 Cirugia cirugia = new Cirugia();
                 cirugia.Nombre = _vista.TextNombreCirugia.Text;
                 cirugia.Descripcion = _vista.TextDescripcionCirugia.Text;

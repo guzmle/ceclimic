@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -22,14 +22,14 @@ namespace CECLIMI.Presentador
         {
             try
             {
-                LPaciente lPaciente = new LPaciente();
-                _paciente = lPaciente.ObtenerInformacionPaciente(Convert.ToInt32(_vista.TextoCiPaciente.Text));
+                ServicioPacienteSoap logica = new ServicioPacienteSoap();
+                _paciente = logica.ObtenerInformacionPaciente(Convert.ToInt32(_vista.TextoCiPaciente.Text));
                 _paciente.Id = Convert.ToInt32(_vista.TextoCiPaciente.Text);
                 _paciente.Cedula = Convert.ToInt32(_vista.TextoCiPaciente.Text);
                 if (_paciente.Nombre != null)
                 {
                     CargarInformacionEnText(_paciente);
-                    foreach (Paciente cirugiasPaciente in lPaciente.ObtenerCirugiasPaciente((int)_paciente.Id))
+                    foreach (Paciente cirugiasPaciente in logica.ObtenerCirugiasPaciente((int)_paciente.Id))
                     {
                         _vista.DataGridView1.Rows.Add(cirugiasPaciente.Cedula,cirugiasPaciente.Nombre,cirugiasPaciente.SegundoNombre,
                             cirugiasPaciente.FechaIngreso,cirugiasPaciente.PrimerApellido);
@@ -70,7 +70,7 @@ namespace CECLIMI.Presentador
             _vista.TextoCiPaciente.Text = "";
             _vista.TextoCorreoElectronicoPacienteIngresado.Text = paciente.Correo;
             _vista.TextoTelefonoFijoPacienteIngresado.Text = paciente.Telefono;
-            _vista.TextoTelefonoMovilPacienteIngresado.Text = paciente.TelefonoMovil;
+            _vista.TextoTelefonoMoviServicioPacienteSoapIngresado.Text = paciente.TelefonoMovil;
         }
 
         public void ClickBotonAceptar()
@@ -88,8 +88,8 @@ namespace CECLIMI.Presentador
                 }
                 if (found)
                 {
-                    LCirugiaPaqueteFinanciero lCirugiaPaqueteFinanciero = new LCirugiaPaqueteFinanciero();
-                    lCirugiaPaqueteFinanciero.EliminarCirugiaPaquete(Convert.ToInt32(_vista.TextIdCirugia.Text));
+                    ServicioCirugiaPaqueteFinancieroSoap logica = new ServicioCirugiaPaqueteFinancieroSoap();
+                    logica.EliminarCirugiaPaquete(Convert.ToInt32(_vista.TextIdCirugia.Text));
                     DialogResult result =
                     MessageBox.Show("Cirugia eliminada con exito.", "Cuidado!", MessageBoxButtons.OK);
                 }
