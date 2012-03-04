@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CECLIMI.Contratos
 {
+    /// <summary>
+    /// Clase que hace de contrato para la vista de eliminar cirujia
+    /// </summary>
     public interface IContratoEliminarCirugia
     {
         GroupBox GrupoInformacionPaciente { get; }
@@ -18,7 +17,7 @@ namespace CECLIMI.Contratos
         Label TextoCiPacienteIngresado { get; }
         Label TextoCorreoElectronicoPacienteIngresado { get; }
         Label TextoTelefonoFijoPacienteIngresado { get; }
-        Label TextoTelefonoMovilPacienteIngresado { get; }
+        Label TextoTelefonoMoviServicioPacienteSoapIngresado { get; }
         Button BotonModificarInformacion { get; }
 
         GroupBox GrupoCirugiaPaciente { get; }

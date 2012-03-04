@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
 using CECLIMI.Presentador;
@@ -66,7 +61,7 @@ namespace CECLIMI.Vista
             get { return textoTelefonoFijoPacienteIngresado; }
         }
 
-        public Label TextoTelefonoMovilPacienteIngresado
+        public Label TextoTelefonoMoviServicioPacienteSoapIngresado
         {
             get { return textoTelefonoMovilIngresado; }
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using EnlaceDatos;
 using Entidades;
@@ -20,16 +20,31 @@ namespace Logica
             return DAO.ObtenerDAO(1).ObtenerDAOPagos().AgregarPago(pago);
         }
 
+        /// <summary>
+        /// Metodo que obtiene los pagos de un paciente especifico
+        /// </summary>
+        /// <param name="paciente"></param>
+        /// <returns></returns>
         public List<Pago> ObtenerPagosPaciente(Paciente paciente)
         {
             return DAO.ObtenerDAO(1).ObtenerDAOPagos().ObtenerPagosPaciente(paciente);
         }
 
+        /// <summary>
+        /// Metodo que valida la existencia de un pago
+        /// </summary>
+        /// <param name="idpago"></param>
+        /// <returns></returns>
         public int ValidarPagoExistente(string idpago)
         {
             return DAO.ObtenerDAO(1).ObtenerDAOPagos().ValidarPagoExistente(idpago);
         }
 
+        /// <summary>
+        /// Metodo que obtiene los pagos de un paquete financiero
+        /// </summary>
+        /// <param name="paquete"></param>
+        /// <returns></returns>
         public List<Pago> ObtenerPagosPaqueteFinanciero(PaqueteFinanciero paquete)
         {
             return DAO.ObtenerDAO(1).ObtenerDAOPagos().ObtenerPagosPaqueteFinanciero(paquete);

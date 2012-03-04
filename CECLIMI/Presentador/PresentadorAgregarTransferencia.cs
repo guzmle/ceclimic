@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using EnlaceDatos;
-using Entidades;
-using Logica;
+
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -14,7 +14,7 @@ namespace CECLIMI.Presentador
     {
         #region variables
         private IContratoAgregarTransferencia _vista;
-        LPaciente logica = new LPaciente();
+        ServicioPacienteSoap logica = new ServicioPacienteSoap();
         Paciente paciente = new Paciente();
         private bool pacienteEncontrado = false;
         private bool beneficiarioEncontrado = false;
@@ -36,7 +36,7 @@ namespace CECLIMI.Presentador
                 {
                     paciente.Id = Convert.ToInt64(_vista.TextoCiPaciente.Text);
                     CargarInformacionEnText(paciente);
-                    LPagos lPagos = new LPagos();
+                    ServicioPagosSoap lPagos = new ServicioPagosSoap();
                     Double monto = 0;
                     foreach (Pago pago in lPagos.ObtenerPagosPaciente(paciente))
                     {
@@ -74,7 +74,7 @@ namespace CECLIMI.Presentador
             _vista.TextoCiPacienteIngresado.Text = "";
             _vista.TextoCorreoElectronicoPacienteIngresado.Text = "";
             _vista.TextoTelefonoFijoPacienteIngresado.Text = "";
-            _vista.TextoTelefonoMovilPacienteIngresado.Text = "";
+            _vista.TextoTelefonoMoviServicioPacienteSoapIngresado.Text = "";
             _vista.GridInformacionPagos.Rows.Clear();
             _vista.TextoTotalAbonadoModificar.Text = "";
 
@@ -99,7 +99,7 @@ namespace CECLIMI.Presentador
             _vista.TextoCiPacienteIngresado.Text = paciente.Id.ToString();
             _vista.TextoCorreoElectronicoPacienteIngresado.Text = paciente.Correo;
             _vista.TextoTelefonoFijoPacienteIngresado.Text = paciente.Telefono;
-            _vista.TextoTelefonoMovilPacienteIngresado.Text = paciente.TelefonoMovil;
+            _vista.TextoTelefonoMoviServicioPacienteSoapIngresado.Text = paciente.TelefonoMovil;
         }
 
         public void BuscarBeneficiario()
@@ -151,7 +151,7 @@ namespace CECLIMI.Presentador
                         transferencia.PacienteOtorga.Id = Convert.ToInt32(_vista.TextoCiPacienteIngresado.Text);
                         transferencia.PacienteRecibe.Id = Convert.ToInt32(_vista.TextoCiBeneficiario.Text);
                         transferencia.Monto = float.Parse(_vista.TextoMontoPagar.Text);
-                        LTransferencia lTransferencia = new LTransferencia();
+                        ServicioTransferenciaSoap lTransferencia = new ServicioTransferenciaSoap();
                         lTransferencia.AgregarTransferencia(transferencia);
                     }
                     else

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
@@ -23,9 +21,9 @@ namespace CECLIMI.Presentador
         {
             try
             {
-                LPaciente lPaciente = new LPaciente();
+                ServicioPacienteSoap logica = new ServicioPacienteSoap();
                 int cedula = Convert.ToInt32(_vista.TextCiPaciente.Text);
-                _paciente = lPaciente.ObtenerInformacionPaciente(cedula);
+                _paciente = logica.ObtenerInformacionPaciente(cedula);
                 _paciente.Id = cedula;
                 _paciente.Cedula = cedula;
                 if (_paciente.Nombre != null)
@@ -60,8 +58,8 @@ namespace CECLIMI.Presentador
 
         public void LlenarComboPaquetes()
         {
-            LPaqueteFinanciero lPaquete = new LPaqueteFinanciero();
-            foreach (PaqueteFinanciero paqueteFinanciero in lPaquete.ObtenerPaqueteFPaciente( (int) _paciente.Id) )
+            ServicioPaqueteFinancieroSoap logica = new ServicioPaqueteFinancieroSoap();
+            foreach (PaqueteFinanciero paqueteFinanciero in logica.ObtenerPaqueteFPaciente( (int) _paciente.Id) )
             {
                 _vista.ComboPaquetesFinancieros.Items.Add(paqueteFinanciero);
             }
@@ -71,8 +69,8 @@ namespace CECLIMI.Presentador
 
         public void BuscarInformacionPaquete()
         {
-            LCirugiaPaqueteFinanciero lCirugiaPaquete = new LCirugiaPaqueteFinanciero();
-            LPagos lPagos = new LPagos();
+            ServicioCirugiaPaqueteFinancieroSoap ServicioCirugiaSoapPaquete = new ServicioCirugiaPaqueteFinancieroSoap();
+            ServicioPagosSoap lPagos = new ServicioPagosSoap();
             _vista.InformacionPaciente.Visible = false;
             _vista.PaquetesFinancieros.Visible = false;
             _vista.PaqueteFinanciero.Visible = true;
@@ -86,7 +84,7 @@ namespace CECLIMI.Presentador
             _vista.FechaIntervencion.Text = paquete.FechaOperacion.ToString().Split(' ')[0];
             _vista.Observaciones.Text = paquete.Observacion;
 
-            foreach (CirugiaPqtFinanciero cirugiaPqt in lCirugiaPaquete.ObtenerCirugiasPaqueteFinanciero(paquete))
+            foreach (CirugiaPqtFinanciero cirugiaPqt in ServicioCirugiaSoapPaquete.ObtenerCirugiasPaqueteFinanciero(paquete))
             {
                 float total = (cirugiaPqt.MontoCirujano - ((cirugiaPqt.MontoCirujano*cirugiaPqt.Descuento)/100)) +
                             cirugiaPqt.Protesis;
@@ -94,7 +92,7 @@ namespace CECLIMI.Presentador
                                          cirugiaPqt.Protesis, cirugiaPqt.Descuento,total);
             }
 
-            List<Pago> pagos = lPagos.ObtenerPagosPaqueteFinanciero(paquete);
+            List<Pago> pagos = new List<Pago> (lPagos.ObtenerPagosPaqueteFinanciero(paquete));
             List<string> nombres = new List<string>();
             foreach (Pago pago in pagos)
             {

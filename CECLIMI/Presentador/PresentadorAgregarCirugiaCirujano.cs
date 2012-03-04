@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
     public class PresentadorAgregarCirugiaCirujano
     {
-        LCirujano lCirujano = new LCirujano();
-        Cirujano cirujano = new Cirujano();
+        ServicioCirujanoSoap ServicioCirujanoSoap = new ServicioCirujanoSoap();
+        Cirujano _cirujano = new Cirujano();
         private IContratoAgregarCirugiaCirujano _vista;
-        private int cirujanoBuscado = 0;
+        private int _cirujanoBuscado;
 
         private List<CirugiaCirujano> cirugias = new List<CirugiaCirujano>();
 
@@ -28,27 +26,26 @@ namespace CECLIMI.Presentador
         /// </summary>
         public void BuscarInformacionCirujano()
         {
-            cirujano = lCirujano.ObtenerInformacionCirujano(Convert.ToInt32(_vista.CedulaCirujano.Text));
-            if (cirujano.Nombre != null)
+            _cirujano = ServicioCirujanoSoap.ObtenerInformacionCirujano(Convert.ToInt32(_vista.CedulaCirujano.Text));
+            if (_cirujano.Nombre != null)
             {
                 LLenarInformacionCirujano();
                 _vista.GrupoDatosCirujano.Visible = true;
                 _vista.GrupoCirugias.Visible = true;
-                cirujanoBuscado = Convert.ToInt32(_vista.CedulaCirujano.Text);
-                cirujano.Cedula = cirujanoBuscado;
+                _cirujanoBuscado = Convert.ToInt32(_vista.CedulaCirujano.Text);
+                _cirujano.Cedula = _cirujanoBuscado;
                 LlenarComboCirugias();
             }
             else
             {
-                cirujanoBuscado = 0;
-                DialogResult result =
-                    MessageBox.Show("El cirujano que intenta buscar no se encuentra registrado.", "Cuidado!", MessageBoxButtons.OK);
+                _cirujanoBuscado = 0;
+                MessageBox.Show("El cirujano que intenta buscar no se encuentra registrado.", "Cuidado!", MessageBoxButtons.OK);
             }
         }
 
         public void LlenarComboCirugias()
         {
-            foreach (Cirugia cirugia in lCirujano.ObtenerCirugiasAgregarCirujano(cirujano))
+            foreach (Cirugia cirugia in ServicioCirujanoSoap.ObtenerCirugiasAgregarCirujano(_cirujano))
             {
                 _vista.UxComboCirugias.Items.Add(cirugia);
             }
@@ -58,12 +55,12 @@ namespace CECLIMI.Presentador
 
         public void LLenarInformacionCirujano()
         {
-            _vista.UxNombre.Text = cirujano.Nombre + " " + cirujano.SegundoNombre;
-            _vista.UxApellido.Text = cirujano.PrimerApellido + " " + cirujano.SegundoApellido;
+            _vista.UxNombre.Text = _cirujano.Nombre + " " + _cirujano.SegundoNombre;
+            _vista.UxApellido.Text = _cirujano.PrimerApellido + " " + _cirujano.SegundoApellido;
             _vista.UxCedula.Text = _vista.CedulaCirujano.Text;
-            _vista.UxCorreo.Text = cirujano.Correo;
-            _vista.UxTelefonoFijo.Text = cirujano.TelefonoFijo;
-            _vista.UxTelefonoMovil.Text = cirujano.TelefonoMovil;
+            _vista.UxCorreo.Text = _cirujano.Correo;
+            _vista.UxTelefonoFijo.Text = _cirujano.TelefonoFijo;
+            _vista.UxTelefonoMovil.Text = _cirujano.TelefonoMovil;
             
         }
 
@@ -74,7 +71,7 @@ namespace CECLIMI.Presentador
                 Cirugia cirugia = (Cirugia) _vista.UxComboCirugias.SelectedItem;
                 CirugiaCirujano cirugiaCirujano = new CirugiaCirujano();
                 cirugiaCirujano.Cirugia.Id = cirugia.Id;
-                cirugiaCirujano.Cirujano.Id = cirujano.Cedula;
+                cirugiaCirujano.Cirujano.Id = _cirujano.Cedula;
                 cirugiaCirujano.Honorarios = Convert.ToSingle(_vista.UxMontoCirugia.Text);
                 cirugias.Add(cirugiaCirujano);
                 _vista.GridCirugiasAgregar.Rows.Add(cirugia.Nombre, "Bsf." + cirugiaCirujano.Honorarios);
@@ -101,10 +98,10 @@ namespace CECLIMI.Presentador
             bool respuesta;
             if (_vista.GridCirugiasAgregar.Rows.Count >= 1)
             {
-                LCirugiaCirujano lCirugiaCirujano = new LCirugiaCirujano();
+                ServicioCirugiaCirujanoSoap servicioCirugiaCirujanoSoap = new ServicioCirugiaCirujanoSoap();
                 foreach (CirugiaCirujano cirugiaCirujano in cirugias)
                 {
-                    lCirugiaCirujano.AgregarCirugiaCirujano(cirugiaCirujano);
+                    servicioCirugiaCirujanoSoap.AgregarCirugiaCirujano(cirugiaCirujano);
                 }
                 respuesta = true;
                 DialogResult result =

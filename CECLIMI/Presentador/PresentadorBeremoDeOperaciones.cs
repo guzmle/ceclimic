@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using CECLIMI.Contratos;
-using Entidades;
-using Logica;
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
     public class PresentadorBeremoDeOperaciones
     {
         private IContratoBeremoDeOperaciones _vista;
-        private LCirujano lCirujano = new LCirujano();
-        private LCirugiaCirujano lCirugiaCirujano = new LCirugiaCirujano();
+        private ServicioCirujanoSoap ServicioCirujanoSoap = new ServicioCirujanoSoap();
+        private ServicioCirugiaCirujanoSoap ServicioCirugiaCirujanoSoap = new ServicioCirugiaCirujanoSoap();
 
         public PresentadorBeremoDeOperaciones ( IContratoBeremoDeOperaciones vista )
         {
@@ -21,8 +21,7 @@ namespace CECLIMI.Presentador
 
         public void BuscarCirujanos()
         {
-            List<Cirujano> cirujanos = new List<Cirujano>();
-            cirujanos = lCirujano.ObtenerCirujanos();
+            List<Cirujano> cirujanos = new List<Cirujano>(ServicioCirujanoSoap.ObtenerTodosCirujanos());
 
             foreach (Cirujano cirujano in cirujanos)
 	        {
@@ -36,7 +35,7 @@ namespace CECLIMI.Presentador
         {
             Cirujano cirujano = (Cirujano) _vista.UxCirujanos.SelectedItem;
 
-            foreach (CirugiaCirujano cirugiaCirujano in lCirugiaCirujano.ObtenerCirugiasCirujano((int) cirujano.Id))
+            foreach (CirugiaCirujano cirugiaCirujano in ServicioCirugiaCirujanoSoap.ObtenerCirugiasCirujano((int) cirujano.Id))
             {
                 float primerAyudante = ((cirugiaCirujano.Honorarios * 40) / 100);
                 float anestesiologo = ((cirugiaCirujano.Honorarios * 30) / 100);

@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using EnlaceDatos;
-using Entidades;
-using Logica;
+
+using Proxys;
+
 
 namespace CECLIMI.Presentador
 {
     public class PresentadorModificarCirugiaCirujano
     {
         private IContratoModificarCirugiaCirujano _vista;
-        LCirujano lCirujano = new LCirujano();
-        LCirugiaCirujano logica = new LCirugiaCirujano();
+        ServicioCirujanoSoap ServicioCirujanoSoap = new ServicioCirujanoSoap();
+        ServicioCirugiaCirujanoSoap logica = new ServicioCirugiaCirujanoSoap();
         Cirujano cirujano = new Cirujano();
 
         public PresentadorModificarCirugiaCirujano(IContratoModificarCirugiaCirujano vista)
@@ -26,7 +26,7 @@ namespace CECLIMI.Presentador
         {
             try
             {
-                cirujano = lCirujano.ObtenerInformacionCirujano(Convert.ToInt32(_vista.TextCiCirujano.Text));
+                cirujano = ServicioCirujanoSoap.ObtenerInformacionCirujano(Convert.ToInt32(_vista.TextCiCirujano.Text));
                 if (cirujano.Nombre != null)
                 {
                     _vista.TextNombreModificar.Text = cirujano.Nombre + " " + cirujano.SegundoNombre;
