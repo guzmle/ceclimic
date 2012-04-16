@@ -83,11 +83,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.grupoPaqueteFinanciero);
             this.panel1.Controls.Add(this.botonAceptar);
             this.panel1.Controls.Add(this.textInformacionPagos);
             this.panel1.Controls.Add(this.grupoInformacionPaciente);
             this.panel1.Controls.Add(this.grupoPaquetesFinancieros);
+            this.panel1.Controls.Add(this.grupoPaqueteFinanciero);
             this.panel1.Location = new System.Drawing.Point(257, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(991, 646);
@@ -281,9 +281,9 @@
             this.pacientesAlternos.Location = new System.Drawing.Point(69, 145);
             this.pacientesAlternos.MaximumSize = new System.Drawing.Size(870, 0);
             this.pacientesAlternos.Name = "pacientesAlternos";
-            this.pacientesAlternos.Size = new System.Drawing.Size(869, 40);
+            this.pacientesAlternos.Size = new System.Drawing.Size(16, 20);
             this.pacientesAlternos.TabIndex = 13;
-            this.pacientesAlternos.Text = resources.GetString("pacientesAlternos.Text");
+            this.pacientesAlternos.Text = "a";
             // 
             // label10
             // 
@@ -467,7 +467,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 34);
+            this.label2.Location = new System.Drawing.Point(179, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 0;
@@ -489,7 +489,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(143, 34);
+            this.label13.Location = new System.Drawing.Point(115, 34);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(139, 20);
             this.label13.TabIndex = 1;

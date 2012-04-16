@@ -453,7 +453,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 51);
+            this.label2.Location = new System.Drawing.Point(127, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 0;
@@ -599,7 +599,7 @@
             // ModificarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1264, 762);
+            this.ClientSize = new System.Drawing.Size(1264, 750);
             this.Controls.Add(this.panel1);
             this.Name = "ModificarPago";
             this.Controls.SetChildIndex(this.panel1, 0);

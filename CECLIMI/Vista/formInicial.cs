@@ -44,5 +44,10 @@ namespace CECLIMI.Vista
         {
 
         }
+
+        private void panelDatos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

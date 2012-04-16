@@ -30,16 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInicial));
             this.panelDatos = new System.Windows.Forms.Panel();
-            this.buttonModificarPerfil = new System.Windows.Forms.Button();
             this.usuarioMostrar = new System.Windows.Forms.Label();
             this.rollMostrar = new System.Windows.Forms.Label();
             this.apellidoMostrar = new System.Windows.Forms.Label();
             this.nombreMostrar = new System.Windows.Forms.Label();
-            this.usuario = new System.Windows.Forms.Label();
-            this.roll = new System.Windows.Forms.Label();
-            this.apellido = new System.Windows.Forms.Label();
-            this.Nombre = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.papiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,30 +49,16 @@
             // 
             this.panelDatos.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panelDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDatos.Controls.Add(this.buttonModificarPerfil);
             this.panelDatos.Controls.Add(this.usuarioMostrar);
             this.panelDatos.Controls.Add(this.rollMostrar);
             this.panelDatos.Controls.Add(this.apellidoMostrar);
             this.panelDatos.Controls.Add(this.nombreMostrar);
-            this.panelDatos.Controls.Add(this.usuario);
-            this.panelDatos.Controls.Add(this.roll);
-            this.panelDatos.Controls.Add(this.apellido);
-            this.panelDatos.Controls.Add(this.Nombre);
-            this.panelDatos.Controls.Add(this.label1);
             this.panelDatos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDatos.Location = new System.Drawing.Point(12, 277);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(239, 396);
             this.panelDatos.TabIndex = 4;
-            // 
-            // buttonModificarPerfil
-            // 
-            this.buttonModificarPerfil.Location = new System.Drawing.Point(58, 247);
-            this.buttonModificarPerfil.Name = "buttonModificarPerfil";
-            this.buttonModificarPerfil.Size = new System.Drawing.Size(105, 29);
-            this.buttonModificarPerfil.TabIndex = 10;
-            this.buttonModificarPerfil.Text = "Modificar Perfil";
-            this.buttonModificarPerfil.UseVisualStyleBackColor = true;
+            this.panelDatos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDatos_Paint);
             // 
             // usuarioMostrar
             // 
@@ -111,55 +91,6 @@
             this.nombreMostrar.Name = "nombreMostrar";
             this.nombreMostrar.Size = new System.Drawing.Size(0, 20);
             this.nombreMostrar.TabIndex = 6;
-            // 
-            // usuario
-            // 
-            this.usuario.AutoSize = true;
-            this.usuario.Location = new System.Drawing.Point(19, 191);
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(58, 20);
-            this.usuario.TabIndex = 5;
-            this.usuario.Text = "Usuario:";
-            // 
-            // roll
-            // 
-            this.roll.AutoSize = true;
-            this.roll.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roll.Location = new System.Drawing.Point(19, 145);
-            this.roll.Name = "roll";
-            this.roll.Size = new System.Drawing.Size(36, 20);
-            this.roll.TabIndex = 4;
-            this.roll.Text = "Roll:";
-            // 
-            // apellido
-            // 
-            this.apellido.AutoSize = true;
-            this.apellido.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellido.Location = new System.Drawing.Point(19, 97);
-            this.apellido.Name = "apellido";
-            this.apellido.Size = new System.Drawing.Size(63, 20);
-            this.apellido.TabIndex = 3;
-            this.apellido.Text = "Apellido:";
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSize = true;
-            this.Nombre.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.Location = new System.Drawing.Point(18, 54);
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(61, 20);
-            this.Nombre.TabIndex = 2;
-            this.Nombre.Text = "Nombre:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Datos personales";
             // 
             // menuStrip1
             // 
@@ -244,16 +175,10 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelDatos;
-        private System.Windows.Forms.Button buttonModificarPerfil;
         private System.Windows.Forms.Label usuarioMostrar;
         private System.Windows.Forms.Label rollMostrar;
         private System.Windows.Forms.Label apellidoMostrar;
         private System.Windows.Forms.Label nombreMostrar;
-        private System.Windows.Forms.Label usuario;
-        private System.Windows.Forms.Label roll;
-        private System.Windows.Forms.Label apellido;
-        private System.Windows.Forms.Label Nombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem papiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kikiToolStripMenuItem;
