@@ -126,8 +126,8 @@ namespace CECLIMI.Vista
             this.panelInformacionUsuario.Controls.Add(this.grupoPersonalQuirurgico);
             this.panelInformacionUsuario.Controls.Add(this.textInformacionVentana);
             this.panelInformacionUsuario.Controls.Add(this.grupoIntervencionQuirurgica);
-            this.panelInformacionUsuario.Controls.Add(this.grupoDatosPaciente1);
             this.panelInformacionUsuario.Controls.Add(this.grupoInformacionPaciente);
+            this.panelInformacionUsuario.Controls.Add(this.grupoDatosPaciente1);
             this.panelInformacionUsuario.Location = new System.Drawing.Point(3, 3);
             this.panelInformacionUsuario.Name = "panelInformacionUsuario";
             this.panelInformacionUsuario.Size = new System.Drawing.Size(983, 638);
@@ -567,7 +567,7 @@ namespace CECLIMI.Vista
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(500, 33);
+            this.label31.Location = new System.Drawing.Point(487, 33);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(81, 20);
             this.label31.TabIndex = 61;
@@ -576,7 +576,7 @@ namespace CECLIMI.Vista
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(114, 97);
+            this.label15.Location = new System.Drawing.Point(101, 97);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 20);
             this.label15.TabIndex = 52;
@@ -595,7 +595,7 @@ namespace CECLIMI.Vista
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(529, 67);
+            this.label14.Location = new System.Drawing.Point(516, 67);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 20);
             this.label14.TabIndex = 46;
@@ -636,7 +636,7 @@ namespace CECLIMI.Vista
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(128, 67);
+            this.label13.Location = new System.Drawing.Point(115, 67);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 20);
             this.label13.TabIndex = 10;
@@ -659,7 +659,7 @@ namespace CECLIMI.Vista
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(27, 33);
+            this.label12.Location = new System.Drawing.Point(14, 33);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(157, 20);
             this.label12.TabIndex = 8;
@@ -837,7 +837,7 @@ namespace CECLIMI.Vista
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 43);
+            this.label2.Location = new System.Drawing.Point(59, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 0;

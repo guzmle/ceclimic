@@ -106,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 51);
+            this.label2.Location = new System.Drawing.Point(136, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 0;
@@ -146,8 +146,8 @@
             this.panel1.Controls.Add(this.botonCancelar);
             this.panel1.Controls.Add(this.botonAceptar);
             this.panel1.Controls.Add(this.textModificarPaciente);
-            this.panel1.Controls.Add(this.grupoDatosCirujano);
             this.panel1.Controls.Add(this.grupoInformacionCirujano);
+            this.panel1.Controls.Add(this.grupoDatosCirujano);
             this.panel1.Location = new System.Drawing.Point(257, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(990, 646);

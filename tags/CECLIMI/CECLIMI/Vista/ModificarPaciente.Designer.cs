@@ -144,7 +144,7 @@
             // correoElectrico
             // 
             this.correoElectrico.AutoSize = true;
-            this.correoElectrico.Location = new System.Drawing.Point(490, 106);
+            this.correoElectrico.Location = new System.Drawing.Point(471, 108);
             this.correoElectrico.Name = "correoElectrico";
             this.correoElectrico.Size = new System.Drawing.Size(113, 20);
             this.correoElectrico.TabIndex = 18;
@@ -180,7 +180,7 @@
             // telefonoMovil
             // 
             this.telefonoMovil.AutoSize = true;
-            this.telefonoMovil.Location = new System.Drawing.Point(512, 70);
+            this.telefonoMovil.Location = new System.Drawing.Point(493, 72);
             this.telefonoMovil.Name = "telefonoMovil";
             this.telefonoMovil.Size = new System.Drawing.Size(91, 20);
             this.telefonoMovil.TabIndex = 14;
@@ -216,7 +216,7 @@
             // telefonoFijo
             // 
             this.telefonoFijo.AutoSize = true;
-            this.telefonoFijo.Location = new System.Drawing.Point(520, 34);
+            this.telefonoFijo.Location = new System.Drawing.Point(501, 36);
             this.telefonoFijo.Name = "telefonoFijo";
             this.telefonoFijo.Size = new System.Drawing.Size(83, 20);
             this.telefonoFijo.TabIndex = 10;
@@ -242,7 +242,7 @@
             // segundoApellido
             // 
             this.segundoApellido.AutoSize = true;
-            this.segundoApellido.Location = new System.Drawing.Point(50, 141);
+            this.segundoApellido.Location = new System.Drawing.Point(31, 143);
             this.segundoApellido.Name = "segundoApellido";
             this.segundoApellido.Size = new System.Drawing.Size(106, 20);
             this.segundoApellido.TabIndex = 7;
@@ -260,7 +260,7 @@
             // primerApellido
             // 
             this.primerApellido.AutoSize = true;
-            this.primerApellido.Location = new System.Drawing.Point(55, 105);
+            this.primerApellido.Location = new System.Drawing.Point(36, 107);
             this.primerApellido.Name = "primerApellido";
             this.primerApellido.Size = new System.Drawing.Size(101, 20);
             this.primerApellido.TabIndex = 5;
@@ -270,7 +270,7 @@
             // ciPaciente
             // 
             this.ciPaciente.AutoSize = true;
-            this.ciPaciente.Location = new System.Drawing.Point(530, 141);
+            this.ciPaciente.Location = new System.Drawing.Point(511, 143);
             this.ciPaciente.Name = "ciPaciente";
             this.ciPaciente.Size = new System.Drawing.Size(73, 20);
             this.ciPaciente.TabIndex = 4;
@@ -296,7 +296,7 @@
             // segundoNombre
             // 
             this.segundoNombre.AutoSize = true;
-            this.segundoNombre.Location = new System.Drawing.Point(49, 69);
+            this.segundoNombre.Location = new System.Drawing.Point(30, 71);
             this.segundoNombre.Name = "segundoNombre";
             this.segundoNombre.Size = new System.Drawing.Size(107, 20);
             this.segundoNombre.TabIndex = 1;
@@ -306,7 +306,7 @@
             // primerNombre
             // 
             this.primerNombre.AutoSize = true;
-            this.primerNombre.Location = new System.Drawing.Point(54, 34);
+            this.primerNombre.Location = new System.Drawing.Point(35, 36);
             this.primerNombre.Name = "primerNombre";
             this.primerNombre.Size = new System.Drawing.Size(102, 20);
             this.primerNombre.TabIndex = 0;
@@ -348,7 +348,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 51);
+            this.label2.Location = new System.Drawing.Point(134, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 0;

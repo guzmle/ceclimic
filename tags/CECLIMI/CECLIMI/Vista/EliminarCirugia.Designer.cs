@@ -40,12 +40,12 @@
             this.fechaOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textInformacionVentana = new System.Windows.Forms.Label();
+            this.botonCancelarCirugia = new System.Windows.Forms.Button();
+            this.botonAceptarCirugia = new System.Windows.Forms.Button();
             this.grupoInformacionPaciente = new System.Windows.Forms.GroupBox();
             this.botonBuscarPaciente = new System.Windows.Forms.Button();
             this.textoCiPaciente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.botonCancelarCirugia = new System.Windows.Forms.Button();
-            this.botonAceptarCirugia = new System.Windows.Forms.Button();
             this.grupoDatosPaciente1 = new System.Windows.Forms.GroupBox();
             this.textoApellidoPacienteIngresado = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -106,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(96, 53);
+            this.label3.Location = new System.Drawing.Point(81, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 53;
@@ -184,6 +184,31 @@
             this.textInformacionVentana.TabIndex = 53;
             this.textInformacionVentana.Text = "Eliminar Cirugia a un pacientes";
             // 
+            // botonCancelarCirugia
+            // 
+            this.botonCancelarCirugia.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCancelarCirugia.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
+            this.botonCancelarCirugia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonCancelarCirugia.Location = new System.Drawing.Point(547, 425);
+            this.botonCancelarCirugia.Name = "botonCancelarCirugia";
+            this.botonCancelarCirugia.Size = new System.Drawing.Size(111, 29);
+            this.botonCancelarCirugia.TabIndex = 40;
+            this.botonCancelarCirugia.Text = "Cancelar";
+            this.botonCancelarCirugia.UseVisualStyleBackColor = true;
+            // 
+            // botonAceptarCirugia
+            // 
+            this.botonAceptarCirugia.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptarCirugia.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptarCirugia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptarCirugia.Location = new System.Drawing.Point(842, 425);
+            this.botonAceptarCirugia.Name = "botonAceptarCirugia";
+            this.botonAceptarCirugia.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptarCirugia.TabIndex = 39;
+            this.botonAceptarCirugia.Text = "Aceptar";
+            this.botonAceptarCirugia.UseVisualStyleBackColor = true;
+            this.botonAceptarCirugia.Click += new System.EventHandler(this.BotonAceptarCirugiaClick);
+            // 
             // grupoInformacionPaciente
             // 
             this.grupoInformacionPaciente.Controls.Add(this.botonBuscarPaciente);
@@ -219,36 +244,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 43);
+            this.label2.Location = new System.Drawing.Point(71, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "CI Paciente";
-            // 
-            // botonCancelarCirugia
-            // 
-            this.botonCancelarCirugia.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonCancelarCirugia.Image = global::CECLIMI.Properties.Resources.icono_cancelar;
-            this.botonCancelarCirugia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonCancelarCirugia.Location = new System.Drawing.Point(547, 425);
-            this.botonCancelarCirugia.Name = "botonCancelarCirugia";
-            this.botonCancelarCirugia.Size = new System.Drawing.Size(111, 29);
-            this.botonCancelarCirugia.TabIndex = 40;
-            this.botonCancelarCirugia.Text = "Cancelar";
-            this.botonCancelarCirugia.UseVisualStyleBackColor = true;
-            // 
-            // botonAceptarCirugia
-            // 
-            this.botonAceptarCirugia.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAceptarCirugia.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
-            this.botonAceptarCirugia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAceptarCirugia.Location = new System.Drawing.Point(842, 425);
-            this.botonAceptarCirugia.Name = "botonAceptarCirugia";
-            this.botonAceptarCirugia.Size = new System.Drawing.Size(111, 29);
-            this.botonAceptarCirugia.TabIndex = 39;
-            this.botonAceptarCirugia.Text = "Aceptar";
-            this.botonAceptarCirugia.UseVisualStyleBackColor = true;
-            this.botonAceptarCirugia.Click += new System.EventHandler(this.BotonAceptarCirugiaClick);
             // 
             // grupoDatosPaciente1
             // 

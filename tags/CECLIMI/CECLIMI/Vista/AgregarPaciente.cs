@@ -109,6 +109,11 @@ namespace CECLIMI.Vista
 
         #endregion
 
+        private void botonCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         
 
 

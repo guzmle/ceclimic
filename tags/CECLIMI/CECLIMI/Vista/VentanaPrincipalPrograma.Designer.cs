@@ -174,20 +174,21 @@
             this.button5.Font = new System.Drawing.Font("Arial", 9F);
             this.button5.Image = global::CECLIMI.Properties.Resources.nuevo_personal;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(163, 39);
+            this.button5.Location = new System.Drawing.Point(500, 39);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 70);
             this.button5.TabIndex = 6;
             this.button5.Text = "Nuevo Personal";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Arial", 9F);
             this.button6.Image = global::CECLIMI.Properties.Resources.modifica_pago;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(485, 39);
+            this.button6.Location = new System.Drawing.Point(379, 39);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(91, 70);
             this.button6.TabIndex = 5;
@@ -201,7 +202,7 @@
             this.button9.Font = new System.Drawing.Font("Arial", 9F);
             this.button9.Image = global::CECLIMI.Properties.Resources.vcard_editar_icono_7017_32;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(374, 39);
+            this.button9.Location = new System.Drawing.Point(268, 39);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(91, 70);
             this.button9.TabIndex = 4;
@@ -215,7 +216,7 @@
             this.button13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Image = global::CECLIMI.Properties.Resources.nueva_carpeta_icono_7506_32;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(269, 39);
+            this.button13.Location = new System.Drawing.Point(163, 39);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(85, 70);
             this.button13.TabIndex = 1;
@@ -262,7 +263,7 @@
             this.button17.Font = new System.Drawing.Font("Arial", 9F);
             this.button17.Image = global::CECLIMI.Properties.Resources.eliminar_transferencia;
             this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button17.Location = new System.Drawing.Point(718, 39);
+            this.button17.Location = new System.Drawing.Point(618, 39);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(91, 70);
             this.button17.TabIndex = 7;
@@ -276,20 +277,21 @@
             this.button11.Font = new System.Drawing.Font("Arial", 9F);
             this.button11.Image = global::CECLIMI.Properties.Resources.modifica_pago;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(487, 39);
+            this.button11.Location = new System.Drawing.Point(853, 39);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(91, 70);
             this.button11.TabIndex = 5;
             this.button11.Text = "Modificar Pago";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Visible = false;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Arial", 9F);
             this.button4.Image = global::CECLIMI.Properties.Resources.correo_movil_icono_6691_321;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(838, 39);
+            this.button4.Location = new System.Drawing.Point(738, 39);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 70);
             this.button4.TabIndex = 3;
@@ -304,7 +306,7 @@
             this.button18.Font = new System.Drawing.Font("Arial", 9F);
             this.button18.Image = global::CECLIMI.Properties.Resources.eliminar_cirugia;
             this.button18.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button18.Location = new System.Drawing.Point(600, 39);
+            this.button18.Location = new System.Drawing.Point(500, 39);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(91, 70);
             this.button18.TabIndex = 6;

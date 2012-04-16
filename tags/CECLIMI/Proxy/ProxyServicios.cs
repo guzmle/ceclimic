@@ -30,7 +30,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioCirugiaPersonalQ.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioCirugiaPersonalQ.asmx";
             }
         }
         
@@ -149,7 +149,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioPaciente.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioPaciente.asmx";
             }
         }
         
@@ -397,7 +397,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioCirugia.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioCirugia.asmx";
             }
         }
         
@@ -510,7 +510,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioPaqueteFinanciero.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioPaqueteFinanciero.asmx";
             }
         }
         
@@ -630,7 +630,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioPagos.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioPagos.asmx";
             }
         }
         
@@ -838,7 +838,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioCirugiaCirujano.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioCirugiaCirujano.asmx";
             }
         }
         
@@ -1053,7 +1053,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioCirugiaPaqueteFinanciero.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioCirugiaPaqueteFinanciero.asmx";
             }
         }
         
@@ -1211,7 +1211,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioTransferencia.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioTransferencia.asmx";
             }
         }
         
@@ -1291,7 +1291,7 @@ namespace Proxys {
                 this.Url = urlSetting;
             }
             else {
-                this.Url = "http://localhost:1197/ServicioCirujano.asmx";
+                this.Url = "http://192.168.1.112/Ceclimi/ServicioCirujano.asmx";
             }
         }
         
