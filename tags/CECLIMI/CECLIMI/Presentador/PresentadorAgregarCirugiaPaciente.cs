@@ -263,6 +263,7 @@ namespace CECLIMI.Presentador
             ServicioCirugiaPaqueteFinancieroSoap servicioCirugiaSoapPaquete = new ServicioCirugiaPaqueteFinancieroSoap();
             foreach (CirugiaPqtFinanciero cirugiaPqtFinanciero in cirugiaPqtFinancieros)
             {
+                cirugiaPqtFinanciero.PaqueteFinanciero = new PaqueteFinanciero();
                 cirugiaPqtFinanciero.PaqueteFinanciero.Id = paquete;
                 servicioCirugiaSoapPaquete.AgregarCirugiaPaquete(cirugiaPqtFinanciero);
             }
@@ -275,17 +276,18 @@ namespace CECLIMI.Presentador
         public void InsertarPersonalQuirurgico (int paquete)
         {
             ServicioCirugiaPersonalQSoap logica = new ServicioCirugiaPersonalQSoap();
+            PersonalPaquete personalPaquete = new PersonalPaquete();
+            personalPaquete.Personal = new Persona();
+            personalPaquete.Paquete = new PaqueteFinanciero();
+            personalPaquete.Paquete.Id = paquete;
             if (_vista.ComboPrimerAyudante.SelectedIndex != -1)
             {
-                PersonalPaquete personalPaquete = new PersonalPaquete();
-                personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal) _vista.ComboPrimerAyudante.SelectedItem).Id;
                 personalPaquete.Especialidad = "1er ayudante";
                 logica.AgregarCirugiaPersonalQ(personalPaquete);
             }
             if (_vista.ComboAnestesiologo.SelectedIndex != -1)
             {
-                PersonalPaquete personalPaquete = new PersonalPaquete();
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.ComboAnestesiologo.SelectedItem).Id;
                 personalPaquete.Especialidad = "Anestesiologo";
@@ -293,7 +295,6 @@ namespace CECLIMI.Presentador
             }
             if (_vista.ComboInstrumentista.SelectedIndex != -1)
             {
-                PersonalPaquete personalPaquete = new PersonalPaquete();
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.ComboInstrumentista.SelectedItem).Id;
                 personalPaquete.Especialidad = "Instrumentista";
@@ -301,7 +302,6 @@ namespace CECLIMI.Presentador
             }
             if (_vista.ComboCirculante.SelectedIndex != -1)
             {
-                PersonalPaquete personalPaquete = new PersonalPaquete();
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.ComboCirculante.SelectedItem).Id;
                 personalPaquete.Especialidad = "Circulante";
@@ -309,7 +309,6 @@ namespace CECLIMI.Presentador
             }
             if (_vista.InstrumentistaEspecial.SelectedIndex != -1)
             {
-                PersonalPaquete personalPaquete = new PersonalPaquete();
                 personalPaquete.Paquete.Id = paquete;
                 personalPaquete.Personal.Id = ((Personal)_vista.InstrumentistaEspecial.SelectedItem).Id;
                 personalPaquete.Especialidad = "Instrumentista Especial";
