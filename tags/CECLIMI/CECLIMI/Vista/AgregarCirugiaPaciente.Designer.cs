@@ -81,6 +81,10 @@ namespace CECLIMI.Vista
             this.label13 = new System.Windows.Forms.Label();
             this.comboIntervencionQuirurgica1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.grupoInformacionPaciente = new System.Windows.Forms.GroupBox();
+            this.botonBuscar = new System.Windows.Forms.Button();
+            this.textoCiPaciente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.grupoDatosPaciente1 = new System.Windows.Forms.GroupBox();
             this.textoApellidoPacienteIngresado = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -94,17 +98,13 @@ namespace CECLIMI.Vista
             this.textoTelefonoMovilIngresado = new System.Windows.Forms.Label();
             this.textoCorreoElectronicoPacienteIngresado = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.grupoInformacionPaciente = new System.Windows.Forms.GroupBox();
-            this.botonBuscar = new System.Windows.Forms.Button();
-            this.textoCiPaciente = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelInformacionUsuario.SuspendLayout();
             this.grupoPersonalQuirurgico.SuspendLayout();
             this.grupoIntervencionQuirurgica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInfoCirugias)).BeginInit();
-            this.grupoDatosPaciente1.SuspendLayout();
             this.grupoInformacionPaciente.SuspendLayout();
+            this.grupoDatosPaciente1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -576,11 +576,11 @@ namespace CECLIMI.Vista
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(101, 97);
+            this.label15.Location = new System.Drawing.Point(90, 97);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 20);
+            this.label15.Size = new System.Drawing.Size(81, 20);
             this.label15.TabIndex = 52;
-            this.label15.Text = "Honorarios";
+            this.label15.Text = "Total Cirugia";
             // 
             // textoHonorarioCirujano
             // 
@@ -664,6 +664,47 @@ namespace CECLIMI.Vista
             this.label12.Size = new System.Drawing.Size(157, 20);
             this.label12.TabIndex = 8;
             this.label12.Text = "Intervenciones Quirurgicas";
+            // 
+            // grupoInformacionPaciente
+            // 
+            this.grupoInformacionPaciente.Controls.Add(this.botonBuscar);
+            this.grupoInformacionPaciente.Controls.Add(this.textoCiPaciente);
+            this.grupoInformacionPaciente.Controls.Add(this.label2);
+            this.grupoInformacionPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupoInformacionPaciente.Location = new System.Drawing.Point(14, 28);
+            this.grupoInformacionPaciente.Name = "grupoInformacionPaciente";
+            this.grupoInformacionPaciente.Size = new System.Drawing.Size(943, 91);
+            this.grupoInformacionPaciente.TabIndex = 35;
+            this.grupoInformacionPaciente.TabStop = false;
+            this.grupoInformacionPaciente.Text = "Informacion del paciente";
+            // 
+            // botonBuscar
+            // 
+            this.botonBuscar.Image = global::CECLIMI.Properties.Resources.boton_buscar;
+            this.botonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonBuscar.Location = new System.Drawing.Point(394, 34);
+            this.botonBuscar.Name = "botonBuscar";
+            this.botonBuscar.Size = new System.Drawing.Size(30, 29);
+            this.botonBuscar.TabIndex = 2;
+            this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botonBuscar.UseVisualStyleBackColor = true;
+            this.botonBuscar.Click += new System.EventHandler(this.BotonBuscarClick);
+            // 
+            // textoCiPaciente
+            // 
+            this.textoCiPaciente.Location = new System.Drawing.Point(168, 37);
+            this.textoCiPaciente.Name = "textoCiPaciente";
+            this.textoCiPaciente.Size = new System.Drawing.Size(220, 26);
+            this.textoCiPaciente.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(59, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "CI Paciente";
             // 
             // grupoDatosPaciente1
             // 
@@ -802,47 +843,6 @@ namespace CECLIMI.Vista
             this.label35.TabIndex = 4;
             this.label35.Text = "Telefono Fijo:";
             // 
-            // grupoInformacionPaciente
-            // 
-            this.grupoInformacionPaciente.Controls.Add(this.botonBuscar);
-            this.grupoInformacionPaciente.Controls.Add(this.textoCiPaciente);
-            this.grupoInformacionPaciente.Controls.Add(this.label2);
-            this.grupoInformacionPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoInformacionPaciente.Location = new System.Drawing.Point(14, 28);
-            this.grupoInformacionPaciente.Name = "grupoInformacionPaciente";
-            this.grupoInformacionPaciente.Size = new System.Drawing.Size(943, 91);
-            this.grupoInformacionPaciente.TabIndex = 35;
-            this.grupoInformacionPaciente.TabStop = false;
-            this.grupoInformacionPaciente.Text = "Informacion del paciente";
-            // 
-            // botonBuscar
-            // 
-            this.botonBuscar.Image = global::CECLIMI.Properties.Resources.boton_buscar;
-            this.botonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonBuscar.Location = new System.Drawing.Point(394, 34);
-            this.botonBuscar.Name = "botonBuscar";
-            this.botonBuscar.Size = new System.Drawing.Size(30, 29);
-            this.botonBuscar.TabIndex = 2;
-            this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.botonBuscar.UseVisualStyleBackColor = true;
-            this.botonBuscar.Click += new System.EventHandler(this.BotonBuscarClick);
-            // 
-            // textoCiPaciente
-            // 
-            this.textoCiPaciente.Location = new System.Drawing.Point(168, 37);
-            this.textoCiPaciente.Name = "textoCiPaciente";
-            this.textoCiPaciente.Size = new System.Drawing.Size(220, 26);
-            this.textoCiPaciente.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "CI Paciente";
-            // 
             // AgregarCirugiaPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,10 +858,10 @@ namespace CECLIMI.Vista
             this.grupoIntervencionQuirurgica.ResumeLayout(false);
             this.grupoIntervencionQuirurgica.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInfoCirugias)).EndInit();
-            this.grupoDatosPaciente1.ResumeLayout(false);
-            this.grupoDatosPaciente1.PerformLayout();
             this.grupoInformacionPaciente.ResumeLayout(false);
             this.grupoInformacionPaciente.PerformLayout();
+            this.grupoDatosPaciente1.ResumeLayout(false);
+            this.grupoDatosPaciente1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

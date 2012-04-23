@@ -30,24 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportePaqueteFinanciero));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonAceptar = new System.Windows.Forms.Button();
+            this.textInformacionPagos = new System.Windows.Forms.Label();
+            this.grupoInformacionPaciente = new System.Windows.Forms.GroupBox();
+            this.botonBuscar = new System.Windows.Forms.Button();
+            this.textoCiPaciente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.grupoPaquetesFinancieros = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboPaquetesFinancieros = new System.Windows.Forms.ComboBox();
             this.grupoPaqueteFinanciero = new System.Windows.Forms.GroupBox();
+            this.totalPagos = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.totalCirugia = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.observaciones = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.fechaIntervencion = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.gridPagos = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridCirugias = new System.Windows.Forms.DataGridView();
-            this.cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Honorarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Protesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pacientesAlternos = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.correoPaciente = new System.Windows.Forms.Label();
@@ -62,21 +69,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.botonAceptar = new System.Windows.Forms.Button();
-            this.textInformacionPagos = new System.Windows.Forms.Label();
-            this.grupoInformacionPaciente = new System.Windows.Forms.GroupBox();
-            this.botonBuscar = new System.Windows.Forms.Button();
-            this.textoCiPaciente = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.grupoPaquetesFinancieros = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboPaquetesFinancieros = new System.Windows.Forms.ComboBox();
+            this.cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Honorarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Protesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.grupoInformacionPaciente.SuspendLayout();
+            this.grupoPaquetesFinancieros.SuspendLayout();
             this.grupoPaqueteFinanciero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCirugias)).BeginInit();
-            this.grupoInformacionPaciente.SuspendLayout();
-            this.grupoPaquetesFinancieros.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,8 +97,108 @@
             this.panel1.Size = new System.Drawing.Size(991, 646);
             this.panel1.TabIndex = 10;
             // 
+            // botonAceptar
+            // 
+            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
+            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonAceptar.Location = new System.Drawing.Point(862, 608);
+            this.botonAceptar.Name = "botonAceptar";
+            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
+            this.botonAceptar.TabIndex = 10;
+            this.botonAceptar.Text = "Aceptar";
+            this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Visible = false;
+            this.botonAceptar.Click += new System.EventHandler(this.BotonAceptarClick);
+            // 
+            // textInformacionPagos
+            // 
+            this.textInformacionPagos.AutoSize = true;
+            this.textInformacionPagos.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInformacionPagos.Location = new System.Drawing.Point(205, 9);
+            this.textInformacionPagos.Name = "textInformacionPagos";
+            this.textInformacionPagos.Size = new System.Drawing.Size(268, 22);
+            this.textInformacionPagos.TabIndex = 27;
+            this.textInformacionPagos.Text = "Reporte Paquete Financiero";
+            // 
+            // grupoInformacionPaciente
+            // 
+            this.grupoInformacionPaciente.Controls.Add(this.botonBuscar);
+            this.grupoInformacionPaciente.Controls.Add(this.textoCiPaciente);
+            this.grupoInformacionPaciente.Controls.Add(this.label2);
+            this.grupoInformacionPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupoInformacionPaciente.Location = new System.Drawing.Point(11, 34);
+            this.grupoInformacionPaciente.Name = "grupoInformacionPaciente";
+            this.grupoInformacionPaciente.Size = new System.Drawing.Size(962, 72);
+            this.grupoInformacionPaciente.TabIndex = 28;
+            this.grupoInformacionPaciente.TabStop = false;
+            this.grupoInformacionPaciente.Text = "Informacion del paciente";
+            // 
+            // botonBuscar
+            // 
+            this.botonBuscar.Image = global::CECLIMI.Properties.Resources.boton_buscar;
+            this.botonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonBuscar.Location = new System.Drawing.Point(514, 25);
+            this.botonBuscar.Name = "botonBuscar";
+            this.botonBuscar.Size = new System.Drawing.Size(30, 29);
+            this.botonBuscar.TabIndex = 52;
+            this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botonBuscar.UseVisualStyleBackColor = true;
+            this.botonBuscar.Click += new System.EventHandler(this.BotonBuscarClick);
+            // 
+            // textoCiPaciente
+            // 
+            this.textoCiPaciente.Location = new System.Drawing.Point(288, 28);
+            this.textoCiPaciente.Name = "textoCiPaciente";
+            this.textoCiPaciente.Size = new System.Drawing.Size(220, 26);
+            this.textoCiPaciente.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(179, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "CI Paciente";
+            // 
+            // grupoPaquetesFinancieros
+            // 
+            this.grupoPaquetesFinancieros.Controls.Add(this.label13);
+            this.grupoPaquetesFinancieros.Controls.Add(this.comboPaquetesFinancieros);
+            this.grupoPaquetesFinancieros.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupoPaquetesFinancieros.Location = new System.Drawing.Point(11, 107);
+            this.grupoPaquetesFinancieros.Name = "grupoPaquetesFinancieros";
+            this.grupoPaquetesFinancieros.Size = new System.Drawing.Size(962, 72);
+            this.grupoPaquetesFinancieros.TabIndex = 53;
+            this.grupoPaquetesFinancieros.TabStop = false;
+            this.grupoPaquetesFinancieros.Text = "Paquetes Financieros";
+            this.grupoPaquetesFinancieros.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(115, 34);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(139, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Paquetes Financieros";
+            // 
+            // comboPaquetesFinancieros
+            // 
+            this.comboPaquetesFinancieros.FormattingEnabled = true;
+            this.comboPaquetesFinancieros.Location = new System.Drawing.Point(288, 31);
+            this.comboPaquetesFinancieros.Name = "comboPaquetesFinancieros";
+            this.comboPaquetesFinancieros.Size = new System.Drawing.Size(220, 28);
+            this.comboPaquetesFinancieros.TabIndex = 0;
+            this.comboPaquetesFinancieros.SelectedIndexChanged += new System.EventHandler(this.ComboPaquetesFinancierosSelectedIndexChanged);
+            // 
             // grupoPaqueteFinanciero
             // 
+            this.grupoPaqueteFinanciero.Controls.Add(this.totalPagos);
+            this.grupoPaqueteFinanciero.Controls.Add(this.label14);
+            this.grupoPaqueteFinanciero.Controls.Add(this.totalCirugia);
+            this.grupoPaqueteFinanciero.Controls.Add(this.label1);
             this.grupoPaqueteFinanciero.Controls.Add(this.observaciones);
             this.grupoPaqueteFinanciero.Controls.Add(this.label11);
             this.grupoPaqueteFinanciero.Controls.Add(this.fechaIntervencion);
@@ -123,6 +227,42 @@
             this.grupoPaqueteFinanciero.TabStop = false;
             this.grupoPaqueteFinanciero.Text = "Paquete Financiero";
             this.grupoPaqueteFinanciero.Visible = false;
+            // 
+            // totalPagos
+            // 
+            this.totalPagos.AutoSize = true;
+            this.totalPagos.Location = new System.Drawing.Point(810, 492);
+            this.totalPagos.Name = "totalPagos";
+            this.totalPagos.Size = new System.Drawing.Size(72, 20);
+            this.totalPagos.TabIndex = 23;
+            this.totalPagos.Text = "totalPagos";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(763, 492);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 20);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Total:";
+            // 
+            // totalCirugia
+            // 
+            this.totalCirugia.AutoSize = true;
+            this.totalCirugia.Location = new System.Drawing.Point(810, 289);
+            this.totalCirugia.Name = "totalCirugia";
+            this.totalCirugia.Size = new System.Drawing.Size(52, 20);
+            this.totalCirugia.TabIndex = 21;
+            this.totalCirugia.Text = "label14";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(763, 289);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Total:";
             // 
             // observaciones
             // 
@@ -173,14 +313,14 @@
             this.gridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
-            this.monto,
             this.Fecha,
             this.Seguro,
-            this.TipoPago});
-            this.gridPagos.Location = new System.Drawing.Point(34, 295);
+            this.TipoPago,
+            this.monto});
+            this.gridPagos.Location = new System.Drawing.Point(34, 313);
             this.gridPagos.Name = "gridPagos";
             this.gridPagos.ReadOnly = true;
-            this.gridPagos.Size = new System.Drawing.Size(907, 194);
+            this.gridPagos.Size = new System.Drawing.Size(907, 176);
             this.gridPagos.TabIndex = 15;
             // 
             // name
@@ -188,12 +328,6 @@
             this.name.HeaderText = "Nombre";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            // 
-            // monto
-            // 
-            this.monto.HeaderText = "Monto";
-            this.monto.Name = "monto";
-            this.monto.ReadOnly = true;
             // 
             // Fecha
             // 
@@ -212,6 +346,12 @@
             this.TipoPago.HeaderText = "Tipo Pago";
             this.TipoPago.Name = "TipoPago";
             this.TipoPago.ReadOnly = true;
+            // 
+            // monto
+            // 
+            this.monto.HeaderText = "Monto";
+            this.monto.Name = "monto";
+            this.monto.ReadOnly = true;
             // 
             // gridCirugias
             // 
@@ -233,46 +373,6 @@
             this.gridCirugias.ReadOnly = true;
             this.gridCirugias.Size = new System.Drawing.Size(907, 96);
             this.gridCirugias.TabIndex = 14;
-            // 
-            // cirugia
-            // 
-            this.cirugia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.cirugia.HeaderText = "Cirugia";
-            this.cirugia.Name = "cirugia";
-            this.cirugia.ReadOnly = true;
-            this.cirugia.Width = 75;
-            // 
-            // cirujano
-            // 
-            this.cirujano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.cirujano.HeaderText = "Cirujano";
-            this.cirujano.Name = "cirujano";
-            this.cirujano.ReadOnly = true;
-            this.cirujano.Width = 82;
-            // 
-            // Honorarios
-            // 
-            this.Honorarios.HeaderText = "Honorarios";
-            this.Honorarios.Name = "Honorarios";
-            this.Honorarios.ReadOnly = true;
-            // 
-            // Protesis
-            // 
-            this.Protesis.HeaderText = "Protesis";
-            this.Protesis.Name = "Protesis";
-            this.Protesis.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // pacientesAlternos
             // 
@@ -408,101 +508,45 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "CECLIMI";
             // 
-            // botonAceptar
+            // cirugia
             // 
-            this.botonAceptar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAceptar.Image = global::CECLIMI.Properties.Resources.icono_aceptar1;
-            this.botonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAceptar.Location = new System.Drawing.Point(862, 608);
-            this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(111, 29);
-            this.botonAceptar.TabIndex = 10;
-            this.botonAceptar.Text = "Aceptar";
-            this.botonAceptar.UseVisualStyleBackColor = true;
-            this.botonAceptar.Visible = false;
-            this.botonAceptar.Click += new System.EventHandler(this.BotonAceptarClick);
+            this.cirugia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cirugia.HeaderText = "Cirugia";
+            this.cirugia.Name = "cirugia";
+            this.cirugia.ReadOnly = true;
+            this.cirugia.Width = 75;
             // 
-            // textInformacionPagos
+            // cirujano
             // 
-            this.textInformacionPagos.AutoSize = true;
-            this.textInformacionPagos.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textInformacionPagos.Location = new System.Drawing.Point(205, 9);
-            this.textInformacionPagos.Name = "textInformacionPagos";
-            this.textInformacionPagos.Size = new System.Drawing.Size(268, 22);
-            this.textInformacionPagos.TabIndex = 27;
-            this.textInformacionPagos.Text = "Reporte Paquete Financiero";
+            this.cirujano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cirujano.HeaderText = "Cirujano";
+            this.cirujano.Name = "cirujano";
+            this.cirujano.ReadOnly = true;
+            this.cirujano.Width = 82;
             // 
-            // grupoInformacionPaciente
+            // Honorarios
             // 
-            this.grupoInformacionPaciente.Controls.Add(this.botonBuscar);
-            this.grupoInformacionPaciente.Controls.Add(this.textoCiPaciente);
-            this.grupoInformacionPaciente.Controls.Add(this.label2);
-            this.grupoInformacionPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoInformacionPaciente.Location = new System.Drawing.Point(11, 34);
-            this.grupoInformacionPaciente.Name = "grupoInformacionPaciente";
-            this.grupoInformacionPaciente.Size = new System.Drawing.Size(962, 72);
-            this.grupoInformacionPaciente.TabIndex = 28;
-            this.grupoInformacionPaciente.TabStop = false;
-            this.grupoInformacionPaciente.Text = "Informacion del paciente";
+            this.Honorarios.HeaderText = "SubTotal IQX";
+            this.Honorarios.Name = "Honorarios";
+            this.Honorarios.ReadOnly = true;
             // 
-            // botonBuscar
+            // Protesis
             // 
-            this.botonBuscar.Image = global::CECLIMI.Properties.Resources.boton_buscar;
-            this.botonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonBuscar.Location = new System.Drawing.Point(514, 25);
-            this.botonBuscar.Name = "botonBuscar";
-            this.botonBuscar.Size = new System.Drawing.Size(30, 29);
-            this.botonBuscar.TabIndex = 52;
-            this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.botonBuscar.UseVisualStyleBackColor = true;
-            this.botonBuscar.Click += new System.EventHandler(this.BotonBuscarClick);
+            this.Protesis.HeaderText = "Protesis";
+            this.Protesis.Name = "Protesis";
+            this.Protesis.ReadOnly = true;
             // 
-            // textoCiPaciente
+            // Descuento
             // 
-            this.textoCiPaciente.Location = new System.Drawing.Point(288, 28);
-            this.textoCiPaciente.Name = "textoCiPaciente";
-            this.textoCiPaciente.Size = new System.Drawing.Size(220, 26);
-            this.textoCiPaciente.TabIndex = 1;
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
             // 
-            // label2
+            // Total
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(179, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "CI Paciente";
-            // 
-            // grupoPaquetesFinancieros
-            // 
-            this.grupoPaquetesFinancieros.Controls.Add(this.label13);
-            this.grupoPaquetesFinancieros.Controls.Add(this.comboPaquetesFinancieros);
-            this.grupoPaquetesFinancieros.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupoPaquetesFinancieros.Location = new System.Drawing.Point(11, 107);
-            this.grupoPaquetesFinancieros.Name = "grupoPaquetesFinancieros";
-            this.grupoPaquetesFinancieros.Size = new System.Drawing.Size(962, 72);
-            this.grupoPaquetesFinancieros.TabIndex = 53;
-            this.grupoPaquetesFinancieros.TabStop = false;
-            this.grupoPaquetesFinancieros.Text = "Paquetes Financieros";
-            this.grupoPaquetesFinancieros.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(115, 34);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(139, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Paquetes Financieros";
-            // 
-            // comboPaquetesFinancieros
-            // 
-            this.comboPaquetesFinancieros.FormattingEnabled = true;
-            this.comboPaquetesFinancieros.Location = new System.Drawing.Point(288, 31);
-            this.comboPaquetesFinancieros.Name = "comboPaquetesFinancieros";
-            this.comboPaquetesFinancieros.Size = new System.Drawing.Size(220, 28);
-            this.comboPaquetesFinancieros.TabIndex = 0;
-            this.comboPaquetesFinancieros.SelectedIndexChanged += new System.EventHandler(this.ComboPaquetesFinancierosSelectedIndexChanged);
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // ReportePaqueteFinanciero
             // 
@@ -513,14 +557,14 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.grupoPaqueteFinanciero.ResumeLayout(false);
-            this.grupoPaqueteFinanciero.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPagos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCirugias)).EndInit();
             this.grupoInformacionPaciente.ResumeLayout(false);
             this.grupoInformacionPaciente.PerformLayout();
             this.grupoPaquetesFinancieros.ResumeLayout(false);
             this.grupoPaquetesFinancieros.PerformLayout();
+            this.grupoPaqueteFinanciero.ResumeLayout(false);
+            this.grupoPaqueteFinanciero.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPagos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCirugias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,16 +603,20 @@
         private System.Windows.Forms.GroupBox grupoPaquetesFinancieros;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboPaquetesFinancieros;
+        private System.Windows.Forms.Label totalCirugia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label totalPagos;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Seguro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cirugia;
         private System.Windows.Forms.DataGridViewTextBoxColumn cirujano;
         private System.Windows.Forms.DataGridViewTextBoxColumn Honorarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn Protesis;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Seguro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPago;
     }
 }
