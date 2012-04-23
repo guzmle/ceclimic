@@ -70,6 +70,8 @@ namespace CECLIMI.Presentador
             {
                 Cirugia cirugia = (Cirugia) _vista.UxComboCirugias.SelectedItem;
                 CirugiaCirujano cirugiaCirujano = new CirugiaCirujano();
+                cirugiaCirujano.Cirugia = new Cirugia();
+                cirugiaCirujano.Cirujano = new Cirujano();
                 cirugiaCirujano.Cirugia.Id = cirugia.Id;
                 cirugiaCirujano.Cirujano.Id = _cirujano.Cedula;
                 cirugiaCirujano.Honorarios = Convert.ToSingle(_vista.UxMontoCirugia.Text);

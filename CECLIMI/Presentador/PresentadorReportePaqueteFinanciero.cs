@@ -83,23 +83,28 @@ namespace CECLIMI.Presentador
             _vista.FechaElaboracion.Text = paquete.FechaPaquete.ToString().Split(' ')[0];
             _vista.FechaIntervencion.Text = paquete.FechaOperacion.ToString().Split(' ')[0];
             _vista.Observaciones.Text = paquete.Observacion;
-
+            float totalCirugias = 0;
             foreach (CirugiaPqtFinanciero cirugiaPqt in ServicioCirugiaSoapPaquete.ObtenerCirugiasPaqueteFinanciero(paquete))
             {
                 float total = (cirugiaPqt.MontoCirujano - ((cirugiaPqt.MontoCirujano*cirugiaPqt.Descuento)/100)) +
                             cirugiaPqt.Protesis;
+                totalCirugias += total;
                 _vista.Cirugias.Rows.Add(cirugiaPqt.Cirugia.Nombre, cirugiaPqt.Cirujano.Nombre, cirugiaPqt.MontoCirujano,
                                          cirugiaPqt.Protesis, cirugiaPqt.Descuento,total);
             }
-
+            _vista.TotalCirugia.Text = totalCirugias.ToString();
             List<Pago> pagos = new List<Pago> (lPagos.ObtenerPagosPaqueteFinanciero(paquete));
             List<string> nombres = new List<string>();
+
+            float totalPagos = 0;
             foreach (Pago pago in pagos)
             {
-                _vista.Pagos.Rows.Add(pago.Nombre, pago.Monto, pago.Fecha.ToString().Split(' ')[0], pago.Seguro,
-                                      pago.TipoPago);
+                _vista.Pagos.Rows.Add(pago.Nombre, pago.Fecha.ToString().Split(' ')[0], pago.Seguro,
+                                      pago.TipoPago, pago.Monto);
+                totalPagos += pago.Monto;
                 nombres.Add(pago.Nombre);
             }
+            _vista.TotalPagos.Text = totalPagos.ToString();
             PacienteAlterno(nombres);
         }
 

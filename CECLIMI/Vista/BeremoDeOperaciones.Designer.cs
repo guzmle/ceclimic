@@ -162,7 +162,7 @@
             this.textInformacionPagos.Name = "textInformacionPagos";
             this.textInformacionPagos.Size = new System.Drawing.Size(232, 22);
             this.textInformacionPagos.TabIndex = 41;
-            this.textInformacionPagos.Text = "Beremo de operaciones";
+            this.textInformacionPagos.Text = "Baremo de operaciones";
             // 
             // botonAceptar
             // 

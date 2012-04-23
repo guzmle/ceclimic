@@ -27,5 +27,8 @@ namespace CECLIMI.Contratos
         Label Observaciones { get; }
 
         Button Aceptar { get; }
+
+        Label TotalCirugia { get; }
+        Label TotalPagos { get; }
     }
 }

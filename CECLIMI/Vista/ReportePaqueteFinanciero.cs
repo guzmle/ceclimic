@@ -111,6 +111,16 @@ namespace CECLIMI.Vista
             get { return botonAceptar; }
         }
 
+        public Label TotalCirugia
+        {
+            get { return totalCirugia; }
+        }
+
+        public Label TotalPagos
+        {
+            get { return totalPagos; }
+        }
+
         #endregion
 
         private void BotonBuscarClick(object sender, EventArgs e)
