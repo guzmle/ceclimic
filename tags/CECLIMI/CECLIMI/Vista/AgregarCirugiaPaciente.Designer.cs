@@ -61,6 +61,7 @@ namespace CECLIMI.Vista
             this.label17 = new System.Windows.Forms.Label();
             this.textInformacionVentana = new System.Windows.Forms.Label();
             this.grupoIntervencionQuirurgica = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gridInfoCirugias = new System.Windows.Forms.DataGridView();
             this.cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,6 +186,7 @@ namespace CECLIMI.Vista
             // 
             // grupoPersonalQuirurgico
             // 
+            this.grupoPersonalQuirurgico.Controls.Add(this.label1);
             this.grupoPersonalQuirurgico.Controls.Add(this.label4);
             this.grupoPersonalQuirurgico.Controls.Add(this.label5);
             this.grupoPersonalQuirurgico.Controls.Add(this.textAnoElaboracion);
@@ -220,7 +222,7 @@ namespace CECLIMI.Vista
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label4.Location = new System.Drawing.Point(722, 90);
+            this.label4.Location = new System.Drawing.Point(722, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(12, 20);
             this.label4.TabIndex = 65;
@@ -230,7 +232,7 @@ namespace CECLIMI.Vista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label5.Location = new System.Drawing.Point(661, 89);
+            this.label5.Location = new System.Drawing.Point(661, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(12, 20);
             this.label5.TabIndex = 64;
@@ -239,7 +241,7 @@ namespace CECLIMI.Vista
             // textAnoElaboracion
             // 
             this.textAnoElaboracion.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.textAnoElaboracion.Location = new System.Drawing.Point(740, 87);
+            this.textAnoElaboracion.Location = new System.Drawing.Point(740, 53);
             this.textAnoElaboracion.MaxLength = 4;
             this.textAnoElaboracion.Name = "textAnoElaboracion";
             this.textAnoElaboracion.Size = new System.Drawing.Size(75, 24);
@@ -249,7 +251,7 @@ namespace CECLIMI.Vista
             // textMesElaboracion
             // 
             this.textMesElaboracion.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.textMesElaboracion.Location = new System.Drawing.Point(678, 87);
+            this.textMesElaboracion.Location = new System.Drawing.Point(678, 53);
             this.textMesElaboracion.MaxLength = 2;
             this.textMesElaboracion.Name = "textMesElaboracion";
             this.textMesElaboracion.Size = new System.Drawing.Size(38, 24);
@@ -259,7 +261,7 @@ namespace CECLIMI.Vista
             // textDiaElaboracion
             // 
             this.textDiaElaboracion.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.textDiaElaboracion.Location = new System.Drawing.Point(619, 87);
+            this.textDiaElaboracion.Location = new System.Drawing.Point(619, 53);
             this.textDiaElaboracion.MaxLength = 2;
             this.textDiaElaboracion.Name = "textDiaElaboracion";
             this.textDiaElaboracion.Size = new System.Drawing.Size(38, 24);
@@ -270,7 +272,7 @@ namespace CECLIMI.Vista
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label6.Location = new System.Drawing.Point(480, 92);
+            this.label6.Location = new System.Drawing.Point(480, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 20);
             this.label6.TabIndex = 63;
@@ -312,7 +314,7 @@ namespace CECLIMI.Vista
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label20.Location = new System.Drawing.Point(722, 56);
+            this.label20.Location = new System.Drawing.Point(722, 92);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(12, 20);
             this.label20.TabIndex = 59;
@@ -332,7 +334,7 @@ namespace CECLIMI.Vista
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label18.Location = new System.Drawing.Point(661, 55);
+            this.label18.Location = new System.Drawing.Point(661, 91);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(12, 20);
             this.label18.TabIndex = 58;
@@ -352,7 +354,7 @@ namespace CECLIMI.Vista
             // textAnoIQX1
             // 
             this.textAnoIQX1.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.textAnoIQX1.Location = new System.Drawing.Point(740, 53);
+            this.textAnoIQX1.Location = new System.Drawing.Point(740, 89);
             this.textAnoIQX1.MaxLength = 4;
             this.textAnoIQX1.Name = "textAnoIQX1";
             this.textAnoIQX1.Size = new System.Drawing.Size(75, 24);
@@ -372,7 +374,7 @@ namespace CECLIMI.Vista
             // textMesIQX1
             // 
             this.textMesIQX1.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.textMesIQX1.Location = new System.Drawing.Point(678, 53);
+            this.textMesIQX1.Location = new System.Drawing.Point(678, 89);
             this.textMesIQX1.MaxLength = 2;
             this.textMesIQX1.Name = "textMesIQX1";
             this.textMesIQX1.Size = new System.Drawing.Size(38, 24);
@@ -393,7 +395,7 @@ namespace CECLIMI.Vista
             // textDiaIQX1
             // 
             this.textDiaIQX1.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.textDiaIQX1.Location = new System.Drawing.Point(619, 53);
+            this.textDiaIQX1.Location = new System.Drawing.Point(619, 89);
             this.textDiaIQX1.MaxLength = 2;
             this.textDiaIQX1.Name = "textDiaIQX1";
             this.textDiaIQX1.Size = new System.Drawing.Size(38, 24);
@@ -414,7 +416,7 @@ namespace CECLIMI.Vista
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label16.Location = new System.Drawing.Point(526, 56);
+            this.label16.Location = new System.Drawing.Point(526, 92);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(72, 20);
             this.label16.TabIndex = 53;
@@ -475,6 +477,17 @@ namespace CECLIMI.Vista
             this.grupoIntervencionQuirurgica.TabStop = false;
             this.grupoIntervencionQuirurgica.Text = "Intervencion Quirurgica";
             this.grupoIntervencionQuirurgica.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label1.Location = new System.Drawing.Point(620, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 20);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Si no la conoce coloque 1 / 1 / 1";
             // 
             // gridInfoCirugias
             // 
@@ -937,6 +950,7 @@ namespace CECLIMI.Vista
         private System.Windows.Forms.TextBox textMesElaboracion;
         private System.Windows.Forms.TextBox textDiaElaboracion;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
 
     }
 }
