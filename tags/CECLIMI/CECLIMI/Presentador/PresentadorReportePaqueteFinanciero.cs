@@ -11,6 +11,7 @@ namespace CECLIMI.Presentador
     {
         private IContratoReportePaqueteFinanciero _vista;
         private Paciente _paciente = new Paciente();
+        private PaqueteFinanciero _paquete = new PaqueteFinanciero();
 
         public PresentadorReportePaqueteFinanciero (IContratoReportePaqueteFinanciero vista)
         {
@@ -76,15 +77,14 @@ namespace CECLIMI.Presentador
             _vista.PaqueteFinanciero.Visible = true;
             _vista.Aceptar.Visible = true;
 
-            PaqueteFinanciero paquete = new PaqueteFinanciero();
-            paquete = (PaqueteFinanciero)_vista.ComboPaquetesFinancieros.SelectedItem;
+            _paquete = (PaqueteFinanciero)_vista.ComboPaquetesFinancieros.SelectedItem;
             _vista.ComboPaquetesFinancieros.Items.Clear();
 
-            _vista.FechaElaboracion.Text = paquete.FechaPaquete.ToString().Split(' ')[0];
-            _vista.FechaIntervencion.Text = paquete.FechaOperacion.ToString().Split(' ')[0];
-            _vista.Observaciones.Text = paquete.Observacion;
+            _vista.FechaElaboracion.Text = _paquete.FechaPaquete.ToString().Split(' ')[0];
+            _vista.FechaIntervencion.Text = _paquete.FechaOperacion.ToString().Split(' ')[0];
+            _vista.Observaciones.Text = _paquete.Observacion;
             float totalCirugias = 0;
-            foreach (CirugiaPqtFinanciero cirugiaPqt in ServicioCirugiaSoapPaquete.ObtenerCirugiasPaqueteFinanciero(paquete))
+            foreach (CirugiaPqtFinanciero cirugiaPqt in ServicioCirugiaSoapPaquete.ObtenerCirugiasPaqueteFinanciero(_paquete))
             {
                 float total = (cirugiaPqt.MontoCirujano - ((cirugiaPqt.MontoCirujano*cirugiaPqt.Descuento)/100)) +
                             cirugiaPqt.Protesis;
@@ -93,7 +93,7 @@ namespace CECLIMI.Presentador
                                          cirugiaPqt.Protesis, cirugiaPqt.Descuento,total);
             }
             _vista.TotalCirugia.Text = totalCirugias.ToString();
-            List<Pago> pagos = new List<Pago> (lPagos.ObtenerPagosPaqueteFinanciero(paquete));
+            List<Pago> pagos = new List<Pago> (lPagos.ObtenerPagosPaqueteFinanciero(_paquete));
             List<string> nombres = new List<string>();
 
             float totalPagos = 0;
@@ -121,6 +121,24 @@ namespace CECLIMI.Presentador
                     }
                 }
                 _vista.PacientesAlternos.Text += nombres[i] + ", " ;
+            }
+        }
+
+        public void ModificarObservacion(String observacion)
+        {
+            ServicioPaqueteFinancieroSoap logica = new ServicioPaqueteFinancieroSoap();
+            /* Aqui va la vaina esa del soap pero no se manejarme en el proxy es lo unico que falta 
+             * para que modifique la observacion*/
+            if (true)
+            {
+                DialogResult result =
+                        MessageBox.Show("Observacion modificada correctamente.", "Transaccion Correcta", MessageBoxButtons.OK);
+            }
+            else
+            {
+
+                DialogResult result =
+                        MessageBox.Show("La observacion no pudo ser modificada.", "Transaccion Incorrecta", MessageBoxButtons.OK);
             }
         }
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportePaqueteFinanciero));
             this.panel1 = new System.Windows.Forms.Panel();
             this.botonAceptar = new System.Windows.Forms.Button();
             this.textInformacionPagos = new System.Windows.Forms.Label();
@@ -40,11 +39,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboPaquetesFinancieros = new System.Windows.Forms.ComboBox();
             this.grupoPaqueteFinanciero = new System.Windows.Forms.GroupBox();
+            this.observaciones = new System.Windows.Forms.TextBox();
             this.totalPagos = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.totalCirugia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.observaciones = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.fechaIntervencion = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,6 +54,12 @@
             this.TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridCirugias = new System.Windows.Forms.DataGridView();
+            this.cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Honorarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Protesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pacientesAlternos = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.correoPaciente = new System.Windows.Forms.Label();
@@ -69,12 +74,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cirujano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Honorarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Protesis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modificarObservacion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.grupoInformacionPaciente.SuspendLayout();
             this.grupoPaquetesFinancieros.SuspendLayout();
@@ -195,11 +195,12 @@
             // 
             // grupoPaqueteFinanciero
             // 
+            this.grupoPaqueteFinanciero.Controls.Add(this.modificarObservacion);
+            this.grupoPaqueteFinanciero.Controls.Add(this.observaciones);
             this.grupoPaqueteFinanciero.Controls.Add(this.totalPagos);
             this.grupoPaqueteFinanciero.Controls.Add(this.label14);
             this.grupoPaqueteFinanciero.Controls.Add(this.totalCirugia);
             this.grupoPaqueteFinanciero.Controls.Add(this.label1);
-            this.grupoPaqueteFinanciero.Controls.Add(this.observaciones);
             this.grupoPaqueteFinanciero.Controls.Add(this.label11);
             this.grupoPaqueteFinanciero.Controls.Add(this.fechaIntervencion);
             this.grupoPaqueteFinanciero.Controls.Add(this.label12);
@@ -227,6 +228,15 @@
             this.grupoPaqueteFinanciero.TabStop = false;
             this.grupoPaqueteFinanciero.Text = "Paquete Financiero";
             this.grupoPaqueteFinanciero.Visible = false;
+            // 
+            // observaciones
+            // 
+            this.observaciones.Location = new System.Drawing.Point(138, 515);
+            this.observaciones.MaxLength = 500;
+            this.observaciones.Multiline = true;
+            this.observaciones.Name = "observaciones";
+            this.observaciones.Size = new System.Drawing.Size(744, 47);
+            this.observaciones.TabIndex = 24;
             // 
             // totalPagos
             // 
@@ -264,21 +274,10 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Total:";
             // 
-            // observaciones
-            // 
-            this.observaciones.AutoSize = true;
-            this.observaciones.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Underline);
-            this.observaciones.Location = new System.Drawing.Point(158, 512);
-            this.observaciones.MaximumSize = new System.Drawing.Size(800, 0);
-            this.observaciones.Name = "observaciones";
-            this.observaciones.Size = new System.Drawing.Size(799, 40);
-            this.observaciones.TabIndex = 19;
-            this.observaciones.Text = resources.GetString("observaciones.Text");
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(52, 512);
+            this.label11.Location = new System.Drawing.Point(30, 512);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 20);
             this.label11.TabIndex = 18;
@@ -288,7 +287,7 @@
             // 
             this.fechaIntervencion.AutoSize = true;
             this.fechaIntervencion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaIntervencion.Location = new System.Drawing.Point(156, 492);
+            this.fechaIntervencion.Location = new System.Drawing.Point(134, 492);
             this.fechaIntervencion.Name = "fechaIntervencion";
             this.fechaIntervencion.Size = new System.Drawing.Size(113, 20);
             this.fechaIntervencion.TabIndex = 17;
@@ -297,7 +296,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(30, 492);
+            this.label12.Location = new System.Drawing.Point(8, 492);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(126, 20);
             this.label12.TabIndex = 16;
@@ -373,6 +372,46 @@
             this.gridCirugias.ReadOnly = true;
             this.gridCirugias.Size = new System.Drawing.Size(907, 96);
             this.gridCirugias.TabIndex = 14;
+            // 
+            // cirugia
+            // 
+            this.cirugia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cirugia.HeaderText = "Cirugia";
+            this.cirugia.Name = "cirugia";
+            this.cirugia.ReadOnly = true;
+            this.cirugia.Width = 75;
+            // 
+            // cirujano
+            // 
+            this.cirujano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cirujano.HeaderText = "Cirujano";
+            this.cirujano.Name = "cirujano";
+            this.cirujano.ReadOnly = true;
+            this.cirujano.Width = 82;
+            // 
+            // Honorarios
+            // 
+            this.Honorarios.HeaderText = "SubTotal IQX";
+            this.Honorarios.Name = "Honorarios";
+            this.Honorarios.ReadOnly = true;
+            // 
+            // Protesis
+            // 
+            this.Protesis.HeaderText = "Protesis";
+            this.Protesis.Name = "Protesis";
+            this.Protesis.ReadOnly = true;
+            // 
+            // Descuento
+            // 
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // pacientesAlternos
             // 
@@ -508,45 +547,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "CECLIMI";
             // 
-            // cirugia
+            // modificarObservacion
             // 
-            this.cirugia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.cirugia.HeaderText = "Cirugia";
-            this.cirugia.Name = "cirugia";
-            this.cirugia.ReadOnly = true;
-            this.cirugia.Width = 75;
-            // 
-            // cirujano
-            // 
-            this.cirujano.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.cirujano.HeaderText = "Cirujano";
-            this.cirujano.Name = "cirujano";
-            this.cirujano.ReadOnly = true;
-            this.cirujano.Width = 82;
-            // 
-            // Honorarios
-            // 
-            this.Honorarios.HeaderText = "SubTotal IQX";
-            this.Honorarios.Name = "Honorarios";
-            this.Honorarios.ReadOnly = true;
-            // 
-            // Protesis
-            // 
-            this.Protesis.HeaderText = "Protesis";
-            this.Protesis.Name = "Protesis";
-            this.Protesis.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
+            this.modificarObservacion.Image = global::CECLIMI.Properties.Resources.iconoModificar;
+            this.modificarObservacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modificarObservacion.Location = new System.Drawing.Point(889, 524);
+            this.modificarObservacion.Name = "modificarObservacion";
+            this.modificarObservacion.Size = new System.Drawing.Size(30, 29);
+            this.modificarObservacion.TabIndex = 53;
+            this.modificarObservacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.modificarObservacion.UseVisualStyleBackColor = true;
+            this.modificarObservacion.Click += new System.EventHandler(this.modificarObservacion_Click);
             // 
             // ReportePaqueteFinanciero
             // 
@@ -595,7 +606,6 @@
         private System.Windows.Forms.Label pacientesAlternos;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView gridCirugias;
-        private System.Windows.Forms.Label observaciones;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label fechaIntervencion;
         private System.Windows.Forms.Label label12;
@@ -618,5 +628,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Protesis;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.TextBox observaciones;
+        private System.Windows.Forms.Button modificarObservacion;
     }
 }
