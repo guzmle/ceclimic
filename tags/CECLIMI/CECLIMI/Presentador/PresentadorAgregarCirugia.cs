@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Proxys;
+using Proxy;
 
 namespace CECLIMI.Presentador
 {

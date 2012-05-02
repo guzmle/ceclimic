@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using CECLIMI.Contratos;
-using Proxys;
+using Proxy;
 
 
 namespace CECLIMI.Presentador
