@@ -11,5 +11,6 @@ namespace EnlaceDatos.IDAO
         bool EditarPaqueteFinanciero(PaqueteFinanciero paquete);
         bool EliminarPaqueteFinanciero(PaqueteFinanciero paquete);
         List<PaqueteFinanciero> ObtenerPaqueteFPaciente(int cedula);
+        bool ModificarObservacionPaqueteFinanciero(PaqueteFinanciero paquete, string observacion);
     }
 }

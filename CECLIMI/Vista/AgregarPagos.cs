@@ -17,7 +17,7 @@ namespace CECLIMI.Vista
         public AgregarPagos()
         {
             InitializeComponent();
-            textNombreQuienPaga.MaxLength = 15;
+            textNombreQuienPaga.MaxLength = 60;
             textSeguro.MaxLength = 30;
             textTipoPago.MaxLength = 3;
             textDiaPago.MaxLength = 2;
@@ -38,6 +38,11 @@ namespace CECLIMI.Vista
         }
 
         #region Implementacion de contratos para AgregarPagos
+
+        public GroupBox GrupoInformacionPacienteBuscar
+        {
+            get { return grupoInformacionPaciente; }
+        }
 
         public GroupBox GroupInformacionPaciente
         {

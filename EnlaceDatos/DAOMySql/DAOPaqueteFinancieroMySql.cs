@@ -141,6 +141,31 @@ namespace EnlaceDatos.DAOMySql
             }
         }
 
-        
+        public bool ModificarObservacionPaqueteFinanciero(PaqueteFinanciero paquete, string observacion)
+        {
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = Conexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "ModificarObservacionPaquete";
+
+                comando.Parameters.AddWithValue("@idPaquete", paquete.Id);
+                comando.Parameters.AddWithValue("@observacion", observacion);
+
+                comando.Parameters["@idPaquete"].Direction = ParameterDirection.Input;
+                comando.Parameters["@observacion"].Direction = ParameterDirection.Input;
+
+                comando.ExecuteNonQuery();
+
+                CerrarConexion();
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e.Message);
+                return false;
+            }
+        }
     }
 }

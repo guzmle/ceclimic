@@ -28,6 +28,12 @@ namespace Logica
         {
             return DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().ObtenerPaqueteFPaciente(cedula);
         }
+
+        public bool ModificarObservacionPaqueteFinanciero(PaqueteFinanciero paquete, string observacion)
+        {
+            return DAO.ObtenerDAO(1).ObtenerDAOPaqueteFinanciero().ModificarObservacionPaqueteFinanciero(paquete,
+                                                                                                         observacion);
+        }
     }
 }
 

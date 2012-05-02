@@ -38,5 +38,12 @@ namespace Servicio
             LPaqueteFinanciero logica = new LPaqueteFinanciero();
             return logica.ObtenerPaqueteFPaciente(cedula);
         }
+
+        [WebMethod]
+        public bool ModificarObservacionesPaqueteFinanciero(PaqueteFinanciero paquete, string observacion)
+        {
+            LPaqueteFinanciero logica = new LPaqueteFinanciero();
+            return logica.ModificarObservacionPaqueteFinanciero(paquete, observacion);
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace CECLIMI.Contratos
     /// </summary>
     public interface IContratoAgregarPagos
     {
+        GroupBox GrupoInformacionPacienteBuscar { get; }
         GroupBox GroupInformacionPaciente { get; }
         GroupBox GroupInformacionPago { get; }
         GroupBox GroupInformacionPaquetesFinancieros { get; }

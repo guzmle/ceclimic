@@ -101,7 +101,7 @@ namespace CECLIMI.Vista
             get { return fechaIntervencion; }
         }
 
-        public Label Observaciones
+        public TextBox Observaciones
         {
             get { return observaciones; }
         }
@@ -121,6 +121,11 @@ namespace CECLIMI.Vista
             get { return totalPagos; }
         }
 
+        public Button ModificarObservacion
+        {
+            get { return modificarObservacion; }
+        }
+
         #endregion
 
         private void BotonBuscarClick(object sender, EventArgs e)
@@ -131,6 +136,11 @@ namespace CECLIMI.Vista
         private void ComboPaquetesFinancierosSelectedIndexChanged(object sender, EventArgs e)
         {
             _presentador.BuscarInformacionPaquete();
+        }
+
+        private void modificarObservacion_Click(object sender, EventArgs e)
+        {
+            _presentador.ModificarObservacion(observaciones.Text);
         }
     }
 }

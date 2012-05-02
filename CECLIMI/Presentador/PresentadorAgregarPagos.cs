@@ -67,6 +67,7 @@ namespace CECLIMI.Presentador
             _vista.GroupInformacionPaquetesFinancieros.Visible = true;
             _vista.BotonAceptarPagosAgregados.Visible = true;
             _vista.BotonCancelarAgregarPagos.Visible = true;
+            _vista.GrupoInformacionPacienteBuscar.Visible = false;
         }
 
         public void LlenarComboPaquetes()

@@ -24,11 +24,12 @@ namespace CECLIMI.Contratos
         DataGridView Cirugias { get; }
         DataGridView Pagos { get; }
         Label FechaIntervencion { get; }
-        Label Observaciones { get; }
+        TextBox Observaciones { get; }
 
         Button Aceptar { get; }
 
         Label TotalCirugia { get; }
         Label TotalPagos { get; }
+        Button ModificarObservacion { get; }
     }
 }
