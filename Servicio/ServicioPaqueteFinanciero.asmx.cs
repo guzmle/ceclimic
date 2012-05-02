@@ -39,6 +39,10 @@ namespace Servicio
             return logica.ObtenerPaqueteFPaciente(cedula);
         }
 
+        /// <summary> Metodo que modifica las observaciones de los paquetes financieros</summary>
+        /// <param name="paquete">dato del paquete</param>
+        /// <param name="observacion">observacion a modificar</param>
+        /// <returns>true si lo modifico false sino</returns>
         [WebMethod]
         public bool ModificarObservacionesPaqueteFinanciero(PaqueteFinanciero paquete, string observacion)
         {
@@ -46,4 +50,5 @@ namespace Servicio
             return logica.ModificarObservacionPaqueteFinanciero(paquete, observacion);
         }
     }
+
 }

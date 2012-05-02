@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using CECLIMI.Contratos;
-using Proxys;
+using Proxy;
 
 
 namespace CECLIMI.Presentador
@@ -129,7 +129,7 @@ namespace CECLIMI.Presentador
             ServicioPaqueteFinancieroSoap logica = new ServicioPaqueteFinancieroSoap();
             /* Aqui va la vaina esa del soap pero no se manejarme en el proxy es lo unico que falta 
              * para que modifique la observacion*/
-            if (true)
+            if (logica.ModificarObservacionesPaqueteFinanciero(_paquete,observacion))
             {
                 DialogResult result =
                         MessageBox.Show("Observacion modificada correctamente.", "Transaccion Correcta", MessageBoxButtons.OK);
